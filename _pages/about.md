@@ -11,7 +11,7 @@ redirect_from:
 Biography
 ======
 Xiang Li is a fourth-year undergraduate student majoring in Computer Science and minoring in Design at the Hong Kong University of Science and Technology (HKUST). He worked on Computer Vision research with [Prof. Yu-Wing Tai](https://scholar.google.com/citations?user=nFhLmFkAAAAJ) and [Prof. Chi-Keung Tang](https://scholar.google.com/citations?user=EWfpM74AAAAJ). Previously, he also had a semester exchange at University of Illinois Urbana-Champaign (UIUC).  
-His research interests includes computer vision and deep learning, especially under data-limited senarios. He has experiences in semantic segmentation, object detection and few-shot learning.
+His research interests include computer vision and deep learning, especially under data-limited scenarios. He has experience in semantic segmentation, object detection, and few-shot learning.
 
 
 Research
