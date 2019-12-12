@@ -9,6 +9,9 @@ main:
   - title: "Project / Coursework"
     url: /projects/
 
+  - title: "CV"
+    url: /files/cv_xiang.pdf
+
 
   # - title: "Publications"
   #   url: /publications/
