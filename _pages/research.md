@@ -8,7 +8,7 @@ redirect_from:
 
 
 
-<div class="publication media">
+<div class="publication media" style="font-size:18px;">
   <img src="\images\papers\oneshot\overview.png"
      alt="Figure in Oneshot paper"
      class="publogo img-fluid float-left rounded g"  a=""
@@ -29,10 +29,10 @@ redirect_from:
 </div>
 
 
+<br>
 
 
-
-<div class="publication media">
+<div class="publication media" style="font-size:16px;">
 <img src="\images\papers\fss\result.jpg"
      alt="Figure in FSS paper"
      class="publogo img-fluid float-left rounded g"  a=""
