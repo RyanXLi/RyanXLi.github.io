@@ -34,8 +34,8 @@ Research
     <b>Xiang Li*</b>, Lin Zhang*, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang (*: Equal contribution) <br>
     <em>Submitted to CVPR</em>, 2020 <br>
     <span class="links">
-    <a href="https://ryanxli.github.io/">[Project Page]</a>
-    <a href="https://ryanxli.github.io/">[Code]</a>
+    <a href="https://ryanxli.github.io/oneshot">[Project Page]</a>
+    <!-- <a href="https://ryanxli.github.io/">[Code]</a> -->
     </span> </p>
   </div>
 </div>
@@ -58,7 +58,6 @@ Research
     <b>Xiang Li</b>, Tianhan Wei, Xiang Li, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
     <em>Submitted to CVPR</em>, 2020 <br>
     <span class="links">
-    <a href="https://ryanxli.github.io/">[Project Page]</a>
     <a href="https://arxiv.org/abs/1907.12347">[ArXiv(previous version)]</a>
     <a href="https://github.com/HKUSTCV/FSS-1000">[GitHub]</a>
     </span> </p>

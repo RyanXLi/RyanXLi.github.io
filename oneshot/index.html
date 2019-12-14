@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Basic Page Needs
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>One-Shot Object Detection without Fine-Tuning</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/footable.standalone.min.css">
+
+    <!-- Favicon
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+    <link rel="manifest" href="./fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-86869673-1', 'auto');
+      ga('send', 'pageview');
+
+
+      // for slideshow begins
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+      // for slideshow ends
+    </script>
+
+    <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+    <style>
+      img {
+          display: block;
+      }
+
+      .column-50 {
+          float: left;
+          width: 50%;
+      }
+      .row-50:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+
+      .floating-teaser {
+          float: left;
+          width: 30%;
+          text-align: center;
+          padding: 15px;
+      }
+      .venue strong {
+          color: #99324b;
+      }
+
+      .benchmark {
+          width: 100%;
+          max-width: 960px;
+          overflow: scroll;
+          overflow-y: hidden;
+      }
+
+
+      /* for slideshow begins */
+
+      * {
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  /* color: white; */
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  /* background-color: #222; */
+  padding: 2px 16px;
+  /* color: white; */
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+      /* for slideshow end */
+
+    </style>
+  </head>
+  <body>
+
+    <!-- Primary Page Layout
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+      <h4 style="padding-top:20px; text-align:center">One-Shot Object Detection without Fine-Tuning</h4>
+      <p align="center", style="margin-bottom:12px;">
+        <span class="simple" >Xiang Li</a><sup>1</sup><span style="font-size:120%">*</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="simple" >Lin Zhang</a><sup>1</sup><span style="font-size:120%">*</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="simple" >Yau Pun Chen</a><sup>1</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="simple" >Yu-Wing Tai</a><sup>2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="simple" >Chi-Keung Tang</a><sup>1</sup>
+      </p>
+
+      <p align="center" style="margin-bottom:20px;">
+        <sup>1</sup>Hong Kong University of Science and Technology
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>2</sup>Tencent <br>
+        <!-- <span style="display:inline-block; width: 32px"></span> -->
+      </p>
+
+      <div class="venue">
+        <p align="center"> Submitted to IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.</p>
+      </div>
+
+      <!-- <figure>
+        <img src="images/objects_teaser.png" style="width:100%"></img>
+        <br>
+      </figure>
+      <div class="caption">
+        <b>Sample objects from our ScanObjectNN dataset.</b> The dataset
+        contains ~15,000 objects that are categorized into 15 categories with
+        2902 unique object instances.  The raw objects are represented by a list
+        of points with global and local coordinates, normals, colors attributes
+        and semantic labels. We also provide part annotations, which to the best
+        of our knowledge is the first on real-world data.
+      </div> -->
+
+      <br>
+
+      <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
+        <h5>Abstract</h5>
+        <p align="justify">
+          Deep learning has revolutionized object detection thanks to large-scale datasets, but their object categories are still arguably very limited. In this paper, we attempt to enrich such categories by addressing the one-shot object detection problem, where the number of annotated training examples for learning an unseen class is limited to one. 
+          We introduce a two-stage model consisting of a first stage Matching-FCOS network and a second stage Structure-Aware Relation Module, the combination of which integrates metric learning with an anchor-free Faster R-CNN-style detection pipeline, eventually eliminating the need to fine-tune on the support images. We also propose novel training strategies that effectively improve detection performance. Extensive quantitative and qualitative evaluations were performed and our method exceeds the state-of-the-art one-shot performance which requires fine-tuning on PASCAL VOC 2007 test set by 12.1%.
+          <br>
+          <br>
+        </p>
+      </div>
+
+      <div class="container" style="width:100%; margin:0; padding:0">
+        <h5>Model</h5>
+        <figure>
+          <img src="images/overview.png" style="width:100%"></img>
+          
+        </figure>
+        <div class="caption">
+          <b>Overview of our architecture.</b> The query and support images are first fed into a shared siamese backbone network. Then our Matching-FCOS produces a set of high-recall proposals. The second stage, which we term Structure-Aware Relation Module (SARM), learns to classify and regress bounding boxes by focusing on structure local features. The final goal is to detect objects in the query image with the same class of the support object. 
+        </div>
+
+        <br>
+
+        <div class="container" style="width:100%; margin:0; padding:0">
+          <div class="container" style="float: left; width:50%; margin:20; padding:0">
+            <figure>
+              <img src="images/newmfcos.png" style="width:75%"></img>
+            </figure>
+            <div class="caption">
+              <b>Matching-FCOS network</b> as the first stage of our model. C3--C5 refers to feature maps of the backbone and P3--P7 refers to feature maps of the FPN.
+            </div>
+          </div>
+
+          <div class="container" style="float: left; width:50%; margin:20; padding:0">
+            <figure>
+              <img src="images/newsarm.png" style="width:100%"></img>
+            </figure>
+            <div class="caption">
+              <b>Structure-Aware Relation Module (SARM)</b> at the second stage. We first pool query proposals features and support features into K x K features and concatenate them. We then use pixel-wise convolutional layers to compare structure-aware local features. Here, the cat is decomposed into structural modules including ears, feet, etc. By processing these features locally, our module can discover more relevant cues to achieve higher detection precision.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+    
+    <div class="section">
+      <h5>Performance</h5>
+        <div class="container" style="width:100%; margin:0; padding:0">
+          <figure>
+            <img src="images/complstd.PNG" style="width:29%; float: left;"></img>
+            <img src="images/abl.PNG" style="width:70%; float: left;"></img>
+            
+          </figure>
+          <br>
+          <div class="caption">
+            <b>Comparison with previous work LSTD</b> (which requires fine-tuning) in one-shot settings evaluated on task I (trained on COCO and tested on ImageNet-LOC) and II (trained on COCO excluding PASCAL VOC classes and tested on PASCAL VOC) following the LSTD paper, as well as the abalation study of our model on task II.
+          </div>
+
+
+          <figure>
+            <img src="images/perclass.PNG" style="width:100%"></img>
+          </figure>
+
+          <div class="caption">
+            <b>Per-class performance</b> of our method on task II.
+          </div>
+        </div>
+      
+    <br>
+    </div>
+    <br>
+
+    <div class="section">
+      <h5>Qualitative Results</h5>
+
+<div class="container" style="width:100%; margin:0; padding:0">
+  <!-- SLIDESHOW BEGIN -->
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1</div>
+      <img src="images/results/1.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2</div>
+    <img src="images/results/2.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3</div>
+    <img src="images/results/3.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4</div>
+    <img src="images/results/4.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5</div>
+    <img src="images/results/5.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6</div>
+    <img src="images/results/6.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">7</div>
+      <img src="images/results/7.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">8</div>
+    <img src="images/results/8.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">9</div>
+    <img src="images/results/9.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">10</div>
+    <img src="images/results/10.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">11</div>
+    <img src="images/results/11.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">12</div>
+    <img src="images/results/12.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">13</div>
+      <img src="images/results/13.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">14</div>
+    <img src="images/results/14.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">15</div>
+    <img src="images/results/15.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">16</div>
+    <img src="images/results/16.PNG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">17</div>
+    <img src="images/results/17.PNG" style="width:100%">
+  </div>
+
+  <!-- <div class="mySlides">
+    <div class="numbertext">18</div>
+    <img src="images/results/18.PNG" style="width:100%">
+  </div> -->
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/results/1.PNG" style="width:100%" onclick="currentSlide(1)" alt="Dog">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/2.PNG" style="width:100%" onclick="currentSlide(2)" alt="Bottle">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/3.PNG" style="width:100%" onclick="currentSlide(3)" alt="Aeroplane">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/4.PNG" style="width:100%" onclick="currentSlide(4)" alt="Car">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/5.PNG" style="width:100%" onclick="currentSlide(5)" alt="Bicycle">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/6.PNG" style="width:100%" onclick="currentSlide(6)" alt="Couch">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/7.PNG" style="width:100%" onclick="currentSlide(7)" alt="Bird">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/8.PNG" style="width:100%" onclick="currentSlide(8)" alt="Bus">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/9.PNG" style="width:100%" onclick="currentSlide(9)" alt="Boat">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/10.PNG" style="width:100%" onclick="currentSlide(10)" alt="Cat">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/11.PNG" style="width:100%" onclick="currentSlide(11)" alt="Train">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/12.PNG" style="width:100%" onclick="currentSlide(12)" alt="Cow">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/13.PNG" style="width:100%" onclick="currentSlide(13)" alt="Table">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/14.PNG" style="width:100%" onclick="currentSlide(14)" alt="Horse">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/15.PNG" style="width:100%" onclick="currentSlide(15)" alt="Motorcycle">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/16.PNG" style="width:100%" onclick="currentSlide(16)" alt="Sheep">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/results/17.PNG" style="width:100%" onclick="currentSlide(17)" alt="Chair">
+    </div>
+    <!-- <div class="column">
+      <img class="demo cursor" src="images/results/18.PNG" style="width:100%" onclick="currentSlide(18)" alt="Snowy Mountains">
+    </div> -->
+  </div>
+</div>
+
+<br>
+
+<!-- <div class="section">
+  <h5>Code</h5>
+  Coming soon! Please stay tuned.
+</div> -->
+
+<!-- SLIDESHOW ENDS -->
+</div>
+
+     
+
+  </div>
+
+
+  <script type="text/javascript">
+    showSlides(1);
+  </script>
+
+
+
+
+
+<!-- <div class="container" style="width:100%; margin:0; padding:0"> -->
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/footable.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery(function($){
+          $('.table').footable();
+      });
+    </script>
+
+    <!-- End Document
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+</html>
