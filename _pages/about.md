@@ -58,8 +58,8 @@ Research
     <b>Xiang Li</b>, Tianhan Wei, Xiang Li, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
     <em>Submitted to CVPR</em>, 2020 <br>
     <span class="links">
-    <a href="https://arxiv.org/abs/1907.12347">[ArXiv(previous version)]</a>
     <a href="https://github.com/HKUSTCV/FSS-1000">[GitHub]</a>
+    <a href="https://arxiv.org/abs/1907.12347">[ArXiv(previous version)]</a>
     </span> </p>
   </div>
 </div>
