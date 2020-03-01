@@ -54,7 +54,7 @@ Research
     FSS-1000: A 1000-Class Dataset for Few-Shot Segmentation</a></strong>
     <!-- <span class="badge badge-danger">New!</span> -->
     <br>
-    <b>Xiang Li</b>, Tianhan Wei, Xiang Li, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
+    <b>Xiang Li</b>, Tianhan Wei, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
     <em>Submitted to CVPR</em>, 2020 <br>
     <span class="links">
     <a href="https://github.com/HKUSTCV/FSS-1000">[GitHub]</a>
