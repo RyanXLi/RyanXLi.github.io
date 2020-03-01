@@ -20,7 +20,7 @@ redirect_from:
     <!-- <span class="badge badge-danger">New!</span> -->
     <br>
     <b>Xiang Li*</b>, Lin Zhang*, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang (*: Equal contribution) <br>
-    <em>Submitted to CVPR</em>, 2020 <br>
+    <em>In submission.</em> <br>
     <span class="links">
     <a href="https://ryanxli.github.io/oneshot">[Project Page]</a>
     </span> </p>
@@ -43,7 +43,7 @@ redirect_from:
     <!-- <span class="badge badge-danger">New!</span> -->
     <br>
     <b>Xiang Li</b>, Tianhan Wei, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
-    <em>Submitted to CVPR</em>, 2020 <br>
+    <em>In CVPR</em>, 2020 <br>
     <span class="links">
     <a href="https://github.com/HKUSTCV/FSS-1000">[GitHub]</a>
     <a href="https://arxiv.org/abs/1907.12347">[ArXiv(previous version)]</a>
