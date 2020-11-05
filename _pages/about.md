@@ -35,16 +35,16 @@ Research
      />
 
   <div class="media-body">
-    <p><strong><a href="https://arxiv.org/abs/2005.03819">
+    <p><strong><a href="https://arxiv.org/abs/2005.03819" target="_blank">
     One-Shot Object Detection without Fine-Tuning</a></strong>
     <!-- <span class="badge badge-danger">New!</span> -->
     <br>
     <b>Xiang Li*</b>, Lin Zhang*, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang (*: Equal contribution) <br>
     <em>Tech Report.</em> <br>
     <span class="links">
-    <a href="https://arxiv.org/abs/2005.03819">[Paper]</a>
-    <a href="https://ryanxli.github.io/oneshot">[Project Page]</a>
-    <a href="https://github.com/RyanXLi/OneshotDet">[GitHub]</a>
+    <a href="https://arxiv.org/abs/2005.03819" target="_blank">[Paper]</a>
+    <a href="https://ryanxli.github.io/oneshot" target="_blank">[Project Page]</a>
+    <a href="https://github.com/RyanXLi/OneshotDet" target="_blank">[GitHub]</a>
     </span> </p>
   </div>
 </div>
@@ -58,7 +58,7 @@ Research
 
   <div class="media-body">
     <p><strong><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
-    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf">
+    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf" target="_blank">
     FSS-1000: A 1000-Class Dataset for Few-Shot Segmentation</a></strong>
     <br>
     <b>Xiang Li</b>, Tianhan Wei, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
@@ -66,8 +66,8 @@ Research
     <span class="links">
     <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
     -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf
-    ">[Paper]</a>
-    <a href="https://github.com/HKUSTCV/FSS-1000">[GitHub]</a>
+    " target="_blank">[Paper]</a>
+    <a href="https://github.com/HKUSTCV/FSS-1000" target="_blank">[GitHub]</a>
     </span> </p>
   </div>
 </div>
