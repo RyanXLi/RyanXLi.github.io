@@ -12,9 +12,18 @@ redirect_from:
 
 Biography
 ======
-Xiang Li is a fourth-year undergraduate student majoring in Computer Science at the Hong Kong University of Science and Technology (HKUST). He will join CMU MSCV in fall 2020. He worked on Computer Vision research with [Prof. Yu-Wing Tai](https://scholar.google.com/citations?user=nFhLmFkAAAAJ) and [Prof. Chi-Keung Tang](https://scholar.google.com/citations?user=EWfpM74AAAAJ). Previously, he also had a semester exchange at University of Illinois Urbana-Champaign (UIUC). His CV is available [here](files/cv_xiang.pdf).  
-His research interests include computer vision and deep learning, especially under data-limited scenarios. He has experience in semantic segmentation, object detection, and few-shot learning.
+Xiang Li is an undergraduate student majoring in Computer Science 
+at the Hong Kong University of Science and Technology (HKUST), 
+where he worked on Computer Vision research with 
+[Prof. Yu-Wing Tai](https://scholar.google.com/citations?user=nFhLmFkAAAAJ) 
+and [Prof. Chi-Keung Tang](https://scholar.google.com/citations?user=EWfpM74AAAAJ). 
+Previously, he also had a semester exchange at University of Illinois 
+Urbana-Champaign (UIUC). His CV is available [here](files/cv_xiang.pdf).  
 
+His research interests mainly include 3D computer vision and few-shot
+ learning. He has experience in semantic segmentation, object detection, and
+  few-shot learning. **He is actively looking for a Ph.D. position in computer
+   vision.**
 
 Research
 ======
@@ -43,7 +52,7 @@ Research
 </div>
 
 
-
+<br />
 
 
 <div class="publication media">
