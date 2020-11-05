@@ -28,33 +28,6 @@ His research interests mainly include 3D computer vision and few-shot
 Research
 ======
 
-
-<div class="publication media">
-<img src="\images\papers\fss\result.jpg"
-     alt="Figure in FSS paper"
-     class="publogo img-fluid float-left rounded g" width="300" a=""
-     />
-
-  <div class="media-body">
-    <p><strong><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
-    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf">
-    FSS-1000: A 1000-Class Dataset for Few-Shot Segmentation</a></strong>
-    <br>
-    <b>Xiang Li</b>, Tianhan Wei, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
-    <em>In CVPR</em>, 2020 <br>
-    <span class="links">
-    <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
-    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf
-    ">[Paper]</a>
-    <a href="https://github.com/HKUSTCV/FSS-1000">[GitHub]</a>
-    </span> </p>
-  </div>
-</div>
-
-
-<br />
-
-
 <div class="publication media">
   <img src="\images\papers\oneshot\overview.png"
      alt="Figure in Oneshot paper"
@@ -77,3 +50,24 @@ Research
 </div>
 
 
+<div class="publication media">
+<img src="\images\papers\fss\result.jpg"
+     alt="Figure in FSS paper"
+     class="publogo img-fluid float-left rounded g" width="300" a=""
+     />
+
+  <div class="media-body">
+    <p><strong><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
+    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf">
+    FSS-1000: A 1000-Class Dataset for Few-Shot Segmentation</a></strong>
+    <br>
+    <b>Xiang Li</b>, Tianhan Wei, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
+    <em>In CVPR</em>, 2020 <br>
+    <span class="links">
+    <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
+    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf
+    ">[Paper]</a>
+    <a href="https://github.com/HKUSTCV/FSS-1000">[GitHub]</a>
+    </span> </p>
+  </div>
+</div>
