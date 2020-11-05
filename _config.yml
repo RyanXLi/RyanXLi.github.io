@@ -83,7 +83,7 @@ author:
   name             : "Xiang (Ryan) Li"
   avatar           : "xiang.jpg"
   bio              :  # "HKUST -> CMU MSCV. Computer vision researcher."
-  location         : "HKUST, Hong Kong"
+  location         :  # "HKUST, Hong Kong"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=3Ds7hOQAAAAJ"
