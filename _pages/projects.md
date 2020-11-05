@@ -6,6 +6,15 @@ redirect_from:
   - /projects.html
 ---
 
+## Open-Source Projects
+
+- Developing and maintaining [MMDetection](https://github.com/open-mmlab/mmdetection), an open-source object detection framework with 11.6k stars on
+ GitHub. 
+  - Implementing detection models in MMDetection, e.g. YOLO v4; reproducing
+ their performances and optimizing their speed, making them modular
+  components for in-place usage of all 40 detection models; 
+
+
 ## System
 
 - An Optimized CUDA Implementation of CNN Forward Pass  
@@ -35,7 +44,7 @@ redirect_from:
 
 
 
-## AI / ML
+## Other AI / ML
 
 - One-shot Pokemon Classification  
   - Classify pokimon images given only 1 reference per class. Adopted a metric-learning based baseline and make improvements  

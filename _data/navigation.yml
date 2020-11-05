@@ -1,7 +1,5 @@
 # main links links
 main:
-  - title: "Research"
-    url: /research/
 
   - title: "Education"
     url: /education/
@@ -12,6 +10,8 @@ main:
   - title: "CV"
     url: /files/cv_xiang.pdf
 
+#  - title: "Research"
+#    url: /research/
 
   # - title: "Publications"
   #   url: /publications/
