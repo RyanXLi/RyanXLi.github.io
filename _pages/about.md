@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-
+<base target="_blank">
 
 Biography
 ======
