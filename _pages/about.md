@@ -14,8 +14,9 @@ Biography
 Xiang Li is an undergraduate student majoring in Computer Science 
 at the Hong Kong University of Science and Technology (HKUST), 
 where he worked on Computer Vision research with 
-[Prof. Yu-Wing Tai](https://scholar.google.com/citations?user=nFhLmFkAAAAJ) 
-and [Prof. Chi-Keung Tang](https://scholar.google.com/citations?user=EWfpM74AAAAJ). 
+<a href="https://scholar.google.com/citations?user=nFhLmFkAAAAJ" target="_blank">Prof. Yu-Wing Tai</a>
+ and 
+<a href="https://scholar.google.com/citations?user=EWfpM74AAAAJ" target="_blank">Prof. Chi-Keung Tang</a>. 
 Previously, he also had a semester exchange at University of Illinois 
 Urbana-Champaign (UIUC). His CV is available [here](files/cv_xiang.pdf).  
 
