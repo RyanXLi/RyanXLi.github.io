@@ -8,7 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-<base target="_blank">
 
 Biography
 ======
@@ -57,15 +56,13 @@ Research
      />
 
   <div class="media-body">
-    <p><strong><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
-    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf" target="_blank">
+    <p><strong><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS-1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf" target="_blank">
     FSS-1000: A 1000-Class Dataset for Few-Shot Segmentation</a></strong>
     <br>
     <b>Xiang Li</b>, Tianhan Wei, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang <br>
     <em>In CVPR</em>, 2020 <br>
     <span class="links">
-    <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS
-    -1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf
+    <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS-1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf
     " target="_blank">[Paper]</a>
     <a href="https://github.com/HKUSTCV/FSS-1000" target="_blank">[GitHub]</a>
     </span> </p>
