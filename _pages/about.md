@@ -10,20 +10,11 @@ redirect_from:
 
 <base target="_blank">
 
-Biography
-======
-Xiang Li is an undergraduate student majoring in Computer Science 
-at the Hong Kong University of Science and Technology (HKUST), 
-where he worked on Computer Vision research with 
-[Prof. Yu-Wing Tai](https://scholar.google.com/citations?user=nFhLmFkAAAAJ) 
-and [Prof. Chi-Keung Tang](https://scholar.google.com/citations?user=EWfpM74AAAAJ). 
-Previously, he also had a semester exchange at University of Illinois 
-Urbana-Champaign (UIUC). His CV is available [here](files/cv_xiang.pdf).  
-
-His research interests mainly include 3D computer vision and few-shot
- learning. He has experience in semantic segmentation, object detection, and
-  few-shot learning. **He is actively looking for a Ph.D. position in computer
-   vision.**
+I am a Ph.D. student at the University of Illinois Urbana-Champaign (UIUC), supervised by [Prof. Yu-Xiong Wang](https://yxw.web.illinois.edu/). 
+My research interest is in computer vision and machine learning, especially meta-learning and few-shot learning. 
+Previously, I was fortunate to have worked with [Prof. Xiaojuan Qi](https://xjqi.github.io/), 
+[Dr. Yu-Wing Tai](https://scholar.google.com/citations?user=nFhLmFkAAAAJ) and [Prof. Chi-Keung Tang](https://scholar.google.com/citations?user=EWfpM74AAAAJ).
+I received my bachelor's degree at the Hong Kong University of Science and Technology (HKUST). My CV is available [here](files/cv_xiang.pdf).  
 
 Research
 ======
