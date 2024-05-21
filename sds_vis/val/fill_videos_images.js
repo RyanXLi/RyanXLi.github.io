@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const videos = ['monster_rgba.mp4', 'hedgedog_rgba.mp4', 'gun2_rgba.mp4', 'stone_bench_rgba.mp4', 'tower_rgba.mp4', 'adapter_rgba.mp4', 'frames_rgba.mp4', 'leg_island_rgba.mp4', 'angrybird_rgba.mp4', 'jet_rgba.mp4'];
+    const videos = ['frames.mp4', 'gun.mp4', 'angrybird.mp4', 'stone_bench.mp4', 'adapter.mp4', 'jet.mp4', 'gun2.mp4', 'tower.mp4', 'warrior.mp4', 'monster.mp4', 'hedgedog.mp4', 'leg_island.mp4'];
 
 
     const gallery = document.getElementById('video-gallery-images');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         videoElement.playsInline = true;
 
         const sourceElement = document.createElement('source');
-        sourceElement.src = `videos/vanilla/${video}`;
+        sourceElement.src = `videos/crm/${video}`;
         sourceElement.type = 'video/mp4';
 
         videoElement.appendChild(sourceElement);

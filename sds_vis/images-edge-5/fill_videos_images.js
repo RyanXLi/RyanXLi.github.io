@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const videos = ['SDXL_cake3_rgba.mp4', 'SDXL_cake1_rgba.mp4', 'ood-pose_nolicense5_rgba.mp4', 'real-images_000000552902_rgba.mp4', 'real-images_000000029393_rgba.mp4', 'real-images_000000556873_rgba.mp4', 'real-images_shaker-no-7-rocking-chair-rocking-chair-18781910-ch-18460985-2-fcd1cd_rgba.mp4', 'real-images_000000036861_rgba.mp4', 'painting_car2_rgba.mp4', 'fine-detail_2_rgba.mp4'];
+    const videos = [];
 
 
     const gallery = document.getElementById('video-gallery-images');

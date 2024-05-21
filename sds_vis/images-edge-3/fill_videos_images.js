@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const videos = ['real-images_000000580757_rgba.mp4', 'concave_nolicense4_rgba.mp4', 'real-images_15_rgba.mp4', 'large-fov_car2_rgba.mp4', 'large-fov_000000081394_rgba.mp4', 'SDXL_mug2_rgba.mp4', 'painting_car1_rgba.mp4', 'real-images_000000537241_rgba.mp4', 'SDXL_castle1_rgba.mp4', 'ood-pose_nolicense14_rgba.mp4'];
+    const videos = [];
 
 
     const gallery = document.getElementById('video-gallery-images');

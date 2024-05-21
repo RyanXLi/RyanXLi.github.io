@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const videos = ['fine-detail_shaker-no-7-rocking-chair-rocking-chair-18781910-ch-18460985-2-fcd1cd_rgba.mp4', 'composite-object_nolicense15_rgba.mp4', 'real-images_000000519611_rgba.mp4', 'deformable_horse2_rgba.mp4', 'transparent_15_rgba.mp4', 'painting_nolicense9_rgba.mp4', 'concave_5_rgba.mp4', 'real-images_000000181816_rgba.mp4', 'SDXL_mug1_rgba.mp4', 'ood-pose_nolicense1_rgba.mp4'];
+    const videos = [];
 
 
     const gallery = document.getElementById('video-gallery-images');

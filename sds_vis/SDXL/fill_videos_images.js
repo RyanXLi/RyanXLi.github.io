@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const videos = ['cake2_rgba.mp4', 'cake3_rgba.mp4', 'castle-cake1_rgba.mp4', 'mug1_rgba.mp4', 'cake1_rgba.mp4', 'horse2_rgba.mp4', 'sculpture1_rgba.mp4', 'character1_rgba.mp4', 'car2_rgba.mp4', 'sculpture4_rgba.mp4', 'mug2_rgba.mp4', 'sculpture2_rgba.mp4', 'basket1_rgba.mp4', 'chair1_rgba.mp4', 'sculpture5_rgba.mp4', 'castle1_rgba.mp4'];
+    const videos = ['panda1.mp4', 'cake3.mp4', 'sculpture3.mp4', 'koala2.mp4', 'mug2.mp4', 'car2.mp4', 'mug1.mp4', 'character1.mp4', 'tiger1.mp4', 'cake2.mp4', 'cake1.mp4', 'horse2.mp4', 'horse1.mp4', 'basket1.mp4', 'castle1.mp4', 'castle-cake1.mp4', 'chair1.mp4', 'sculpture1.mp4', 'koala1.mp4', 'sculpture5.mp4', 'cat1.mp4', 'sculpture2.mp4', 'sculpture4.mp4'];
 
 
     const gallery = document.getElementById('video-gallery-images');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         videoElement.playsInline = true;
 
         const sourceElement = document.createElement('source');
-        sourceElement.src = `videos/vanilla/${video}`;
+        sourceElement.src = `videos/crm/${video}`;
         sourceElement.type = 'video/mp4';
 
         videoElement.appendChild(sourceElement);
