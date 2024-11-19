@@ -202,14 +202,14 @@
 </section>
 
 <section class="hero teaser">
-  <div class="container is-max-desktop">
+  <div class="container is-max-desktop" style="margin-top: -2.5%;">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
+        <source src="./static/assets/video_teaser.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        We propose <strong><span class="dnerf">Reflect3D</span></strong>, a zero-shot single-image 3D reflection symmetry detector; we improve single-image 3D generation through symmetry-aware optimization.
+        TL;DR: We propose <strong><span class="dnerf">Reflect3D</span></strong>, a zero-shot single-image 3D reflection symmetry detector; we improve single-image 3D generation through symmetry-aware optimization.
       </h2>
     </div>
   </div>
@@ -311,10 +311,17 @@
     <div class="container is-max-desktop">
       <div class="hero-body has-text-centered">
           <h2 class="title is-3">Architecture</h2>
-            <video id="arch" autoplay muted loop playsinline controls height="100%">
+          <img src="./static/assets/symm_method.png" alt="symmetry method">
+          <p><strong>Figure 1.</strong> 
+            Overview of <strong><span class="dnerf">Reflect3D</span></strong>, our zero-shot single-image symmetry detector. Top: Our transformer-based feed-forward symmetry detector predicts symmetry planes from a single RGB image. Bottom: Our multi-view symmetry enhancement pipeline leverages multi-view diffusion to resolve the inherent single-view ambiguity in symmetry detection. Aggregating symmetry predictions from multiple synthesized views results in more precise and comprehensive symmetry predictions. </p>
+
+            <img src="./static/assets/shape_method.png" alt="shape method">
+          <p><strong>Figure 2.</strong> 
+            Our symmetry-aware 3D generation pipeline. Building on DreamGaussian, we integrate the detected symmetry through three steps, namely, symmetry alignment, symmetric SDS optimization, and symmetric texture refinement. </p>
+            <!-- <video id="arch" autoplay muted loop playsinline controls height="100%">
               <source src="./zeroshape/videos/architecture.mp4"
                       type="video/mp4">
-            </video>
+            </video> -->
       </div>
     </div>
     <!--/ arch. -->
@@ -322,11 +329,43 @@
     <!-- arch. -->
     <div class="container is-max-desktop">
       <div class="hero-body has-text-centered">
-          <h2 class="title is-3">Image-to-3D Ablation</h2>
-            <video id="abl" autoplay muted loop playsinline controls height="100%">
-              <source src="./zeroshape/videos/abl.mp4"
+          <h2 class="title is-3">Symmetry Detection Results</h2>
+            <video id="symm" autoplay muted loop playsinline height="100%">
+              <source src="./static/assets/video_symm.mp4"
                       type="video/mp4">
             </video>
+            <p><strong><span class="dnerf">Reflect3D</span></strong> achieves better generalization and precision in single-image symmetry detection than the baseline NeRD.</p>
+      </div>
+    </div>
+    <!--/ arch. -->
+
+
+    <!-- arch. -->
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+          <h2 class="title is-3">Single-Image 3D Generation Results</h2>
+            <video id="shape" autoplay muted loop playsinline height="100%">
+              <source src="./static/assets/video_shape.mp4"
+                      type="video/mp4">
+            </video>
+            <p>We achieve better performance in single-image 3D generation compared to our baseline DreamGaussian. Leveraging detected symmetry, our method
+              avoids missing details and corrects geometric errors.
+              Meanwhile, we greatly improve the texture and geometric quality
+              of the unobserved object backside. </p>
+      </div>
+    </div>
+    <!--/ arch. -->
+
+
+    <!-- arch. -->
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+          <h2 class="title is-3">Single-Image 3D Generation Ablations</h2>
+            <video id="abl" autoplay muted loop playsinline height="100%">
+              <source src="./static/assets/video_abl.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Each of the four components in our pipeline is critical to achieving high-quality geometry and texture in single-image 3D generation.</p>
       </div>
     </div>
     <!--/ arch. -->
