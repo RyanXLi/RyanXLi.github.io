@@ -145,7 +145,15 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-
+              <span class="link-block">
+                <a href="."
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
               <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
@@ -156,7 +164,15 @@
                 </a>
               </span> -->
               <!-- Video Link. -->
-
+              <span class="link-block">
+                <a href="."
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
               <!-- Code Link. -->
               <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies"
@@ -261,7 +277,22 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
-
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Symmetry is a ubiquitous and fundamental property in the visual world, serving as a critical cue for perception and structure interpretation. This paper investigates the detection of 3D reflection symmetry from a single RGB image, and reveals its significant benefit on single-image 3D generation. 
+          </p>
+          <p>
+            We introduce <strong><span class="dnerf">Reflect3D</span></strong>, a scalable, zero-shot symmetry detector capable of robust generalization to diverse and real-world scenarios. Inspired by the success of foundation models, our method scales up symmetry detection with a transformer-based architecture. We also leverage generative priors from multi-view diffusion models to address the inherent ambiguity in single-view symmetry detection. Extensive evaluations on various data sources demonstrate that Reflect3D establishes a new state-of-the-art in single-image symmetry detection. 
+          </p>
+          <p>
+            Furthermore, we show the practical benefit of incorporating detected symmetry into single-image 3D generation pipelines through a symmetry-aware optimization process. The integration of symmetry significantly enhances the structural accuracy, cohesiveness, and visual fidelity of the reconstructed 3D geometry and textures, advancing the capabilities of 3D content creation.
+          </p>
+        </div>
+      </div>
+    </div>
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
@@ -276,7 +307,24 @@
     </div> -->
     <!--/ Paper video. -->
 
+    <!-- arch. -->
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+          <h2 class="title is-3">Architecture</h2>
+          <img src="./static/assets/symm_method.png" alt="symmetry method">
+          <p><strong>Figure 1.</strong> 
+            Overview of <strong><span class="dnerf">Reflect3D</span></strong>, our zero-shot single-image symmetry detector. Top: Our transformer-based feed-forward symmetry detector predicts symmetry planes from a single RGB image. Bottom: Our multi-view symmetry enhancement pipeline leverages multi-view diffusion to resolve the inherent single-view ambiguity in symmetry detection. Aggregating symmetry predictions from multiple synthesized views results in more precise and comprehensive symmetry predictions. </p>
 
+            <img src="./static/assets/shape_method.png" alt="shape method">
+          <p><strong>Figure 2.</strong> 
+            Our symmetry-aware 3D generation pipeline. Building on DreamGaussian, we integrate the detected symmetry through three steps, namely, symmetry alignment, symmetric SDS optimization, and symmetric texture refinement. </p>
+            <!-- <video id="arch" autoplay muted loop playsinline controls height="100%">
+              <source src="./zeroshape/videos/architecture.mp4"
+                      type="video/mp4">
+            </video> -->
+      </div>
+    </div>
+    <!--/ arch. -->
 
     <!-- arch. -->
     <div class="container is-max-desktop">
@@ -321,20 +369,7 @@
       </div>
     </div>
     <!--/ arch. -->
-
-        <!-- arch. -->
-        <div class="container is-max-desktop">
-          <div class="hero-body has-text-centered">
-              <h2 class="title is-3">Objects with Asymmetry</h2>
-                <video id="abl" autoplay muted loop playsinline height="100%">
-                  <source src="./static/assets/Asymm.mp4"
-                          type="video/mp4">
-                </video>
-                <p>Our method accommodates asymmetric details by encouraging symmetry without strictly enforcing it. Our pipeline effectively detects symmetry and generates high-quality 3D meshes for these asymmetric objects.</p>
-          </div>
-        </div>
-        <!--/ arch. -->
-
+    
   </div>
 </section>
 
