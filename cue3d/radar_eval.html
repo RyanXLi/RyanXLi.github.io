@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radar Chart Visualization</title>
+  <!-- Import ECharts -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+    
+    .chart-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .controls-container {
+      margin-bottom: 30px;
+    }
+    
+    .model-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .model-group {
+      position: relative;
+    }
+    
+    .model-btn {
+      width: 200px;
+      padding: 12px 16px;
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    
+    .model-btn[data-active="true"].model-3d:hover {
+      border-color: #871510;
+    }
+    
+    .model-btn[data-active="true"].model-2d:hover {
+      border-color: #E19645;
+    }
+    
+    .model-label {
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    .model-btn[data-active="true"].model-3d .model-label {
+      color: #871510;
+    }
+    
+    .model-btn[data-active="false"] .model-label {
+      color: #999;
+    }
+    
+    .model-btn[data-active="true"].model-2d .model-label {
+      color: #E19645;
+    }
+    
+    .dropdown-btn {
+      padding: 6px;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #666;
+      transition: all 0.2s;
+    }
+    
+    .model-btn[data-active="true"].model-3d .dropdown-btn:hover {
+      background-color: rgba(135, 21, 16, 0.1);
+      color: #871510;
+    }
+    
+    .model-btn[data-active="true"].model-2d .dropdown-btn:hover {
+      background-color: rgba(225, 150, 69, 0.1);
+      color: #E19645;
+    }
+    
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      margin-top: 5px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.2s;
+    }
+    
+    .dropdown-menu.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .dropdown-item {
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .dropdown-item:hover {
+      background-color: #f5f5f5;
+    }
+    
+    .dropdown-item input {
+      margin-right: 10px;
+      width: 16px;
+      height: 16px;
+    }
+    
+    .dataset-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    
+    .dataset-btn {
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 2px solid;
+      transition: all 0.3s;
+      background-color: transparent;
+      opacity: 0.5;
+    }
+    
+    #gso-btn {
+      border-color: #9A6500;
+      color: black;
+    }
+    
+    #toys4k-btn {
+      border-color: #564668;
+      color: black;
+    }
+    
+    #zeroverse-btn {
+      border-color: #444B0B;
+      color: black;
+    }
+    
+    .dataset-btn[data-active="true"] {
+      opacity: 1;
+      color: white;
+    }
+    
+    #gso-btn[data-active="true"] {
+      background-color: #9A6500;
+    }
+    
+    #toys4k-btn[data-active="true"] {
+      background-color: #564668;
+    }
+    
+    #zeroverse-btn[data-active="true"] {
+      background-color: #444B0B;
+    }
+    
+    #radarChart {
+      height: 600px;
+      width: 100%;
+    }
+    
+    .chart-container {
+      margin-top: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .model-btn {
+        width: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="chart-title">Model Performance Across Different Metrics</h2>
+    
+    <div class="controls-container">
+      <div class="model-controls">
+        <!-- Regression Models -->
+        <div class="model-group">
+          <div class="model-btn model-3d" data-active="true" id="regression-btn-container">
+            <div id="regression-btn" class="model-label" data-active="true">Regression Models</div>
+            <button id="regression-dropdown-btn" class="dropdown-btn" aria-expanded="false">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="regression-dropdown">
+            <div class="dropdown-item">
+              <input type="checkbox" name="regression-sf3d" value="sf3d" checked>
+              <span>SF3D</span>
+            </div>
+            <div class="dropdown-item">
+              <input type="checkbox" name="regression-openlrm" value="openlrm" checked>
+              <span>OpenLRM</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Multiview Models -->
+        <div class="model-group">
+          <div class="model-btn model-2d" data-active="true" id="multiview-btn-container">
+            <div id="multiview-btn" class="model-label" data-active="true">Multiview Models</div>
+            <button id="multiview-dropdown-btn" class="dropdown-btn" aria-expanded="false">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="multiview-dropdown">
+            <div class="dropdown-item">
+              <input type="checkbox" name="multiview-instantmesh" value="instantmesh" checked>
+              <span>InstantMesh</span>
+            </div>
+            <div class="dropdown-item">
+              <input type="checkbox" name="multiview-crm" value="crm" checked>
+              <span>CRM</span>
+            </div>
+            <div class="dropdown-item">
+              <input type="checkbox" name="multiview-lgm" value="lgm" checked>
+              <span>LGM</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Native Models -->
+        <div class="model-group">
+          <div class="model-btn model-2d" data-active="true" id="native-btn-container">
+            <div id="native-btn" class="model-label" data-active="true">Native Models</div>
+            <button id="native-dropdown-btn" class="dropdown-btn" aria-expanded="false">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="native-dropdown">
+            <div class="dropdown-item">
+              <input type="checkbox" name="native-trellis" value="trellis" checked>
+              <span>Trellis</span>
+            </div>
+            <div class="dropdown-item">
+              <input type="checkbox" name="native-hunyuan3d" value="hunyuan3d" checked>
+              <span>Hunyuan3D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dataset-controls">
+        <button id="gso-btn" class="dataset-btn" data-active="true">
+          GSO
+        </button>
+        <button id="toys4k-btn" class="dataset-btn" data-active="false">
+          Toys4K
+        </button>
+        <!-- <button id="zeroverse-btn" class="dataset-btn" data-active="false">
+          Zeroverse
+        </button> -->
+      </div>
+    </div>
+    
+    <div class="chart-container">
+      <div id="radarChart"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ===== DATA DEFINITIONS =====
+      // Indicators will be set dynamically based on the loaded dataset
+      let indicators = [];
+
+      // Paste your generated data here - will be populated from gen_actual_data.py script output
+      // Format should be: { "gso": {...model data...}, "toys4k_small": {...model data...}, "zeroverse_small": {...model data...} }
+      const actualData = {
+  "gso": {
+    "Hunyuan3D": [
+      0.97,
+      0.8907,
+      0.9577,
+      0.97,
+      0.97,
+      0.97,
+      0.9225,
+      0.9525,
+      0.9228,
+      0.8966
+    ],
+    "LGM": [
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.043
+    ],
+    "SF3D": [
+      0.159,
+      0.4284,
+      0.5984,
+      0.7394,
+      0.6825,
+      0.1587,
+      0.536,
+      0.5365,
+      0.4945,
+      0.441
+    ],
+    "InstantMesh": [
+      0.7194,
+      0.7012,
+      0.7528,
+      0.7988,
+      0.7258,
+      0.7284,
+      0.7211,
+      0.7273,
+      0.6471,
+      0.643
+    ],
+    "OpenLRM": [
+      0.2185,
+      0.1364,
+      0.3403,
+      0.4843,
+      0.3035,
+      0.2521,
+      0.2494,
+      0.3485,
+      0.0759,
+      0.03
+    ],
+    "CRM": [
+      0.5102,
+      0.5367,
+      0.551,
+      0.5507,
+      0.3065,
+      0.3978,
+      0.4607,
+      0.4439,
+      0.3538,
+      0.1841
+    ],
+    "Trellis": [
+      0.9315,
+      0.97,
+      0.97,
+      0.9455,
+      0.8871,
+      0.9387,
+      0.97,
+      0.97,
+      0.97,
+      0.97
+    ]
+  },
+  "toys4k_small": {
+    "Hunyuan3D": [
+      0.97,
+      0.951,
+      0.9544,
+      0.97,
+      0.97,
+      0.97,
+      0.9637,
+      0.9583,
+      0.9492,
+      0.8505
+    ],
+    "LGM": [
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.0663
+    ],
+    "SF3D": [
+      0.3558,
+      0.6002,
+      0.6624,
+      0.7544,
+      0.7482,
+      0.3221,
+      0.6808,
+      0.6232,
+      0.6106,
+      0.5167
+    ],
+    "InstantMesh": [
+      0.7097,
+      0.7229,
+      0.7639,
+      0.7686,
+      0.6829,
+      0.6916,
+      0.6981,
+      0.714,
+      0.681,
+      0.563
+    ],
+    "OpenLRM": [
+      0.3091,
+      0.2944,
+      0.4274,
+      0.5071,
+      0.2921,
+      0.2841,
+      0.3334,
+      0.3816,
+      0.0832,
+      0.03
+    ],
+    "CRM": [
+      0.5509,
+      0.5708,
+      0.6015,
+      0.606,
+      0.3444,
+      0.3684,
+      0.4576,
+      0.4346,
+      0.3925,
+      0.209
+    ],
+    "Trellis": [
+      0.9119,
+      0.97,
+      0.97,
+      0.9311,
+      0.893,
+      0.9101,
+      0.97,
+      0.97,
+      0.97,
+      0.97
+    ]
+  },
+  "zeroverse_small": {
+    "Hunyuan3D": [
+      0.8141,
+      0.5582,
+      0.8286,
+      0.97,
+      0.886,
+      0.97,
+      0.8338,
+      0.97,
+      0.97,
+      0.9017
+    ],
+    "LGM": [
+      0.4134,
+      0.2406,
+      0.03,
+      0.03,
+      0.03,
+      0.417,
+      0.1179,
+      0.03,
+      0.5584,
+      0.03
+    ],
+    "SF3D": [
+      0.03,
+      0.2532,
+      0.8543,
+      0.8166,
+      0.97,
+      0.03,
+      0.7064,
+      0.6945,
+      0.3476,
+      0.4561
+    ],
+    "InstantMesh": [
+      0.6473,
+      0.3004,
+      0.4086,
+      0.4109,
+      0.4442,
+      0.6936,
+      0.03,
+      0.2834,
+      0.3918,
+      0.4626
+    ],
+    "OpenLRM": [
+      0.5329,
+      0.03,
+      0.5543,
+      0.4901,
+      0.5126,
+      0.6809,
+      0.4253,
+      0.5913,
+      0.03,
+      0.0446
+    ],
+    "CRM": [
+      0.97,
+      0.97,
+      0.97,
+      0.7276,
+      0.5681,
+      0.7994,
+      0.8734,
+      0.6473,
+      0.7993,
+      0.4203
+    ],
+    "Trellis": [
+      0.671,
+      0.6556,
+      0.6186,
+      0.5891,
+      0.4164,
+      0.8433,
+      0.97,
+      0.8698,
+      0.9675,
+      0.97
+    ]
+  }
+};
+
+      // Colors for each model
+      const colors = {
+        SF3D: '#B2CBC2',
+        OpenLRM: '#BBC990',
+        InstantMesh: '#B45342',
+        CRM: '#DCAC99',
+        LGM: '#6F936B',
+        Trellis: '#EBA062',
+        Hunyuan3D: '#9A8EB4'
+      };
+
+      const modelGroups = {
+        'regression': {
+          'sf3d': ['SF3D'],
+          'openlrm': ['OpenLRM']
+        },
+        'multiview': {
+          'instantmesh': ['InstantMesh'],
+          'crm': ['CRM'],
+          'lgm': ['LGM']
+        },
+        'native': {
+          'trellis': ['Trellis'],
+          'hunyuan3d': ['Hunyuan3D']
+        }
+      };
+
+      // Keep track of the current dataset
+      let currentDataset = 'gso';
+
+      // Metric categories and their color coding
+      const metricCategories = {
+        '2D Visible Surface - ': {
+          metrics: ['PSNR', 'SSIM', 'LPIPS'],
+          color: '#9A6500'
+        },
+        '3D Visible Surface - ': {
+          metrics: ['CD', 'FS@0.01'],
+          color: '#564668'
+        },
+        '2D Overall - ': {
+          metrics: ['PSNR', 'SSIM', 'LPIPS'],
+          color: '#444B0B'
+        },
+        '3D Overall - ': {
+          metrics: ['CD', 'FS@0.01'],
+          color: '#B45342'
+        }
+      };
+
+      // Initialize the indicators based on metric categories
+      const initializeIndicators = () => {
+        indicators = [];
+        let index = 0;
+        
+        for (const [category, info] of Object.entries(metricCategories)) {
+          const categoryColor = info.color;
+          
+          for (const metric of info.metrics) {
+            indicators.push({
+              name: `{cb${index}|${category}}{m|${metric}}`,
+              max: 1
+            });
+            index++;
+          }
+        }
+        
+        return indicators;
+      };
+
+      // Initialize indicators
+      initializeIndicators();
+
+      // ===== CHART INITIALIZATION =====
+      const chartDom = document.getElementById('radarChart');
+      const myChart = echarts.init(chartDom);
+      
+      // Create rich text style with correct colors
+      const richStyles = {};
+      let colorIndex = 0;
+      
+      for (const [category, info] of Object.entries(metricCategories)) {
+        for (const metric of info.metrics) {
+          richStyles[`cb${colorIndex}`] = {
+            fontWeight: 'bold',
+            fontSize: 14,
+            fontFamily: 'Arial, sans-serif',
+            color: info.color
+          };
+          colorIndex++;
+        }
+      }
+      
+      const option = {
+        grid: {
+          right: '20%',
+          left: '15%'
+        },
+        legend: {
+          orient: 'vertical',
+          right: 0,
+          top: 'middle',
+          padding: [10, 10, 10, 10],
+          borderWidth: 1,
+          borderColor: '#ccc',
+          borderRadius: 4,
+          backgroundColor: '#fff', 
+          data: [], // Will be populated from current dataset
+          textStyle: {
+            fontSize: 14,
+            fontFamily: 'Arial, sans-serif'
+          },
+          icon: 'circle',
+          itemWidth: 14,
+          itemHeight: 14,
+          itemGap: 15,
+          selected: {
+            'SF3D': true,
+            'OpenLRM': true,
+            'InstantMesh': true,
+            'CRM': true,
+            'LGM': true,
+            'Trellis': true,
+            'Hunyuan3D': true
+          }
+        },
+        toolbox: {
+          show: true,
+          right: 0,
+          top: 425,
+          feature: {
+            myTool: {
+              show: true,
+              title: 'Select/Deselect All',
+              icon: 'path://M432.45,595.444c0,2.177-4.661,6.82-11.305,6.82c-6.475,0-11.306-4.567-11.306-6.82s4.852-6.812,11.306-6.812C427.841,588.632,432.452,593.191,432.45,595.444L432.45,595.444z M421.155,589.876c-3.009,0-5.448,2.495-5.448,5.572s2.439,5.572,5.448,5.572c3.01,0,5.449-2.495,5.449-5.572C426.604,592.371,424.165,589.876,421.155,589.876L421.155,589.876z M421.146,591.891c-1.916,0-3.47,1.589-3.47,3.549c0,1.959,1.554,3.548,3.47,3.548s3.469-1.589,3.469-3.548C424.614,593.479,423.062,591.891,421.146,591.891L421.146,591.891zM421.146,591.891',
+              onclick: function() {
+                const currentData = getCurrentDataset();
+                const allSelected = !Object.values(myChart.getOption().legend[0].selected).every(v => v);
+                const newSelected = {};
+                Object.keys(currentData).forEach(key => {
+                  newSelected[key] = allSelected;
+                });
+                
+                myChart.setOption({
+                  legend: { selected: newSelected }
+                });
+
+                ['regression', 'multiview', 'native'].forEach(prefix => {
+                  document.querySelectorAll(`input[name^="${prefix}-"]`).forEach((checkbox) => {
+                    checkbox.checked = allSelected;
+                  });
+
+                  const btn = document.getElementById(`${prefix}-btn`);
+                  if (btn) {
+                    btn.setAttribute('data-active', allSelected.toString());
+                    document.getElementById(`${prefix}-btn-container`).setAttribute('data-active', allSelected.toString());
+                  }
+                });
+              }
+            }
+          },
+          itemSize: 15,
+          itemGap: 10,
+          orient: 'horizontal',
+        },
+        tooltip: {
+          trigger: 'item',
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          borderColor: '#ccc',
+          borderWidth: 1,
+          textStyle: {
+            color: '#333',
+            fontFamily: 'Arial, sans-serif'
+          },
+          formatter: function(params) {
+            const modelName = params.name;
+            const currentData = getCurrentDataset();
+            const values = currentData[modelName];
+            
+            let result = `<span style="color: ${colors[modelName]}; font-size: 16px; text-shadow: 1px 1px 2px #000;"><b>${modelName}</b></span><br/>`;
+            
+            let index = 0;
+            for (const [category, info] of Object.entries(metricCategories)) {
+              result += `<span style="color: ${info.color}"><b>${category}:</b></span><br/>`;
+              
+              for (const metric of info.metrics) {
+                if (index < values.length) {
+                  result += `- ${metric}: ${values[index].toFixed(4)}<br/>`;
+                  index++;
+                }
+              }
+            }
+            
+            return result;
+          }
+        },
+        radar: {
+          indicator: indicators,
+          shape: 'polygon',
+          startAngle: 110,
+          splitNumber: 4,
+          axisName: {
+            fontSize: 14,
+            fontFamily: 'Arial, sans-serif',
+            rich: {
+              ...richStyles,
+              m: {
+                fontSize: 14,
+                fontFamily: 'Arial, sans-serif',
+                color: '#333'
+              }
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              type: 'dashed',
+              width: 1.5,
+              color: 'rgba(128, 128, 128, 0.4)'
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              type: 'dashed',
+              width: 1.5,
+              color: 'rgba(128, 128, 128, 0.4)'
+            }
+          },
+          splitArea: {
+            areaStyle: {
+              color: '#f0f0f0',
+              opacity: 0.2
+            }
+          }
+        },
+        series: [{
+          type: 'radar',
+          symbol: 'circle',
+          symbolSize: 8,
+          animation: true,
+          animationDuration: 300,
+          animationEasing: 'cubicOut',
+          z: 2,
+          data: []
+        }]
+      };
+
+      // Function to get the current dataset
+      const getCurrentDataset = () => {
+        return actualData[currentDataset] || {};
+      };
+
+      // Function to update the chart with the current dataset
+      const updateChart = () => {
+        const currentData = getCurrentDataset();
+        
+        // Update legend data
+        myChart.setOption({
+          legend: {
+            data: Object.keys(currentData)
+          },
+          series: [{
+            data: Object.keys(currentData).map(key => ({
+              name: key,
+              value: currentData[key],
+              lineStyle: {
+                color: colors[key],
+                width: 2
+              },
+              areaStyle: {
+                color: colors[key],
+                opacity: 0.05
+              },
+              itemStyle: {
+                color: colors[key],
+                borderWidth: 1
+              },
+              emphasis: {
+                focus: 'series',
+                scale: true,
+                lineStyle: {
+                  width: 6,
+                },
+                itemStyle: {
+                  borderWidth: 6,
+                  color: colors[key],
+                }
+              }
+            }))
+          }]
+        });
+      };
+
+      // Apply initial configuration
+      myChart.setOption(option);
+
+      // ===== EVENT HANDLERS =====
+      // Handle dataset button clicks
+      document.querySelectorAll('.dataset-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const button = e.currentTarget;
+          const datasetId = button.id.split('-')[0];
+          
+          // Update active state for all dataset buttons
+          document.querySelectorAll('.dataset-btn').forEach(b => {
+            b.setAttribute('data-active', 'false');
+          });
+          button.setAttribute('data-active', 'true');
+          
+          // Set current dataset
+          if (datasetId === 'gso') {
+            currentDataset = 'gso';
+          } else if (datasetId === 'toys4k') {
+            currentDataset = 'toys4k_small';
+          } else if (datasetId === 'zeroverse') {
+            currentDataset = 'zeroverse_small';
+          }
+          
+          // Update chart
+          updateChart();
+        });
+      });
+
+      // Handle dropdown toggles
+      const toggleDropdown = (prefix, show) => {
+        const dropdownBtn = document.getElementById(`${prefix}-dropdown-btn`);
+        const dropdown = document.getElementById(`${prefix}-dropdown`);
+        const arrow = dropdownBtn?.querySelector('svg');
+        
+        if (dropdownBtn && dropdown && arrow) {
+          dropdownBtn.setAttribute('aria-expanded', show.toString());
+          arrow.style.transform = show ? 'rotate(-180deg)' : '';
+          
+          if (show) {
+            dropdown.classList.add('visible');
+          } else {
+            dropdown.classList.remove('visible');
+          }
+        }
+      };
+
+      // Update checkboxes and chart
+      const updateCheckboxesAndChart = (prefix, checked) => {
+        document.querySelectorAll(`input[name^="${prefix}-"]`).forEach(checkbox => {
+          checkbox.checked = checked;
+        });
+        updateModelSelections();
+      };
+
+      // Update chart based on selected models
+      const updateModelSelections = () => {
+        const selectedRegressionTypes = Array.from(document.querySelectorAll('input[name^="regression-"]:checked'))
+          .map(cb => cb.value);
+        
+        const selectedMultiviewTypes = Array.from(document.querySelectorAll('input[name^="multiview-"]:checked'))
+          .map(cb => cb.value);
+          
+        const selectedNativeTypes = Array.from(document.querySelectorAll('input[name^="native-"]:checked'))
+          .map(cb => cb.value);
+
+        const selectedRegressionModels = selectedRegressionTypes.flatMap(type => modelGroups['regression'][type] || []);
+        const selectedMultiviewModels = selectedMultiviewTypes.flatMap(type => modelGroups['multiview'][type] || []);
+        const selectedNativeModels = selectedNativeTypes.flatMap(type => modelGroups['native'][type] || []);
+
+        const currentData = getCurrentDataset();
+        const newSelected = Object.keys(currentData).reduce((acc, curr) => {
+          acc[curr] = selectedRegressionModels.includes(curr) || 
+                     selectedMultiviewModels.includes(curr) || 
+                     selectedNativeModels.includes(curr);
+          return acc;
+        }, {});
+
+        myChart.setOption({
+          legend: { selected: newSelected }
+        });
+      };
+
+      // Handle main button clicks
+      const handleMainButtonClick = (e) => {
+        const btn = e.currentTarget;
+        const prefix = btn.id.split('-')[0];
+        const currentState = btn.getAttribute('data-active') === 'true';
+        const newState = !currentState;
+        
+        btn.setAttribute('data-active', newState.toString());
+        document.getElementById(`${prefix}-btn-container`).setAttribute('data-active', newState.toString());
+        updateCheckboxesAndChart(prefix, newState);
+      };
+
+      // Handle dropdown button clicks
+      const handleDropdownButtonClick = (e) => {
+        e.stopPropagation();
+        const btn = e.currentTarget;
+        const prefix = btn.id.split('-')[0];
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        
+        ['regression', 'multiview', 'native'].forEach(p => {
+          if (p !== prefix) {
+            toggleDropdown(p, false);
+          }
+        });
+
+        toggleDropdown(prefix, !isExpanded);
+      };
+
+      // Handle checkbox changes
+      const handleCheckboxChange = () => {
+        ['regression', 'multiview', 'native'].forEach(prefix => {
+          const hasChecked = Array.from(document.querySelectorAll(`input[name^="${prefix}-"]`))
+            .some(cb => cb.checked);
+          
+          const btn = document.getElementById(`${prefix}-btn`);
+          if (btn) {
+            btn.setAttribute('data-active', hasChecked.toString());
+            document.getElementById(`${prefix}-btn-container`).setAttribute('data-active', hasChecked.toString());
+          }
+        });
+        
+        updateModelSelections();
+      };
+
+      // Handle outside clicks to close dropdowns
+      const handleOutsideClick = (e) => {
+        const target = e.target;
+        const isDropdownClick = 
+          target.closest('#regression-dropdown-btn') || 
+          target.closest('#multiview-dropdown-btn') || 
+          target.closest('#native-dropdown-btn') || 
+          target.closest('#regression-dropdown') || 
+          target.closest('#multiview-dropdown') || 
+          target.closest('#native-dropdown');
+        
+        if (!isDropdownClick) {
+          ['regression', 'multiview', 'native'].forEach(prefix => {
+            toggleDropdown(prefix, false);
+          });
+        }
+      };
+
+      // Attach event listeners
+      ['regression-btn', 'multiview-btn', 'native-btn'].forEach(btnId => {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          btn.addEventListener('click', handleMainButtonClick);
+        }
+      });
+
+      ['regression-dropdown-btn', 'multiview-dropdown-btn', 'native-dropdown-btn'].forEach(btnId => {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          btn.addEventListener('click', handleDropdownButtonClick);
+        }
+      });
+
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', handleCheckboxChange);
+      });
+
+      document.addEventListener('click', handleOutsideClick);
+
+      // Handle resize
+      const resizeObserver = new ResizeObserver(() => {
+        myChart.resize();
+      });
+
+      resizeObserver.observe(chartDom);
+
+      // Listen for legend selection changes
+      myChart.on('legendselectchanged', function(params) {
+        const modelName = params.name;
+        
+        const allRegressionModels = Object.values(modelGroups['regression']).flat();
+        const isRegressionModelSelected = allRegressionModels.some(model => params.selected[model]);
+        
+        if (allRegressionModels.includes(modelName)) {
+          const btn = document.getElementById('regression-btn');
+          if (btn) {
+            btn.setAttribute('data-active', isRegressionModelSelected.toString());
+            document.getElementById('regression-btn-container').setAttribute('data-active', isRegressionModelSelected.toString());
+          }
+          
+          for (const [type, models] of Object.entries(modelGroups['regression'])) {
+            if (models.includes(modelName)) {
+              const checkbox = document.querySelector(`input[name="regression-${type}"]`);
+              if (checkbox) {
+                const isGroupSelected = models.some(model => params.selected[model]);
+                checkbox.checked = isGroupSelected;
+              }
+            }
+          }
+        }
+        
+        const allMultiviewModels = Object.values(modelGroups['multiview']).flat();
+        const isMultiviewModelSelected = allMultiviewModels.some(model => params.selected[model]);
+        
+        if (allMultiviewModels.includes(modelName)) {
+          const btn = document.getElementById('multiview-btn');
+          if (btn) {
+            btn.setAttribute('data-active', isMultiviewModelSelected.toString());
+            document.getElementById('multiview-btn-container').setAttribute('data-active', isMultiviewModelSelected.toString());
+          }
+          
+          for (const [type, models] of Object.entries(modelGroups['multiview'])) {
+            if (models.includes(modelName)) {
+              const checkbox = document.querySelector(`input[name="multiview-${type}"]`);
+              if (checkbox) {
+                const isGroupSelected = models.some(model => params.selected[model]);
+                checkbox.checked = isGroupSelected;
+              }
+            }
+          }
+        }
+        
+        const allNativeModels = Object.values(modelGroups['native']).flat();
+        const isNativeModelSelected = allNativeModels.some(model => params.selected[model]);
+        
+        if (allNativeModels.includes(modelName)) {
+          const btn = document.getElementById('native-btn');
+          if (btn) {
+            btn.setAttribute('data-active', isNativeModelSelected.toString());
+            document.getElementById('native-btn-container').setAttribute('data-active', isNativeModelSelected.toString());
+          }
+          
+          for (const [type, models] of Object.entries(modelGroups['native'])) {
+            if (models.includes(modelName)) {
+              const checkbox = document.querySelector(`input[name="native-${type}"]`);
+              if (checkbox) {
+                const isGroupSelected = models.some(model => params.selected[model]);
+                checkbox.checked = isGroupSelected;
+              }
+            }
+          }
+        }
+      });
+
+      // Clean up on unload
+      window.addEventListener('unload', () => {
+        resizeObserver.disconnect();
+        myChart.dispose();
+      });
+
+      // After initializing the chart, update the UI to match the default selections
+      const updateUIFromSelection = () => {
+        // Check if any models in a group are selected
+        const isRegressionActive = myChart.getOption().legend[0].selected?.['SF3D'] || false;
+        const isMultiviewActive = myChart.getOption().legend[0].selected?.['InstantMesh'] || false;
+        const isNativeActive = myChart.getOption().legend[0].selected?.['Trellis'] || false;
+        
+        // Update buttons
+        document.getElementById('regression-btn').setAttribute('data-active', isRegressionActive.toString());
+        document.getElementById('regression-btn-container').setAttribute('data-active', isRegressionActive.toString());
+        
+        document.getElementById('multiview-btn').setAttribute('data-active', isMultiviewActive.toString());
+        document.getElementById('multiview-btn-container').setAttribute('data-active', isMultiviewActive.toString());
+        
+        document.getElementById('native-btn').setAttribute('data-active', isNativeActive.toString());
+        document.getElementById('native-btn-container').setAttribute('data-active', isNativeActive.toString());
+      };
+      
+      // Initialize the chart with data
+      updateChart();
+      updateUIFromSelection();
+      
+      // Make sure all checkboxes are checked and models are selected
+      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = true;
+      });
+      updateModelSelections();
+    });
+  </script>
+</body>
+</html>
