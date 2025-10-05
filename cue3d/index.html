@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="We present Cue3D, the first comprehensive, model-agnostic framework for quantifying the influence of individual image cues in single-image 3D generation.">
+  <meta name="keywords" content="Image-to-3D, 3D generation, 3D dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+
+
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="fav/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="fav/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="fav/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="fav/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="fav/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="fav/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+  <link rel="manifest" href="fav/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu"> -->
+    <!-- <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="../index.html">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a> -->
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div> -->
+    <!-- </div> -->
+
+  <!-- </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation</h1>
+          <div class="is-size-5 publication-authors">
+
+            <span class="author-block">
+              <a href="https://ryanxli.github.io">Xiang Li</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://ziruiwang409.github.io/">Zirui Wang</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://zixuanh.com">Zixuan Huang</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://rehg.org">James M. Rehg</a><sup></sup>
+            </span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup></sup>University of Illinois at Urbana-Champaign</span> 
+            <!-- <br>
+            <span class="author-block"><sup>2</sup>Georgia Institute of Technology</span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <div style="margin-top: 0.5em;"></div>
+          <b>NeurIPS 2025 Spotlight ✨</b>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+
+              <span class="link-block">
+                <a href="static/assets/reflect3d.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+               <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/RyanXLi/SymmetryStrikesBack"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span> -->
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop"> 
+    <!-- style="margin-top: -2.5%;"> -->
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/video_teaser_new.mp4"
+                type="video/mp4">
+      </video> -->
+      <br><br>
+      <h2 class="subtitle has-text-centered">
+        TL;DR: We present Cue3D, the first comprehensive, model-agnostic framework for quantifying the influence of individual image cues in single-image 3D generation.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans and traditional computer vision methods rely on a diverse set of monocular cues to infer 3D structure from a single image, such as shading, texture, silhouette, etc. While recent deep generative models have dramatically advanced single-image 3D generation, it remains unclear which image cues these methods actually exploit. 
+          </p>
+          <p>
+            We introduce Cue3D, the first comprehensive, model-agnostic framework for quantifying the influence of individual image cues in single-image 3D generation. Our unified benchmark evaluates seven state-of-the-art methods, spanning regression-based, multi-view, and native 3D generative paradigms. By systematically perturbing cues such as shading, texture, silhouette, perspective, edges, and local continuity, we measure their impact on 3D output quality. Our analysis reveals that shape meaningfulness, not texture, dictates generalization. Geometric cues, particularly shading, are crucial for 3D generation. We further identify over-reliance on provided silhouettes and diverse sensitivities to cues such as perspective and local continuity across model families. 
+          </p>
+          <p>
+            By dissecting these dependencies, Cue3D advances our understanding of how modern 3D networks leverage classical vision cues, and offers directions for developing more transparent, robust, and controllable single-image 3D generation models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+
+
+    <!-- arch. -->
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+          <h2 class="title is-3">Method</h2>
+          <img src="./static/assets/symm_method.png" alt="symmetry method">
+          <p><strong>Figure 1.</strong> 
+            Overview of <strong><span class="dnerf">Reflect3D</span></strong>, our zero-shot single-image symmetry detector. Top: Our transformer-based feed-forward symmetry detector predicts symmetry planes from a single RGB image. Bottom: Our multi-view symmetry enhancement pipeline leverages multi-view diffusion to resolve the inherent single-view ambiguity in symmetry detection. Aggregating symmetry predictions from multiple synthesized views results in more precise and comprehensive symmetry predictions. </p>
+
+            <img src="./static/assets/shape_method.png" alt="shape method">
+          <p><strong>Figure 2.</strong> 
+            Our symmetry-aware 3D generation pipeline. Building on DreamGaussian, we integrate the detected symmetry through three steps, namely, symmetry alignment, symmetric SDS optimization, and symmetric texture refinement. </p>
+            <!-- <video id="arch" autoplay muted loop playsinline controls height="100%">
+              <source src="./zeroshape/videos/architecture.mp4"
+                      type="video/mp4">
+            </video> -->
+      </div>
+    </div>
+    <!--/ arch. -->
+
+    <!-- arch. -->
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+          <h2 class="title is-3">Symmetry Detection Results</h2>
+            <video id="symm" autoplay muted loop playsinline height="100%">
+              <source src="./static/assets/video_symm.mp4"
+                      type="video/mp4">
+            </video>
+            <p><strong><span class="dnerf">Reflect3D</span></strong> achieves better generalization and precision in single-image symmetry detection than the baseline NeRD.</p>
+      </div>
+    </div>
+    <!--/ arch. -->
+
+
+    <!-- arch. -->
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+          <h2 class="title is-3">Single-Image 3D Generation Results</h2>
+            <video id="shape" autoplay muted loop playsinline height="100%">
+              <source src="./static/assets/video_shape.mp4"
+                      type="video/mp4">
+            </video>
+            <p>We achieve better performance in single-image 3D generation compared to our baseline DreamGaussian. Leveraging detected symmetry, our method
+              avoids missing details and corrects geometric errors.
+              Meanwhile, we greatly improve the texture and geometric quality
+              of the unobserved object backside. </p>
+      </div>
+    </div>
+    <!--/ arch. -->
+
+
+    <!-- arch. -->
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+          <h2 class="title is-3">Single-Image 3D Generation Ablations</h2>
+            <video id="abl" autoplay muted loop playsinline height="100%">
+              <source src="./static/assets/video_abl.mp4"
+                      type="video/mp4">
+            </video>
+            <p>Each of the four components in our pipeline is critical to achieving high-quality geometry and texture in single-image 3D generation.</p>
+      </div>
+    </div>
+    <!--/ arch. -->
+
+        <!-- arch. -->
+        <div class="container is-max-desktop">
+          <div class="hero-body has-text-centered">
+              <h2 class="title is-3">Objects with Minor Asymmetry</h2>
+                <video id="abl" autoplay muted loop playsinline height="100%">
+                  <source src="./static/assets/Asymm.mp4"
+                          type="video/mp4">
+                </video>
+                <p>Our method accommodates asymmetric details by encouraging symmetry without strictly enforcing it. Our pipeline effectively detects symmetry and generates high-quality 3D meshes for these asymmetric objects.</p>
+          </div>
+        </div>
+        <!--/ arch. -->
+
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{li2024symmetry,
+  author    = {Li, Xiang and Huang, Zixuan and Thai, Anh and Rehg, James M.},
+  title     = {Symmetry Strikes Back: From Single-Image Symmetry Detection to 3D Generation},
+  journal   = {ArXiv},
+  year      = {2024}
+}</code></pre>
+  </div>
+</section>
+
+<!-- TODO: fill in -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      This website template is borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      <!-- <a class="icon-link"
+         href="."> 
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
