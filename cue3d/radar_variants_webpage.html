@@ -11,7 +11,7 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 20px;
-      background-color: #f8f9fa;
+      background-color: white;
     }
     
     .container {
@@ -25,8 +25,9 @@
     
     .chart-title {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       color: #333;
+      font-size: 1.2rem;
     }
     
     .controls-container {
@@ -37,8 +38,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 15px;
     }
     
     .model-group {
@@ -46,11 +47,11 @@
     }
     
     .model-btn {
-      width: 200px;
-      padding: 12px 16px;
+      width: 150px;
+      padding: 8px 12px;
       background-color: white;
       border: 2px solid #ddd;
-      border-radius: 8px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -68,6 +69,7 @@
     
     .model-label {
       font-weight: bold;
+      font-size: 0.85rem;
       transition: color 0.3s;
     }
     
@@ -84,13 +86,18 @@
     }
     
     .dropdown-btn {
-      padding: 6px;
+      padding: 4px;
       background: transparent;
       border: none;
       border-radius: 50%;
       cursor: pointer;
       color: #666;
       transition: all 0.2s;
+    }
+    
+    .dropdown-btn svg {
+      width: 14px;
+      height: 14px;
     }
     
     .model-btn[data-active="true"].model-3d .dropdown-btn:hover {
@@ -127,10 +134,11 @@
     }
     
     .dropdown-item {
-      padding: 10px 16px;
+      padding: 6px 12px;
       display: flex;
       align-items: center;
       cursor: pointer;
+      font-size: 0.85rem;
     }
     
     .dropdown-item:hover {
@@ -138,9 +146,9 @@
     }
     
     .dropdown-item input {
-      margin-right: 10px;
-      width: 16px;
-      height: 16px;
+      margin-right: 8px;
+      width: 14px;
+      height: 14px;
     }
     
     .dataset-controls {
@@ -152,9 +160,10 @@
     }
     
     .dataset-btn {
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 50px;
       font-weight: bold;
+      font-size: 0.85rem;
       cursor: pointer;
       border: 2px solid;
       transition: all 0.3s;
@@ -205,7 +214,7 @@
     
     @media (max-width: 768px) {
       .model-btn {
-        width: 160px;
+        width: 130px;
       }
     }
   </style>
@@ -316,42 +325,42 @@
 
       const actualData = {
   "gso": {
-    "SF3D": [
+    "LGM": [
       {
         "cue_type": "Texture",
-        "value": 0.9964
+        "value": 0.8462
       },
       {
         "cue_type": "Shading",
-        "value": 0.5764
+        "value": 0.7342
       },
       {
         "cue_type": "Silhouette",
-        "value": 0.3963
+        "value": 0.5696
       },
       {
         "cue_type": "Occlusion",
-        "value": 0.4998
+        "value": 0.5842
       },
       {
         "cue_type": "Edges",
-        "value": 0.9399
+        "value": 0.9296
       },
       {
         "cue_type": "Perspective",
-        "value": 0.8373
+        "value": 0.8993
       },
       {
         "cue_type": "Local",
-        "value": 0.2603
+        "value": 0.8375
       },
       {
         "cue_type": "Style",
-        "value": 0.6378
+        "value": 0.8984
       },
       {
         "cue_type": "Shape Meaningfulness",
-        "value": 0.433
+        "value": 0.9373
       }
     ],
     "OpenLRM": [
@@ -392,44 +401,6 @@
         "value": 0.6905
       }
     ],
-    "InstantMesh": [
-      {
-        "cue_type": "Texture",
-        "value": 0.9446
-      },
-      {
-        "cue_type": "Shading",
-        "value": 0.818
-      },
-      {
-        "cue_type": "Silhouette",
-        "value": 0.5314
-      },
-      {
-        "cue_type": "Occlusion",
-        "value": 0.3575
-      },
-      {
-        "cue_type": "Edges",
-        "value": 0.9606
-      },
-      {
-        "cue_type": "Perspective",
-        "value": 0.9062
-      },
-      {
-        "cue_type": "Local",
-        "value": 0.751
-      },
-      {
-        "cue_type": "Style",
-        "value": 0.7712
-      },
-      {
-        "cue_type": "Shape Meaningfulness",
-        "value": 0.3113
-      }
-    ],
     "CRM": [
       {
         "cue_type": "Texture",
@@ -468,80 +439,80 @@
         "value": 0.7362
       }
     ],
-    "LGM": [
+    "SF3D": [
       {
         "cue_type": "Texture",
-        "value": 0.8462
+        "value": 0.9964
       },
       {
         "cue_type": "Shading",
-        "value": 0.7342
+        "value": 0.5764
       },
       {
         "cue_type": "Silhouette",
-        "value": 0.5696
+        "value": 0.3963
       },
       {
         "cue_type": "Occlusion",
-        "value": 0.5842
+        "value": 0.4998
       },
       {
         "cue_type": "Edges",
-        "value": 0.9296
+        "value": 0.9399
       },
       {
         "cue_type": "Perspective",
-        "value": 0.8993
+        "value": 0.8373
       },
       {
         "cue_type": "Local",
-        "value": 0.8375
+        "value": 0.2603
       },
       {
         "cue_type": "Style",
-        "value": 0.8984
+        "value": 0.6378
       },
       {
         "cue_type": "Shape Meaningfulness",
-        "value": 0.9373
+        "value": 0.433
       }
     ],
-    "Trellis": [
+    "InstantMesh": [
       {
         "cue_type": "Texture",
-        "value": 0.9792
+        "value": 0.9446
       },
       {
         "cue_type": "Shading",
-        "value": 0.7033
+        "value": 0.818
       },
       {
         "cue_type": "Silhouette",
-        "value": 0.944
+        "value": 0.5314
       },
       {
         "cue_type": "Occlusion",
-        "value": 0.5369
+        "value": 0.3575
       },
       {
         "cue_type": "Edges",
-        "value": 0.9363
+        "value": 0.9606
       },
       {
         "cue_type": "Perspective",
-        "value": 0.9286
+        "value": 0.9062
       },
       {
         "cue_type": "Local",
-        "value": 0.5763
+        "value": 0.751
       },
       {
         "cue_type": "Style",
-        "value": 0.7513
+        "value": 0.7712
       },
       {
         "cue_type": "Shape Meaningfulness",
-        "value": 0.241
+        "value": 0.3113
       }
     ],
     "Hunyuan3D-2": [
@@ -581,45 +552,83 @@
         "cue_type": "Shape Meaningfulness",
         "value": 0.2849
       }
-    ]
-  },
-  "toys4k_small": {
-    "SF3D": [
+    ],
+    "Trellis": [
       {
         "cue_type": "Texture",
-        "value": 0.9907
+        "value": 0.9792
       },
       {
         "cue_type": "Shading",
-        "value": 0.4333
+        "value": 0.7033
       },
       {
         "cue_type": "Silhouette",
-        "value": 0.2488
+        "value": 0.944
       },
       {
         "cue_type": "Occlusion",
-        "value": 0.3811
+        "value": 0.5369
       },
       {
         "cue_type": "Edges",
-        "value": 0.9148
+        "value": 0.9363
       },
       {
         "cue_type": "Perspective",
-        "value": 0.8413
+        "value": 0.9286
       },
       {
         "cue_type": "Local",
-        "value": 0.3449
+        "value": 0.5763
       },
       {
         "cue_type": "Style",
-        "value": 0.5675
+        "value": 0.7513
       },
       {
         "cue_type": "Shape Meaningfulness",
-        "value": 0.2595
+        "value": 0.241
+      }
+    ]
+  },
+  "toys4k_small": {
+    "LGM": [
+      {
+        "cue_type": "Texture",
+        "value": 0.9589
+      },
+      {
+        "cue_type": "Shading",
+        "value": 0.7669
+      },
+      {
+        "cue_type": "Silhouette",
+        "value": 0.3216
+      },
+      {
+        "cue_type": "Occlusion",
+        "value": 0.5341
+      },
+      {
+        "cue_type": "Edges",
+        "value": 0.9217
+      },
+      {
+        "cue_type": "Perspective",
+        "value": 0.9625
+      },
+      {
+        "cue_type": "Local",
+        "value": 0.8452
+      },
+      {
+        "cue_type": "Style",
+        "value": 0.9548
+      },
+      {
+        "cue_type": "Shape Meaningfulness",
+        "value": 0.819
       }
     ],
     "OpenLRM": [
@@ -660,44 +669,6 @@
         "value": 0.5702
       }
     ],
-    "InstantMesh": [
-      {
-        "cue_type": "Texture",
-        "value": 1.0018
-      },
-      {
-        "cue_type": "Shading",
-        "value": 0.7965
-      },
-      {
-        "cue_type": "Silhouette",
-        "value": 0.4945
-      },
-      {
-        "cue_type": "Occlusion",
-        "value": 0.389
-      },
-      {
-        "cue_type": "Edges",
-        "value": 1.0028
-      },
-      {
-        "cue_type": "Perspective",
-        "value": 0.9562
-      },
-      {
-        "cue_type": "Local",
-        "value": 0.779
-      },
-      {
-        "cue_type": "Style",
-        "value": 0.6709
-      },
-      {
-        "cue_type": "Shape Meaningfulness",
-        "value": 0.2187
-      }
-    ],
     "CRM": [
       {
         "cue_type": "Texture",
@@ -736,80 +707,80 @@
         "value": 0.6142
       }
     ],
-    "LGM": [
+    "SF3D": [
       {
         "cue_type": "Texture",
-        "value": 0.9589
+        "value": 0.9907
       },
       {
         "cue_type": "Shading",
-        "value": 0.7669
+        "value": 0.4333
       },
       {
         "cue_type": "Silhouette",
-        "value": 0.3216
+        "value": 0.2488
       },
       {
         "cue_type": "Occlusion",
-        "value": 0.5341
+        "value": 0.3811
       },
       {
         "cue_type": "Edges",
-        "value": 0.9217
+        "value": 0.9148
       },
       {
         "cue_type": "Perspective",
-        "value": 0.9625
+        "value": 0.8413
       },
       {
         "cue_type": "Local",
-        "value": 0.8452
+        "value": 0.3449
       },
       {
         "cue_type": "Style",
-        "value": 0.9548
+        "value": 0.5675
       },
       {
         "cue_type": "Shape Meaningfulness",
-        "value": 0.819
+        "value": 0.2595
       }
     ],
-    "Trellis": [
+    "InstantMesh": [
       {
         "cue_type": "Texture",
-        "value": 0.9924
+        "value": 1.0018
       },
       {
         "cue_type": "Shading",
-        "value": 0.7355
+        "value": 0.7965
       },
       {
         "cue_type": "Silhouette",
-        "value": 0.9586
+        "value": 0.4945
       },
       {
         "cue_type": "Occlusion",
-        "value": 0.5716
+        "value": 0.389
       },
       {
         "cue_type": "Edges",
-        "value": 0.9787
+        "value": 1.0028
       },
       {
         "cue_type": "Perspective",
-        "value": 0.9594
+        "value": 0.9562
       },
       {
         "cue_type": "Local",
-        "value": 0.7258
+        "value": 0.779
       },
       {
         "cue_type": "Style",
-        "value": 0.7809
+        "value": 0.6709
       },
       {
         "cue_type": "Shape Meaningfulness",
-        "value": 0.2043
+        "value": 0.2187
       }
     ],
     "Hunyuan3D-2": [
@@ -848,6 +819,44 @@
       {
         "cue_type": "Shape Meaningfulness",
         "value": 0.2224
+      }
+    ],
+    "Trellis": [
+      {
+        "cue_type": "Texture",
+        "value": 0.9924
+      },
+      {
+        "cue_type": "Shading",
+        "value": 0.7355
+      },
+      {
+        "cue_type": "Silhouette",
+        "value": 0.9586
+      },
+      {
+        "cue_type": "Occlusion",
+        "value": 0.5716
+      },
+      {
+        "cue_type": "Edges",
+        "value": 0.9787
+      },
+      {
+        "cue_type": "Perspective",
+        "value": 0.9594
+      },
+      {
+        "cue_type": "Local",
+        "value": 0.7258
+      },
+      {
+        "cue_type": "Style",
+        "value": 0.7809
+      },
+      {
+        "cue_type": "Shape Meaningfulness",
+        "value": 0.2043
       }
     ]
   }
@@ -937,7 +946,7 @@
         const safeKey = cueType.replace(/\s+/g, '_');
         richStyles[safeKey] = {
           fontWeight: 'bold',
-          fontSize: 20,
+          fontSize: 14,
           fontFamily: 'Arial, sans-serif',
           color: color,
           align: 'center',
@@ -947,28 +956,28 @@
 
       const option = {
         grid: {
-          right: '20%',
-          left: '15%'
+          right: '5%',
+          left: '5%',
+          top: '5%',
+          bottom: '25%'
         },
         legend: {
           show: true,
-          orient: 'vertical',
-          right: 0,
-          top: 'middle',
+          orient: 'horizontal',
+          bottom: 5,
+          left: 'center',
           padding: [10, 10, 10, 10],
-          borderWidth: 1,
-          borderColor: '#ccc',
-          borderRadius: 4,
-          backgroundColor: '#fff', 
+          borderWidth: 0,
+          backgroundColor: 'transparent', 
           data: [], // Will be populated from current dataset
           textStyle: {
-            fontSize: 14,
+            fontSize: 11,
             fontFamily: 'Arial, sans-serif'
           },
           icon: 'circle',
-          itemWidth: 14,
-          itemHeight: 14,
-          itemGap: 15,
+          itemWidth: 10,
+          itemHeight: 10,
+          itemGap: 10,
           selected: {
             'SF3D': true,
             'OpenLRM': false,
@@ -981,8 +990,8 @@
         },
         toolbox: {
           show: true,
-          right: 0,
-          top: 425,
+          right: 10,
+          top: 10,
           feature: {
             myTool: {
               show: true,
@@ -1018,8 +1027,8 @@
               pixelRatio: 3
             }
           },
-          itemSize: 15,
-          itemGap: 10,
+          itemSize: 12,
+          itemGap: 8,
           orient: 'horizontal',
         },
         tooltip: {
@@ -1055,15 +1064,17 @@
           shape: 'polygon',
           startAngle: 110,
           splitNumber: 4,
-          nameGap: 55,
+          nameGap: 45,
+          center: ['50%', '45%'],
+          radius: '62%',
           axisName: {
-            fontSize: 14,
+            fontSize: 11,
             fontFamily: 'Arial, sans-serif',
             align: 'center',
             rich: {
               ...richStyles,
               m: {
-                fontSize: 20,
+                fontSize: 14,
                 fontFamily: 'Arial, sans-serif',
                 color: '#333',
                 align: 'center'
@@ -1106,7 +1117,7 @@
         series: [{
           type: 'radar',
           symbol: 'circle',
-          symbolSize: 8,
+          symbolSize: 6,
           animation: true,
           animationDuration: 300,
           animationEasing: 'cubicOut',
