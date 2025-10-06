@@ -212,7 +212,7 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="chart-title">Model Performance Across Different Metrics</h2>
+    <h2 class="chart-title">Unified Evaluation of Single-Image 3D Generation Models</h2>
     
     <div class="controls-container">
       <div class="model-controls">
@@ -281,7 +281,7 @@
             </div>
             <div class="dropdown-item">
               <input type="checkbox" name="native-hunyuan3d" value="hunyuan3d" checked>
-              <span>Hunyuan3D</span>
+              <span>Hunyuan3D-2</span>
             </div>
           </div>
         </div>
@@ -311,269 +311,289 @@
       // Indicators will be set dynamically based on the loaded dataset
       let indicators = [];
 
-      // Paste your generated data here - will be populated from gen_actual_data.py script output
+      // I will paste my generated data herewill be populated from gen_actual_data.py script output
       // Format should be: { "gso": {...model data...}, "toys4k_small": {...model data...}, "zeroverse_small": {...model data...} }
       const actualData = {
   "gso": {
-    "Hunyuan3D": [
-      0.97,
-      0.8907,
-      0.9577,
-      0.97,
-      0.97,
-      0.97,
-      0.9225,
-      0.9525,
-      0.9228,
-      0.8966
-    ],
     "LGM": [
       0.03,
       0.03,
       0.03,
       0.03,
+      0.0435,
       0.03,
       0.03,
       0.03,
       0.03,
       0.03,
-      0.043
-    ],
-    "SF3D": [
-      0.159,
-      0.4284,
-      0.5984,
-      0.7394,
-      0.6825,
-      0.1587,
-      0.536,
-      0.5365,
-      0.4945,
-      0.441
-    ],
-    "InstantMesh": [
-      0.7194,
-      0.7012,
-      0.7528,
-      0.7988,
-      0.7258,
-      0.7284,
-      0.7211,
-      0.7273,
-      0.6471,
-      0.643
-    ],
-    "OpenLRM": [
-      0.2185,
-      0.1364,
-      0.3403,
-      0.4843,
-      0.3035,
-      0.2521,
-      0.2494,
-      0.3485,
-      0.0759,
       0.03
     ],
+    "OpenLRM": [
+      0.2592,
+      0.2564,
+      0.3586,
+      0.0774,
+      0.03,
+      0.3087,
+      0.2245,
+      0.1398,
+      0.3502,
+      0.4988,
+      0.3122
+    ],
     "CRM": [
-      0.5102,
-      0.5367,
-      0.551,
-      0.5507,
-      0.3065,
-      0.3978,
-      0.4607,
-      0.4439,
-      0.3538,
-      0.1841
+      0.4096,
+      0.4744,
+      0.4571,
+      0.3641,
+      0.189,
+      0.164,
+      0.5255,
+      0.5529,
+      0.5677,
+      0.5673,
+      0.3153
+    ],
+    "SF3D": [
+      0.1628,
+      0.5522,
+      0.5526,
+      0.5093,
+      0.4541,
+      0.4427,
+      0.1631,
+      0.4412,
+      0.6166,
+      0.762,
+      0.7033
+    ],
+    "InstantMesh": [
+      0.7507,
+      0.7431,
+      0.7495,
+      0.6668,
+      0.6626,
+      0.7535,
+      0.7414,
+      0.7226,
+      0.7758,
+      0.8233,
+      0.748
+    ],
+    "Hunyuan3D-2": [
+      1.0,
+      0.951,
+      0.9819,
+      0.9512,
+      0.9242,
+      1.0,
+      1.0,
+      0.9182,
+      0.9874,
+      1.0,
+      1.0
     ],
     "Trellis": [
-      0.9315,
-      0.97,
-      0.97,
-      0.9455,
-      0.8871,
-      0.9387,
-      0.97,
-      0.97,
-      0.97,
-      0.97
+      0.9677,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.9625,
+      0.9603,
+      1.0,
+      1.0,
+      0.9748,
+      0.9145
     ]
   },
   "toys4k_small": {
-    "Hunyuan3D": [
-      0.97,
-      0.951,
-      0.9544,
-      0.97,
-      0.97,
-      0.97,
-      0.9637,
-      0.9583,
-      0.9492,
-      0.8505
-    ],
     "LGM": [
       0.03,
       0.03,
       0.03,
       0.03,
+      0.0675,
       0.03,
       0.03,
       0.03,
       0.03,
       0.03,
-      0.0663
-    ],
-    "SF3D": [
-      0.3558,
-      0.6002,
-      0.6624,
-      0.7544,
-      0.7482,
-      0.3221,
-      0.6808,
-      0.6232,
-      0.6106,
-      0.5167
-    ],
-    "InstantMesh": [
-      0.7097,
-      0.7229,
-      0.7639,
-      0.7686,
-      0.6829,
-      0.6916,
-      0.6981,
-      0.714,
-      0.681,
-      0.563
-    ],
-    "OpenLRM": [
-      0.3091,
-      0.2944,
-      0.4274,
-      0.5071,
-      0.2921,
-      0.2841,
-      0.3334,
-      0.3816,
-      0.0832,
       0.03
     ],
+    "OpenLRM": [
+      0.2922,
+      0.3431,
+      0.3929,
+      0.0849,
+      0.03,
+      0.2552,
+      0.318,
+      0.3028,
+      0.4401,
+      0.5223,
+      0.3005
+    ],
     "CRM": [
-      0.5509,
-      0.5708,
-      0.6015,
-      0.606,
-      0.3444,
-      0.3684,
-      0.4576,
-      0.4346,
-      0.3925,
-      0.209
+      0.3792,
+      0.4712,
+      0.4475,
+      0.4041,
+      0.2147,
+      0.1063,
+      0.5675,
+      0.5881,
+      0.6197,
+      0.6244,
+      0.3544
+    ],
+    "SF3D": [
+      0.3315,
+      0.7015,
+      0.6421,
+      0.6291,
+      0.5323,
+      0.5277,
+      0.3662,
+      0.6184,
+      0.6826,
+      0.7776,
+      0.7711
+    ],
+    "InstantMesh": [
+      0.7128,
+      0.7194,
+      0.7358,
+      0.7018,
+      0.58,
+      0.6875,
+      0.7314,
+      0.745,
+      0.7873,
+      0.7921,
+      0.7037
+    ],
+    "Hunyuan3D-2": [
+      1.0,
+      0.9935,
+      0.9879,
+      0.9785,
+      0.8767,
+      1.0,
+      1.0,
+      0.9804,
+      0.9839,
+      1.0,
+      1.0
     ],
     "Trellis": [
-      0.9119,
-      0.97,
-      0.97,
-      0.9311,
-      0.893,
-      0.9101,
-      0.97,
-      0.97,
-      0.97,
-      0.97
+      0.9382,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.9854,
+      0.94,
+      1.0,
+      1.0,
+      0.9599,
+      0.9206
     ]
   },
   "zeroverse_small": {
-    "Hunyuan3D": [
-      0.8141,
-      0.5582,
-      0.8286,
-      0.97,
-      0.886,
-      0.97,
-      0.8338,
-      0.97,
-      0.97,
-      0.9017
-    ],
     "LGM": [
-      0.4134,
-      0.2406,
+      0.4293,
+      0.1207,
+      0.03,
+      0.5753,
       0.03,
       0.03,
+      0.4257,
+      0.2474,
       0.03,
-      0.417,
-      0.1179,
       0.03,
-      0.5584,
       0.03
+    ],
+    "OpenLRM": [
+      0.7017,
+      0.4379,
+      0.6093,
+      0.03,
+      0.0451,
+      0.2379,
+      0.549,
+      0.03,
+      0.571,
+      0.5048,
+      0.528
+    ],
+    "CRM": [
+      0.824,
+      0.9003,
+      0.667,
+      0.8238,
+      0.4328,
+      0.03,
+      1.0,
+      1.0,
+      1.0,
+      0.7498,
+      0.5852
     ],
     "SF3D": [
       0.03,
-      0.2532,
-      0.8543,
-      0.8166,
-      0.97,
+      0.728,
+      0.7157,
+      0.3577,
+      0.4697,
+      0.3072,
       0.03,
-      0.7064,
-      0.6945,
-      0.3476,
-      0.4561
+      0.2603,
+      0.8806,
+      0.8417,
+      1.0
     ],
     "InstantMesh": [
-      0.6473,
-      0.3004,
-      0.4086,
-      0.4109,
-      0.4442,
-      0.6936,
+      0.7147,
       0.03,
-      0.2834,
-      0.3918,
-      0.4626
+      0.2915,
+      0.4033,
+      0.4764,
+      0.5151,
+      0.667,
+      0.309,
+      0.4207,
+      0.4231,
+      0.4574
     ],
-    "OpenLRM": [
-      0.5329,
-      0.03,
-      0.5543,
-      0.4901,
-      0.5126,
-      0.6809,
-      0.4253,
-      0.5913,
-      0.03,
-      0.0446
-    ],
-    "CRM": [
-      0.97,
-      0.97,
-      0.97,
-      0.7276,
-      0.5681,
-      0.7994,
-      0.8734,
-      0.6473,
-      0.7993,
-      0.4203
+    "Hunyuan3D-2": [
+      1.0,
+      0.8595,
+      1.0,
+      1.0,
+      0.9295,
+      1.0,
+      0.8391,
+      0.575,
+      0.8541,
+      1.0,
+      0.9133
     ],
     "Trellis": [
-      0.671,
-      0.6556,
-      0.6186,
-      0.5891,
-      0.4164,
-      0.8433,
-      0.97,
-      0.8698,
-      0.9675,
-      0.97
+      0.8693,
+      1.0,
+      0.8966,
+      0.9974,
+      1.0,
+      0.5151,
+      0.6914,
+      0.6756,
+      0.6374,
+      0.6069,
+      0.4288
     ]
   }
 };
-
       // Colors for each model
       const colors = {
         SF3D: '#B2CBC2',
@@ -582,7 +602,7 @@
         CRM: '#DCAC99',
         LGM: '#6F936B',
         Trellis: '#EBA062',
-        Hunyuan3D: '#9A8EB4'
+        "Hunyuan3D-2": '#9A8EB4'
       };
 
       const modelGroups = {
@@ -597,7 +617,7 @@
         },
         'native': {
           'trellis': ['Trellis'],
-          'hunyuan3d': ['Hunyuan3D']
+          'hunyuan3d': ['Hunyuan3D-2']
         }
       };
 
@@ -606,21 +626,25 @@
 
       // Metric categories and their color coding
       const metricCategories = {
-        '2D Visible Surface - ': {
-          metrics: ['PSNR', 'SSIM', 'LPIPS'],
-          color: '#9A6500'
-        },
-        '3D Visible Surface - ': {
-          metrics: ['CD', 'FS@0.01'],
-          color: '#564668'
-        },
-        '2D Overall - ': {
+        '2D Overall': {
           metrics: ['PSNR', 'SSIM', 'LPIPS'],
           color: '#444B0B'
         },
-        '3D Overall - ': {
-          metrics: ['CD', 'FS@0.01'],
+        '3D Overall': {
+          metrics: ['CD', 'FS'],
           color: '#B45342'
+        },
+        'Symmetry': {
+          metrics: ['FS'],
+          color: '#6F936B'
+        },
+        '2D Visible': {
+          metrics: ['PSNR', 'SSIM', 'LPIPS'],
+          color: '#9A6500'
+        },
+        '3D Visible': {
+          metrics: ['CD', 'FS'],
+          color: '#564668'
         }
       };
 
@@ -634,7 +658,7 @@
           
           for (const metric of info.metrics) {
             indicators.push({
-              name: `{cb${index}|${category}}{m|${metric}}`,
+              name: `{cb${index}|${category}}\n{cb${index}|${metric}}`,
               max: 1
             });
             index++;
@@ -649,7 +673,10 @@
 
       // ===== CHART INITIALIZATION =====
       const chartDom = document.getElementById('radarChart');
-      const myChart = echarts.init(chartDom);
+      const myChart = echarts.init(chartDom, null, {
+        devicePixelRatio: window.devicePixelRatio || 2,
+        renderer: 'canvas'
+      });
       
       // Create rich text style with correct colors
       const richStyles = {};
@@ -659,9 +686,11 @@
         for (const metric of info.metrics) {
           richStyles[`cb${colorIndex}`] = {
             fontWeight: 'bold',
-            fontSize: 14,
+            fontSize: 20,
             fontFamily: 'Arial, sans-serif',
-            color: info.color
+            color: info.color,
+            align: 'center',
+            lineHeight: 20
           };
           colorIndex++;
         }
@@ -673,6 +702,7 @@
           left: '15%'
         },
         legend: {
+          show: true,
           orient: 'vertical',
           right: 0,
           top: 'middle',
@@ -697,7 +727,7 @@
             'CRM': true,
             'LGM': true,
             'Trellis': true,
-            'Hunyuan3D': true
+            'Hunyuan3D-2': true
           }
         },
         toolbox: {
@@ -733,6 +763,10 @@
                   }
                 });
               }
+            },
+            saveAsImage: {
+              title: 'Save as Image',
+              pixelRatio: 3
             }
           },
           itemSize: 15,
@@ -775,15 +809,18 @@
           shape: 'polygon',
           startAngle: 110,
           splitNumber: 4,
+          nameGap: 55,
           axisName: {
             fontSize: 14,
             fontFamily: 'Arial, sans-serif',
+            align: 'center',
             rich: {
               ...richStyles,
               m: {
-                fontSize: 14,
+                fontSize: 20,
                 fontFamily: 'Arial, sans-serif',
-                color: '#333'
+                color: '#333',
+                align: 'center'
               }
             }
           },
