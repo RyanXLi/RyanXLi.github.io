@@ -288,30 +288,42 @@ Our perturbation analysis uncovers how modern single-image 3D models leverage im
 <div class="container is-max-desktop">
   <div class="hero-body has-text-centered">
     <h3 class="title is-3">Meaningfulness of shape, not texture, dictates generalization</h3>
-      <video id="style_segmented_flat_design" autoplay muted loop playsinline height="100%">
-        <source src="./static/assets/videos/style_segmented_flat_design.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <video id="style_segmented_Ink_wash" autoplay muted loop playsinline height="100%">
-        <source src="./static/assets/videos/style_segmented_Ink_wash.mp4"
-                type="video/mp4">
-      </video>
-      <video id="style_segmented_lineart" autoplay muted loop playsinline height="100%">
-        <source src="./static/assets/videos/style_segmented_lineart.mp4""
-                type="video/mp4">
-      </video>
-      <video id="style_segmented_oil_painting" autoplay muted loop playsinline height="100%">
-        <source src="./static/assets/videos/style_segmented_oil_painting.mp4"
-                type="video/mp4">
-      </video>
-      <video id="style_segmented_pointillism" autoplay muted loop playsinline height="100%">
-        <source src="./static/assets/videos/style_segmented_pointillism.mp4"
-                type="video/mp4">
-      </video>
-      <video id="style_segmented_sculpture" autoplay muted loop playsinline height="100%">
-        <source src="./static/assets/videos/style_segmented_sculpture.mp4"
-                type="video/mp4">
-      </video> -->
+      <div class="publication-video">
+        <video id="style_segmented_flat_design" autoplay muted loop playsinline controls style="width: 100%; height: 100%; object-fit: contain;">
+          <source src="./static/assets/videos/style_segmented_flat_design.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="publication-video">
+        <video id="style_segmented_Ink_wash" autoplay muted loop playsinline controls style="width: 100%; height: 100%; object-fit: contain;">
+          <source src="./static/assets/videos/style_segmented_Ink_wash.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="publication-video">
+        <video id="style_segmented_lineart" autoplay muted loop playsinline controls style="width: 100%; height: 100%; object-fit: contain;">
+          <source src="./static/assets/videos/style_segmented_lineart.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="publication-video">
+        <video id="style_segmented_oil_painting" autoplay muted loop playsinline controls style="width: 100%; height: 100%; object-fit: contain;">
+          <source src="./static/assets/videos/style_segmented_oil_painting.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="publication-video">
+        <video id="style_segmented_pointillism" autoplay muted loop playsinline controls style="width: 100%; height: 100%; object-fit: contain;">
+          <source src="./static/assets/videos/style_segmented_pointillism.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="publication-video">
+        <video id="style_segmented_sculpture" autoplay muted loop playsinline controls style="width: 100%; height: 100%; object-fit: contain;">
+          <source src="./static/assets/videos/style_segmented_sculpture.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
     <!-- <h3 class="title is-3">Semantics alone are not enough; Geometric cues are crucial</h3>
     <h3 class="title is-3">Shading is more important than texture</h3>
     <h3 class="title is-3">Models are overly sensitive to silhouette and occlusion</h3>
@@ -420,10 +432,10 @@ Our perturbation analysis uncovers how modern single-image 3D models leverage im
     <div class="container is-max-desktop">
       <div class="hero-body has-text-centered">
           <h2 class="title is-3">Symmetry Detection Results</h2>
-            <video id="symm" autoplay muted loop playsinline height="100%">
+            <!-- <video id="symm" autoplay muted loop playsinline height="100%">
               <source src="./static/assets/video_symm.mp4"
                       type="video/mp4">
-            </video>
+            </video> -->
             <p><strong><span class="dnerf">Reflect3D</span></strong> achieves better generalization and precision in single-image symmetry detection than the baseline NeRD.</p>
       </div>
     </div>
@@ -434,10 +446,10 @@ Our perturbation analysis uncovers how modern single-image 3D models leverage im
     <div class="container is-max-desktop">
       <div class="hero-body has-text-centered">
           <h2 class="title is-3">Single-Image 3D Generation Results</h2>
-            <video id="shape" autoplay muted loop playsinline height="100%">
+            <!-- <video id="shape" autoplay muted loop playsinline height="100%">
               <source src="./static/assets/video_shape.mp4"
                       type="video/mp4">
-            </video>
+            </video> -->
             <p>We achieve better performance in single-image 3D generation compared to our baseline DreamGaussian. Leveraging detected symmetry, our method
               avoids missing details and corrects geometric errors.
               Meanwhile, we greatly improve the texture and geometric quality
@@ -451,10 +463,10 @@ Our perturbation analysis uncovers how modern single-image 3D models leverage im
     <div class="container is-max-desktop">
       <div class="hero-body has-text-centered">
           <h2 class="title is-3">Single-Image 3D Generation Ablations</h2>
-            <video id="abl" autoplay muted loop playsinline height="100%">
+            <!-- <video id="abl" autoplay muted loop playsinline height="100%">
               <source src="./static/assets/video_abl.mp4"
                       type="video/mp4">
-            </video>
+            </video> -->
             <p>Each of the four components in our pipeline is critical to achieving high-quality geometry and texture in single-image 3D generation.</p>
       </div>
     </div>
@@ -464,10 +476,10 @@ Our perturbation analysis uncovers how modern single-image 3D models leverage im
         <div class="container is-max-desktop">
           <div class="hero-body has-text-centered">
               <h2 class="title is-3">Objects with Minor Asymmetry</h2>
-                <video id="abl" autoplay muted loop playsinline height="100%">
+                <!-- <video id="abl" autoplay muted loop playsinline height="100%">
                   <source src="./static/assets/Asymm.mp4"
                           type="video/mp4">
-                </video>
+                </video> -->
                 <p>Our method accommodates asymmetric details by encouraging symmetry without strictly enforcing it. Our pipeline effectively detects symmetry and generates high-quality 3D meshes for these asymmetric objects.</p>
           </div>
         </div>
