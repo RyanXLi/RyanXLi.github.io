@@ -155,15 +155,3 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
-
-/* Video styling */
-.publication-video video {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px 0;
-}
-
-/* Ensure videos are responsive */
-.publication-video {
-  margin: 20px 0;
-}
