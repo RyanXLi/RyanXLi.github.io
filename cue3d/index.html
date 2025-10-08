@@ -287,7 +287,11 @@ Our perturbation analysis uncovers how modern single-image 3D models leverage im
 <!-- Analysis Section: four sub-sections -->
 <div class="container is-max-desktop">
   <div class="hero-body has-text-centered">
-    <h3 class="title is-3">Meaningfulness of shape, not texture, dictates generalization</h3>
+    <h4 class="title is-3">Meaningfulness of shape, not texture, dictates generalization</h4>
+      <p> what should we put here? Zeroverse? Cut-mix?</p>
+      <p>For models to generalize, the input image must indicate a meaningful shape that does not significantly deviate from the training distribution.
+      </p>
+    <h4 class="title is-3">Semantics alone are not enough; Geometric cues are crucial</h4>
       <video id="style_segmented_Ink_wash" autoplay muted loop playsinline height="100%">
         <source src="./static/assets/videos/style_segmented_Ink_wash.mp4"
                 type="video/mp4">
@@ -312,10 +316,120 @@ Our perturbation analysis uncovers how modern single-image 3D models leverage im
         <source src="./static/assets/videos/style_segmented_sculpture.mp4"
                 type="video/mp4">
       </video>
-    <h3 class="title is-3">Semantics alone are not enough; Geometric cues are crucial</h3>
-    <h3 class="title is-3">Shading is more important than texture</h3>
-    <h3 class="title is-3">Models are overly sensitive to silhouette and occlusion</h3>
-    <h3 class="title is-3">Other cues have diverse impact</h3>
+      <p>Using a state-of-the-art style-transfer method~\cite{xing2024csgo}, we convert images into artistic styles that preserve high-level 
+        semantics but often disrupts geometric cues like realistic shading and texture. We observe a significant drop on the performance compared 
+        to the original images, underscoring the continued importance of geometric cues.
+      </p>
+    <h4 class="title is-3">Shading is more important than texture</h4>
+      <video id="texture_checker_images" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/texture_checker_images.mp4"
+                type="video/mp4">
+      </video>
+      <video id="texture_checker_diffuses" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/texture_checker_diffuses.mp4"
+                type="video/mp4">
+      </video>
+      <video id="texture_haven_images" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/texture_haven_images.mp4"
+                type="video/mp4">
+      </video>
+      <video id="texture_haven_diffuses" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/texture_haven_diffuses.mp4"
+                type="video/mp4">
+      </video>
+      <video id="texture_perlin_images" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/texture_perlin_images.mp4"
+                type="video/mp4">
+      </video>
+      <video id="texture_perlin_diffuses" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/texture_perlin_diffuses.mp4"
+                type="video/mp4">
+      </video>
+      <video id="color_solid_default_images" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/color_solid_default_images.mp4"
+                type="video/mp4">
+      </video>
+      <video id="color_solid_default_diffuses" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/color_solid_default_diffuses.mp4"
+                type="video/mp4">
+      </video>
+      <p>Even when all recognizable textures are replaced by procedural noise, natural patterns, or flat gray, for several methods, the quality of the 3D outputs 
+        remain almost unchanged, as long as the shading is kept intact. However, removing shading causes a noticeable performance decline. We further discover 
+        an interplay between shading and texture cues: intact shading alone suffices to uphold performance regardless of texture content, but when shading is 
+        removed, preserving the original texture yields better results than substituting with procedural textures or uniform color.</p>
+      </p>
+    <h4 class="title is-3">Models are overly sensitive to silhouette and occlusion</h4>
+      <video id="final_mask_dilate_weak" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/final_mask_dilate_weak.mp4"
+                type="video/mp4">
+      </video>
+      <video id="final_mask_dilate_mid" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/final_mask_dilate_mid.mp4"
+                type="video/mp4">
+      </video>
+      <video id="final_mask_dilate_strong" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/final_mask_dilate_strong.mp4"
+                type="video/mp4">
+      </video>
+      <video id="final_occlude_weak" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/final_occlude_weak.mp4"
+                type="video/mp4">
+      </video>
+      <video id="final_occlude_mid" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/final_occlude_mid.mp4"
+                type="video/mp4">
+      </video>
+      <video id="final_occlude_strong" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/final_occlude_strong.mp4"
+                type="video/mp4">
+      </video>
+      <p>Dilating the object mask (without altering interior pixels) inflicts severe errors on regression-based and multi-view methods, 
+        whereas one native 3D generator remains relatively robust. In contrast, occlusion of both silhouette and image content dramatically degrades all approaches.</p>
+    <h4 class="title is-3">Other cues have diverse impact</h4>
+      <!-- TODO: edge_canny, edge_filled_solid, edge_filled, edge_hed, edge_linart, edge_pidi, edge_remove, mask_manhat_strong, ortho_images,
+       color_local_rea_20-->
+      <video id="edge_canny" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/edge_canny.mp4"
+                type="video/mp4">
+      </video>
+      <video id="edge_filled_solid" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/edge_filled_solid.mp4"
+                type="video/mp4">
+      </video>
+      <video id="edge_filled" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/edge_filled.mp4"
+                type="video/mp4">
+      </video>
+      <video id="edge_hed" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/edge_hed.mp4"
+                type="video/mp4">
+      </video>
+      <video id="edge_linart" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/edge_linart.mp4"
+                type="video/mp4">
+      </video>
+      <video id="edge_pidi" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/edge_pidi.mp4"
+                type="video/mp4">
+      </video>
+      <video id="edge_remove" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/edge_remove.mp4"
+                type="video/mp4">
+      </video>
+      <video id="mask_manhat_strong" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/mask_manhat_strong.mp4"
+                type="video/mp4">
+      </video>
+      <video id="ortho_images" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/ortho_images.mp4"
+                type="video/mp4">
+      </video>
+      <video id="color_local_rea_20" autoplay muted loop playsinline height="100%">
+        <source src="./static/assets/videos/color_local_rea_20.mp4"
+                type="video/mp4">
+      </video>
+      <p>Perturbing perspective, edge, and local-continuity signals produce measurable performance drops that vary across 
+        model categories, which we provide thorough analysis in the experiments section.</p>
   </div>  
 </div>
 <!--/ Analysis Section: four sub-sections -->
