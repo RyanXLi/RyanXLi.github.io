@@ -144,7 +144,7 @@
               <!-- PDF Link. -->
 
               <span class="link-block">
-                <a href="index.html"
+                <a href="./static/assets/cue3d.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -281,12 +281,20 @@
       <span style="flex: 1; text-align: center;">Hunyuan3D-2</span>
       <span style="flex: 1; text-align: center;">Trellis</span>
     </div>
+    <video id="orig_images" autoplay muted loop playsinline height="100%">
+      <source src="./static/assets/videos/orig.mp4"
+              type="video/mp4">
+    </video>
+    <video id="zeroverse" autoplay muted loop playsinline height="100%">
+      <source src="./static/assets/videos/zeroverse.mp4"
+              type="video/mp4">
+    </video>
     <video id="texture_checker_images" autoplay muted loop playsinline height="100%">
       <source src="./static/assets/videos/texture_checker_images.mp4"
               type="video/mp4">
     </video>
       <p>
-        (1) <strong>Meaningfulness of shape, not texture, dictates generalization.</strong> For models to generalize, the input image must indicate a meaningful shape that does not significantly deviate from the training distribution. When we disrupt this cue by providing the models with a stochastic combination of textured primitive shapes, every method collapses with distinct failure modes. In contrast, the models perform surprisingly well on meaningless or random textures, with the best-performing models showing near perfect generalization.
+        (1) <strong>Meaningfulness of shape, not texture, dictates generalization.</strong> For models to generalize, the input image must indicate a meaningful shape that does not significantly deviate from the training distribution. When we disrupt this cue by providing the models with a stochastic combination of textured primitive shapes (or random CutMix of meaningful 3D assets), models on average perform poorly with distinct failure modes. In contrast, the models perform surprisingly well on meaningless or random textures, with the best-performing models showing near perfect generalization.
       </p>
       <br><br>
       <div style="display: flex; margin-bottom: 5px; font-size: 0.9em; color: #666;">
@@ -308,7 +316,7 @@
               type="video/mp4">
     </video>
       <p>
-        (2) <strong>Semantics alone are not enough; Geometric cues are crucial.</strong> Using a state-of-the-art style-transfer method, we convert images into artistic styles that preserve high-level semantics but often disrupts geometric cues like realistic shading and texture, as shown in Figure 1. We observe a significant drop on the performance compared to the original images, underscoring the continued importance of geometric cues.
+        (2) <strong>Semantics alone are not enough; Geometric cues are crucial.</strong> Using a state-of-the-art style-transfer method, we convert images into artistic styles that preserve high-level semantics but often disrupts geometric cues like realistic shading and texture. We observe a significant drop on the performance compared to the original images, underscoring the continued importance of geometric cues.
       </p>
       <br><br>
       <div style="display: flex; margin-bottom: 5px; font-size: 0.9em; color: #666;">
@@ -385,11 +393,13 @@
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
+    <div class="hero-body has-text-centered">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{li2024symmetry,
+    </div>
+    <pre><code>@inproceedings{li2025cue3d,
   author    = {Li, Xiang and Wang, Zirui and Huang, Zixuan and Rehg, James M.},
   title     = {Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation},
-  journal   = {NeurIPS},
+  booktitle = {NeurIPS},
   year      = {2025}
 }</code></pre>
   </div>
