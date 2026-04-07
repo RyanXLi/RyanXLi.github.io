@@ -1,0 +1,146 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{tabularx}
+
+% Colors
+\definecolor{linkblue}{HTML}{0066CC}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkblue,
+    urlcolor=linkblue,
+    pdfauthor={Xiang Li},
+    pdftitle={Xiang Li - CV},
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% Remove page numbers on first page, use plain style elsewhere
+\pagestyle{plain}
+
+% Paper title link (black, not blue)
+\newcommand{\papertitle}[2]{\href{#1}{\textcolor{black}{\textbf{#2}}}}
+
+% Custom commands
+\newcommand{\cventry}[4]{
+    \noindent\textbf{#1} \hfill #2 \\
+    \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+%---------- HEADING ----------
+\begin{center}
+    {\LARGE\bfseries Xiang (Ryan) Li} \\[4pt]
+    \href{mailto:xiangl12@illinois.edu}{xiangl12@illinois.edu} \quad $\vert$ \quad
+    \href{mailto:ryanxli@outlook.com}{ryanxli@outlook.com} \quad $\vert$ \quad
+    \href{https://ryanxli.github.io}{ryanxli.github.io} \quad $\vert$ \quad
+    \href{https://scholar.google.com/citations?user=3Ds7hOQAAAAJ}{Google Scholar} \quad $\vert$ \quad
+    \href{https://www.linkedin.com/in/xiang-li-52aa4912a}{LinkedIn}
+\end{center}
+
+%---------- RESEARCH INTERESTS ----------
+\section{Research Interests}
+
+Analysis and alignment of visual generative AI, with an emphasis on 3D generation.
+Topics include single-image 3D reconstruction, 3D editing, preference optimization for 3D models, and understanding the 3D capabilities of foundation models.
+
+%---------- EDUCATION ----------
+\section{Education}
+
+\cventry{University of Illinois Urbana--Champaign (UIUC)}{Urbana, IL}{Ph.D. in Computer Science}{2021 -- Present (Expected 2026)} \\
+Advisor: \href{https://rehg.org/}{Prof.\ James M.\ Rehg}
+
+\vspace{8pt}
+
+\cventry{The Hong Kong University of Science and Technology (HKUST)}{Hong Kong}{B.Eng. in Computer Science}{2017 -- 2021} \\
+Advisors: \href{https://yuwingtai.github.io/}{Prof.\ Yu-Wing Tai} and \href{https://scholar.google.com/citations?user=EWfpM74AAAAJ}{Prof.\ Chi-Keung Tang}
+
+%---------- EXPERIENCE ----------
+\section{Industry Experience}
+
+\cventry{Meta -- Superintelligence Lab}{Menlo Park, CA}{Research Intern}{2024 -- 2025} \\
+Worked on SAM 3D, a generative model for 3D object reconstruction from single images. \\
+Main contributor to post-training and preference optimization. \\
+Mentors: \href{https://sites.google.com/view/weiyaowang/home}{Weiyao Wang}, \href{https://alexsax.github.io/}{Sasha Sax}, \href{https://scholar.google.com/citations?user=XY6Nh9YAAAAJ&hl=en}{Hao Tang}, \href{https://scholar.google.com/citations?user=A-wA73gAAAAJ&hl=en}{Matt Feiszli}
+
+\vspace{8pt}
+
+\cventry{Google Research}{}{Research Intern}{2023} \\
+Mentor: \href{https://boqinggong.github.io/}{Boqing Gong}
+
+%---------- PUBLICATIONS ----------
+\section{Publications}
+
+\textit{* denotes equal contribution}
+
+\vspace{6pt}
+
+\begin{enumerate}[leftmargin=*, label={[\arabic*]}]
+
+    \item \papertitle{https://ai.meta.com/sam3d/}{SAM 3D: 3Dfy Anything in Images} \\
+    SAM 3D Team \\
+    \textit{CVPR 2026} \\
+    Personal Contribution: Main contributor to post-training and preference optimization. \\
+    {\small \href{https://arxiv.org/pdf/2511.16624}{[Paper]} \href{https://ai.meta.com/sam3d/}{[Project Page]} \href{https://github.com/facebookresearch/sam-3d-objects}{[Code]}}
+
+    \item \papertitle{https://vidfm-3d-probe.github.io/}{How Much 3D Do Video Foundation Models Encode?} \\
+    Zixuan Huang*, \underline{Xiang Li}*, Zhaoyang Lv, James M.\ Rehg \\
+    \textit{CVPR 2026} \\
+    {\small \href{https://vidfm-3d-probe.github.io/static/assets/vidfm_3d_probe.pdf}{[Paper]} \href{https://vidfm-3d-probe.github.io/}{[Project Page]}}
+
+    \item \papertitle{https://vinedresser3d.github.io/}{Vinedresser3D: Agentic Text-guided 3D Editing} \\
+    Yankuan Chi*, \underline{Xiang Li}*, Zixuan Huang, James M.\ Rehg \\
+    \textit{CVPR 2026} \\
+    {\small \href{https://vinedresser3d.github.io/assets/vinedresser3d.pdf}{[Paper]} \href{https://vinedresser3d.github.io/}{[Project Page]} \href{https://github.com/ykchizs/Vinedresser3D}{[Code]}}
+
+    \item \papertitle{https://ryanxli.github.io/cue3d/}{Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation} \\
+    \underline{Xiang Li}*, Zirui Wang*, Zixuan Huang, James M.\ Rehg \\
+    \textit{NeurIPS 2025} \textbf{(Spotlight)} \\
+    {\small \href{https://ryanxli.github.io/cue3d/static/assets/cue3d.pdf}{[Paper]} \href{https://ryanxli.github.io/cue3d/}{[Project Page]}}
+
+    \item \papertitle{https://ryanxli.github.io/reflect3d/}{Symmetry Strikes Back: From Single-Image Symmetry Detection to 3D Generation} \\
+    \underline{Xiang Li}, Zixuan Huang, Anh Thai, James M.\ Rehg \\
+    \textit{CVPR 2025} \textbf{(Highlight)} \\
+    {\small \href{https://ryanxli.github.io/reflect3d/static/assets/reflect3d.pdf}{[Paper]} \href{https://ryanxli.github.io/reflect3d/}{[Project Page]} \href{https://github.com/RyanXLi/SymmetryStrikesBack}{[Code]}}
+
+    \item \papertitle{https://openaccess.thecvf.com/content/ICCV2023/papers/Yu_Video_State-Changing_Object_Segmentation_ICCV_2023_paper.pdf}{Video State-Changing Object Segmentation} \\
+    Jiangwei Yu*, \underline{Xiang Li}*, Xinran Zhao, Hongming Zhang, Yu-Xiong Wang \\
+    \textit{ICCV 2023} \\
+    {\small \href{https://openaccess.thecvf.com/content/ICCV2023/papers/Yu_Video_State-Changing_Object_Segmentation_ICCV_2023_paper.pdf}{[Paper]} \href{https://venom12138.github.io/VSCOS.github.io/}{[Project Page]} \href{https://github.com/venom12138/vscos}{[Code]}}
+
+    \item \papertitle{https://openreview.net/pdf?id=AIeeXKsspI}{YouTubePD: A Multimodal Benchmark for Parkinson's Disease Analysis} \\
+    Andy Zhou*, Samuel Li*, Pranav Sriram*, \underline{Xiang Li}*, Jiahua Dong*, Ansh Sharma, Yuanyi Zhong, Shirui Luo, Maria Jaromin, Volodymyr Kindratenko, George Heintz, Christopher Zallek, Yu-Xiong Wang \\
+    \textit{NeurIPS Datasets and Benchmarks Track 2023} \\
+    {\small \href{https://openreview.net/pdf?id=AIeeXKsspI}{[Paper]} \href{https://uiuc-yuxiong-lab.github.io/YouTubePD/}{[Project Page]} \href{https://github.com/samwli/YouTubePD-data}{[Dataset]}}
+
+    \item \papertitle{https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS-1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf}{FSS-1000: A 1000-Class Dataset for Few-Shot Segmentation} \\
+    \underline{Xiang Li}, Tianhan Wei, Yau Pun Chen, Yu-Wing Tai, Chi-Keung Tang \\
+    \textit{CVPR 2020} \\
+    {\small \href{https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_FSS-1000_A_1000-Class_Dataset_for_Few-Shot_Segmentation_CVPR_2020_paper.pdf}{[Paper]} \href{https://github.com/HKUSTCV/FSS-1000}{[Dataset \& Code]}}
+
+\end{enumerate}
+
+%---------- ACADEMIC SERVICE ----------
+\section{Academic Service}
+
+\textbf{Conference Reviewer:} CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR
+% Add/adjust as needed
+
+%---------- SKILLS ----------
+\section{Technical Skills}
+
+\textbf{Languages \& Frameworks:} Python, PyTorch, JAX, CUDA, C++ \\
+\textbf{Topics:} Diffusion Models, 3D Reconstruction (NeRF, 3D Gaussian Splatting), Large-Scale Training, RLHF/DPO
+
+\end{document}
