@@ -1,0 +1,1829 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>登临尖塔 — 《杀戮尖塔2》终极通关攻略</title>
+<meta name="description" content="《杀戮尖塔2》全角色逐一精讲 —— 所有主流流派、核心卡牌、取舍优先级，写给想要真的赢下每一局的玩家。" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="googlebot" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* Chinese-specific typographic polish */
+body, p, li, dd { font-family: "Noto Serif SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", serif; line-height: 1.85; }
+h1, h2, h3, h4 { font-family: "Noto Serif SC", "Cinzel", serif; letter-spacing: 0.05em; }
+.brand, .eyebrow, .cp-name, .card-name, .archetype-name, .hero .tagline, .navlinks a, .card-footer, .pill, .keyword dt, .tier-table th, .act-step .act-label { font-family: "Cinzel", "Noto Serif SC", serif; }
+.card-name { font-size: 1.02rem; letter-spacing: 0.06em; }
+.card-desc { font-size: 0.88rem; line-height: 1.65; }
+</style>
+</head>
+<body>
+
+<!-- ================================================== 导航 -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">⚔ 登临尖塔</div>
+    <ul class="navlinks">
+      <li><a href="#universal">基础原理</a></li>
+      <li><a href="#ironclad">铁甲战士</a></li>
+      <li><a href="#silent">静默猎手</a></li>
+      <li><a href="#defect">故障机器人</a></li>
+      <li><a href="#regent">储君</a></li>
+      <li><a href="#necrobinder">亡灵契约师</a></li>
+      <li><a href="#bosses">首领攻略</a></li>
+      <li><a href="#sources">参考来源</a></li>
+      <li><a href="index.html" class="lang-toggle" lang="en">English</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================================================== 首页 -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">终极攻略指南 · 0.103.x 版本 · 2026 年 4 月</span>
+    <h1>登临<br />尖塔</h1>
+    <p class="tagline">《杀戮尖塔2》全角色完整通关手册。<br />写给想要<em>真的赢下</em>每一局的玩家。</p>
+
+    <div class="char-picker">
+      <a class="char-picker-item" href="#ironclad" style="--char-color: var(--c-ironclad);">
+        <div class="emblem">⚔</div>
+        <span class="cp-name">铁甲战士</span>
+        <span class="cp-role">力量 · 消耗 · 血量</span>
+      </a>
+      <a class="char-picker-item" href="#silent" style="--char-color: var(--c-silent);">
+        <div class="emblem">🗡</div>
+        <span class="cp-name">静默猎手</span>
+        <span class="cp-role">中毒 · 小刀 · 奇巧</span>
+      </a>
+      <a class="char-picker-item" href="#defect" style="--char-color: var(--c-defect);">
+        <div class="emblem">◈</div>
+        <span class="cp-name">故障机器人</span>
+        <span class="cp-role">充能球 · 专注 · 利爪</span>
+      </a>
+      <a class="char-picker-item" href="#regent" style="--char-color: var(--c-regent);">
+        <div class="emblem">☼</div>
+        <span class="cp-name">储君</span>
+        <span class="cp-role">星力 · 锻造 · 君主之刃</span>
+      </a>
+      <a class="char-picker-item" href="#necrobinder" style="--char-color: var(--c-necro);">
+        <div class="emblem">☠</div>
+        <span class="cp-name">亡灵契约师</span>
+        <span class="cp-role">奥斯提 · 灾厄 · 灵魂</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">5</span><span class="label">角色职业</span></div>
+      <div class="hero-stat"><span class="num">23</span><span class="label">核心流派</span></div>
+      <div class="hero-stat"><span class="num">150+</span><span class="label">卡牌讲解</span></div>
+      <div class="hero-stat"><span class="num">∞</span><span class="label">升天难度</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================== 基础原理 -->
+<section id="universal">
+  <div class="container">
+    <span class="eyebrow">第一章</span>
+    <h2>决定胜负的基础原理</h2>
+    <p class="section-intro">在拆解每个角色之前，请把这几条道理刻进肌肉记忆。它们决定的胜负场数，比任何一张单卡都多。忽视它们，再好的流派也会在第三幕首领翻车。</p>
+
+    <h3>卡牌评估的优先级阶梯</h3>
+    <p>每次面对三张卡奖励时，<em>按顺序</em>问自己以下问题。遇到第一个"否"就跳过：</p>
+    <ol style="padding-left: 24px; color: var(--ink-dim); font-size: 1rem; line-height: 1.9;">
+      <li><strong>它能推进我的成长曲线吗？</strong>成长（Scaling）是引擎 —— 力量、中毒、专注、星力、灾厄、奥斯提增强、锻造。没有成长，第三幕首领不会因为你格挡够厚就放过你。</li>
+      <li><strong>它能解决一个具体的短板吗？</strong>没有群攻？没有首回合格挡？没有抽牌？如果这张卡能以<em>合适的费用</em>补一个已经浮现的弱点，那就拿。</li>
+      <li><strong>我能在想打的那回合打出它吗？</strong>一张 3 费炸弹只能第四回合打出，往往不如一张每回合都能打的 1 费。能量曲线比单卡强度更重要。</li>
+      <li><strong>到第三幕首领时它还好用吗？</strong>类似"单体打 6"这种过渡卡到后期毫无威胁。成长牌和多段打击则会一路相伴到终局。</li>
+    </ol>
+
+    <div class="callout">
+      <h4>你忘了的那条先验</h4>
+      <p>一局出色的构筑中，至少<em>三张奖励里有一张</em>该跳过。高难度（升天 20）常见失误就是拿一张"看起来还行"的卡冲淡抽牌 —— 薄组能 1 回合抽到核心，厚组抽到的是打击、防御、打击。</p>
+    </div>
+
+    <h3>一副健康套牌的轮廓</h3>
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>卡组厚度</h4>
+        <p>大多数流派的甜点区是 20–30 张。少于 15 张会抽到消耗堆/虚空；超过 35 张则成长牌被严重稀释。</p>
+      </div>
+      <div class="info-box">
+        <h4>成长比例</h4>
+        <p>你需要大约 2–4 张成长牌（能力牌、联动引擎）。再多是加分，再少就只能等死。</p>
+      </div>
+      <div class="info-box">
+        <h4>格挡保底</h4>
+        <p>每副牌都需要 3–5 张可靠的格挡来源，应付那些打不过伤害的回合 —— 首领未格挡就能打掉 30 点。</p>
+      </div>
+      <div class="info-box">
+        <h4>能量来源</h4>
+        <p>第二幕结束前必须有至少一张抽牌引擎和一个能量遗物。否则你的 3 费大牌只会烂在手里。</p>
+      </div>
+    </div>
+
+    <h3>关卡推进 —— 通用先验</h3>
+    <div class="act-timeline">
+      <div class="act-step">
+        <span class="act-label">第一幕 · 铺垫</span>
+        <p>目标是活下来，而非赢。拿可靠的攻击、一件防具，精英只在你能承受 20 点反伤时再打。一幕首领奖励沉得住气的人。</p>
+      </div>
+      <div class="act-step">
+        <span class="act-label">第二幕 · 定型</span>
+        <p>成长方案必须在这里成型。能打就打<em>每一个</em>能扛下来的精英 —— 精英掉的遗物是全局最大幅度的战力跃升。开始果断删起手卡。</p>
+      </div>
+      <div class="act-step">
+        <span class="act-label">第三幕 · 收割</span>
+        <p>你已经清楚卡组的样子。路线偏向篝火优于商店，优先升级两到三张决胜牌，保留一瓶大药给首领开局。</p>
+      </div>
+      <div class="act-step">
+        <span class="act-label">多版幕段 · 变体</span>
+        <p>二代抢先体验提供三幕的不同布局与遭遇变体，而非第四幕。跑图目前以三幕首领作结 —— Mega Crit 已预告真结局会在后续 EA 补丁中加入，但原作的心脏战目前<em>不在</em>二代游戏内。</p>
+      </div>
+    </div>
+
+    <h3>必须烂熟的关键词</h3>
+    <dl class="keywords">
+      <div class="keyword"><dt>消耗 · Exhaust</dt><dd>该牌从战斗牌堆移除。铁甲战士循环引擎的核心。</dd></div>
+      <div class="keyword"><dt>保留 · Retain</dt><dd>该牌在回合之间留在手中。可以攒爆发等时机。</dd></div>
+      <div class="keyword"><dt>虚无 · Ethereal</dt><dd>若本回合未打出则消耗。对亡灵契约师是优势，对其他角色是成本。</dd></div>
+      <div class="keyword"><dt>先天 · Innate</dt><dd>初始手牌中必然包含。适合爆发牌，不适合卡手大费牌。</dd></div>
+      <div class="keyword"><dt>奇巧 · Sly</dt><dd>本牌被弃掉时自动免费打出。静默猎手的新招牌。</dd></div>
+      <div class="keyword"><dt>召唤 · Summon</dt><dd>强化亡灵契约师的召唤物奥斯提 —— 横跨回合的持久血量。</dd></div>
+      <div class="keyword"><dt>锻造 · Forge</dt><dd>在本场战斗中永久强化储君的君主之刃伤害。</dd></div>
+      <div class="keyword"><dt>星力 · Stars</dt><dd>储君的辅助资源。<em>不会</em>在回合结束时重置，可积攒用于法术牌。</dd></div>
+      <div class="keyword"><dt>灾厄 · Doom</dt><dd>亡灵契约师的减益。当敌人 HP 跌至其灾厄层数或更低，立刻死亡。</dd></div>
+      <div class="keyword"><dt>充能 · Channel</dt><dd>将一个充能球召唤至槽位。当槽位已满再充能，最左侧的球会释放。</dd></div>
+      <div class="keyword"><dt>释放 · Evoke</dt><dd>消耗一颗球以触发其强力效果。电浆→能量，黑暗→巨额伤害，等等。</dd></div>
+      <div class="keyword"><dt>专注 · Focus</dt><dd>故障机器人的核心数值。每点使所有充能球的被动与释放效果 +1（电浆除外）。</dd></div>
+    </dl>
+
+    <div class="callout tip">
+      <h4>提示 —— 金币要早花</h4>
+      <p>第一幕的商店多半是浪费；<em>第二幕</em>的商店才是救场利器。凡是能删卡的服务都优先于任何 100 金币以下的卡/遗物。每删一张都是双重收益：修好自己的组，同时抽掉一张未来可能被抽到的废牌。</p>
+    </div>
+
+    <div class="callout warn">
+      <h4>一代 vs 二代 —— 本作的变动</h4>
+      <p>本攻略涉及的每张卡、每件遗物，都已与二代专属信源交叉核对（杀戮尖塔 2 Wiki、Untapped.gg 二代卡库、Mobalytics 二代栏目、灰机 Wiki 与游民星空）。一代玩家熟悉的少数卡<strong>在二代里不存在</strong>，本攻略也<em>不</em>将其列为选项：<strong>死神 · Reaper</strong>（已移除）、<strong>尸爆 · Corpse Explosion</strong>（静默猎手已移除）、<strong>擒拿 · Grapple</strong>（已弃用）。二代仍在抢先体验阶段，卡池会随版本推进变化 —— 跑图前建议对照当前版本再确认。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== 铁甲战士 -->
+<section id="ironclad" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">⚔</div>
+      <div>
+        <span class="eyebrow">铁甲战士</span>
+        <h2>铁甲战士 · The Ironclad</h2>
+        <p class="char-subtitle">"把灵魂卖掉的士兵 —— 至今仍在还债。"</p>
+      </div>
+    </div>
+
+    <p>铁甲战士是尖塔最安全的入门角色，同时也是<em>玻璃大炮</em>上限最明显的职业。他的身份建立在三根支柱上 —— 以<strong>力量</strong>作为伤害乘数，以<strong>消耗</strong>作为削牌与能力牌触发器，以<strong>自损血量</strong>作为成长代价。他是唯一一个拥有每场战斗结束自动回血的初始遗物的职业，其他职业要慢慢流血致死的错误，他能自行修复。</p>
+
+    <p>他的短板在于：伤害上限<em>真实存在</em>，但线性 —— 他永远达不到后期故障机器人或储君那种爆炸性爆发。也就是说，面对硬精英和三四幕首领，你必须真的有方案：一张能让力量逐次结算的多段攻击牌，一个不怕抽牌波动的消耗回报，或者一个能扛过前摇的撞击窗口。</p>
+
+    <p>铁甲战士赢在第一幕第二次奖励前就选定一条赛道并忠诚执行。他输在你从三个流派各收了一张非普通卡，然后指望它们自动形成联动 —— 不会的。</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>初始遗物 —— 燃血 · Burning Blood</h4>
+        <p>每场战斗结束时回复 6 点生命值。这是游戏里给新手最重要的辅助轮。它把前期小量损耗转化为白送的生存空间，让第一幕可以承担更多风险。</p>
+      </div>
+      <div class="info-box">
+        <h4>初始血量</h4>
+        <p>80 HP —— 全角色最高。配合燃血，你拥有全游戏最大的试错空间。比如第一幕多打一个其他角色跳过的精英。</p>
+      </div>
+      <div class="info-box">
+        <h4>起手牌关键卡</h4>
+        <p>5 张打击、4 张防御、1 张痛击（造成伤害并施加易伤）；升天 10+ 会多出一张登天诅咒。痛击要留，其余都是删卡目标。</p>
+      </div>
+      <div class="info-box">
+        <h4>他做不到的事</h4>
+        <p>没有自带中毒、没有充能球、没有战中召唤、没有免费的多目标成长。群攻必须主动通过旋风斩、横斩一类卡牌获得 —— 不建好就会被走廊战拖死。</p>
+      </div>
+    </div>
+
+    <!-- ---- 力量流 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · 力量流（重击）</span>
+        <span class="archetype-rating">稳定度 <span class="rating-bar" style="--pct:88%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">游戏里最干净的胜利方案。叠力量，多段打，赢战斗。</p>
+
+      <p>力量为每次攻击的每段伤害加定值。单段攻击就是线性加成，多段攻击则是乘法式爆炸 —— 加了 6 点力量的旋风斩不是多打 6 伤害，而是每段、每个敌人都多 6。核心循环是：前中期丢一张加力量的牌，后半场就用多段攻击打穿对面。</p>
+
+      <p>第一幕奖励看不出端倪时，就默认走这条路。它几乎不挑卡组厚度，在低能量下也能运转，也不怕抽牌波动 —— 能力牌加一次力量后就会一直供血。</p>
+
+      <h4>优先选取（见到必拿）</h4>
+      <div class="card-grid">
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">怒火中烧<span class="card-name-en">Inflame</span></h3>
+          <div class="card-desc">获得 2 点<span class="kw">力量</span>。一能量、一卡完成力量起手；首回合抽到等于直接赢下这场战斗。</div>
+          <div class="card-footer"><span>稀有度 精英</span><span>攻击成长</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">洞察弱点<span class="card-name-en">Spot Weakness</span></h3>
+          <div class="card-desc">若敌人意图攻击，获得 3 点<span class="kw">力量</span>。对首领价值夸张 —— 几乎所有首领每回合都在预告攻击。</div>
+          <div class="card-footer"><span>精英</span><span>条件成长</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">恶魔形态<span class="card-name-en">Demon Form</span></h3>
+          <div class="card-desc">每回合开始获得 2 点<span class="kw">力量</span>。全职业最强成长牌 —— 落地即胜一切长战。</div>
+          <div class="card-footer"><span>稀有</span><span>长战决胜</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">双重打击<span class="card-name-en">Twin Strike</span></h3>
+          <div class="card-desc">造成 2 次 5 点伤害。每次打出享受两次力量加成。与完美打击等携带"Strike"名字的卡互相加成。</div>
+          <div class="card-footer"><span>普通</span><span>多段</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">旋风斩<span class="card-name-en">Whirlwind</span></h3>
+          <div class="card-desc">对所有敌人造成 X 次伤害。最可扩展的群攻 —— 力量一旦就位，走廊再也不是问题。</div>
+          <div class="card-footer"><span>精英</span><span>X 费群攻</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">突破极限<span class="card-name-en">Limit Break</span></h3>
+          <div class="card-desc">令当前<span class="kw">力量</span>翻倍。消耗（升级后移除消耗）。升级后是整个牌池里最过分的一张。</div>
+          <div class="card-footer"><span>稀有</span><span>力量乘数</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">0</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">屈伸<span class="card-name-en">Flex</span></h3>
+          <div class="card-desc">本回合获得 2 点临时<span class="kw">力量</span>。先打它再打决胜牌，别浪费在格挡牌上。</div>
+          <div class="card-footer"><span>普通</span><span>临时力量</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">剑回旋<span class="card-name-en">Sword Boomerang</span></h3>
+          <div class="card-desc">对一个随机敌人造成 3 点伤害共 3 次。每段享受力量加成。优秀走廊清场工具。</div>
+          <div class="card-footer"><span>精英</span><span>随机多段</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>恶魔形态</strong> —— 二幕以后一律首抢，只要你能支付那个 3 费的布局回合。</li>
+            <li><strong>升级版突破极限</strong> —— 胜率提升两位数百分点。路过篝火优先升它。</li>
+            <li><strong>双重打击</strong> —— 多段普通牌主骨。拿两张，升级都不亏。</li>
+            <li><strong>洞察弱点</strong> —— 对任何会攻击的敌人（也就是所有首领）无脑点。</li>
+            <li><strong>旋风斩</strong> —— 群攻天花板，力量越高越离谱。</li>
+            <li><strong>柄击 · Pommel Strike</strong> —— 9 伤害加抽牌，解决中局手牌不足。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>头锤 · Headbutt</strong> —— 回顶牌几乎不值得占卡位；只有消耗流才考虑。</li>
+            <li><strong>上勾拳 · Uppercut</strong> —— 2 费 13 伤害尚可，但单段高费挤占成长卡位。</li>
+            <li><strong>再战 · Second Wind</strong> —— 力量流手牌里几乎没有技能可转化。</li>
+            <li><strong>怒气 · Anger</strong> —— 刷满弃牌堆，稀释抽牌却不助成长。</li>
+            <li><strong>铁浪 · Iron Wave</strong> —— 一幕保底尚可；抽到甩掉后就该让位。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>优先凑的遗物</h4>
+      <div class="pills">
+        <span class="pill gold">笔尖 · Pen Nib</span>
+        <span class="pill gold">阿卡贝科 · Akabeko</span>
+        <span class="pill">打击假人 · Strike Dummy</span>
+        <span class="pill">观赏折扇 · Ornamental Fan</span>
+        <span class="pill">翠玉之剑 · Sword of Jade</span>
+        <span class="pill">船锚 · Anchor</span>
+        <span class="pill">号角靴 · Horn Cleat</span>
+        <span class="pill">金刚杵 · Vajra</span>
+      </div>
+    </div>
+
+    <!-- ---- 消耗流 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · 消耗流（循环引擎）</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:92%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">主动删自己的牌来换收益。铁甲战士最硬的天花板流派。</p>
+
+      <p>消耗流与力量流走的是相反路线 —— 不是让每张牌更强，而是<em>删掉</em>它们，让每次消耗转化为过牌、格挡或能量。三个引擎缺一不可：<strong>黑暗之拥</strong>（每次消耗抽一张）、<strong>无痛</strong>（每次消耗 3 点格挡）、<strong>腐化</strong>（技能变 0 费并消耗）。三个中占两个就能稳定运转。</p>
+
+      <p>腐化是转换器。在它之前，被遗忘的仪式是一张 1 费技能；在它之后，它变成 0 费消耗并触发黑暗之拥。你抽完全组，格挡完所有攻击，然后用契约终结或灰烬打击白嫖伤害。一个腐化发动后的引擎，唯一瓶颈是"战斗还能持续几回合"，常见答案：全部回合。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">腐化<span class="card-name-en">Corruption</span></h3>
+          <div class="card-desc">所有<span class="kw">技能</span>费用变 0 并<span class="kw">消耗</span>。关键键位 —— 没有它或等价物，引擎启动不了。</div>
+          <div class="card-footer"><span>稀有</span><span>引擎</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">黑暗之拥<span class="card-name-en">Dark Embrace</span></h3>
+          <div class="card-desc">每消耗一张牌抽 1 张。把所有消耗都变成过牌。与腐化合用基本抽光全组。</div>
+          <div class="card-footer"><span>精英</span><span>引擎</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">无痛<span class="card-name-en">Feel No Pain</span></h3>
+          <div class="card-desc">每消耗一张牌获得 3 点格挡。格挡引擎 —— 消耗循环开动后可无限扩张。</div>
+          <div class="card-footer"><span>精英</span><span>格挡来源</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">祭品<span class="card-name-en">Offering</span></h3>
+          <div class="card-desc">失去 6 HP。获得 2 能量。抽 3 张牌。消耗。配腐化后基本零费释放全部收益 —— 强得过分。</div>
+          <div class="card-footer"><span>稀有</span><span>资源泵</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">真气<span class="card-name-en">True Grit</span></h3>
+          <div class="card-desc">获得 7 点格挡；随机消耗手牌中一张（升级后指定）。格挡加薄组一体。</div>
+          <div class="card-footer"><span>普通</span><span>删废牌</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">0</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">契约终结<span class="card-name-en">Pact's End</span></h3>
+          <div class="card-desc">对所有敌人造成基于本场已消耗卡数量的群攻。消耗引擎的决胜手。</div>
+          <div class="card-footer"><span>稀有</span><span>群攻决胜</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">被遗忘的仪式<span class="card-name-en">Forgotten Ritual</span></h3>
+          <div class="card-desc">获得 2 能量。<span class="kw">消耗</span>。配腐化每回合都是免费能量＋抽牌＋格挡。</div>
+          <div class="card-footer"><span>普通</span><span>引擎燃料</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">邪眼<span class="card-name-en">Evil Eye</span></h3>
+          <div class="card-desc">获得格挡；若本回合已消耗过牌则大幅提升。一张牌就能拉出 16 点格挡。</div>
+          <div class="card-footer"><span>精英</span><span>格挡爆发</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>腐化</strong>二幕见到即视为赢局 —— 活动里可以专门转化其他牌来凑它。</li>
+            <li><strong>黑暗之拥</strong>＋<strong>无痛</strong> —— 两张都要，前者是发动机，后者是保险。</li>
+            <li><strong>祭品</strong> —— 配腐化是 0 费的"+2 能量、+3 抽牌"，必收。</li>
+            <li><strong>烙印 · Brand</strong>、<strong>燃烧契约 · Burning Pact</strong> —— 腐化落地前的便宜消耗跳板。</li>
+            <li><strong>冥河之灰</strong>（遗物）—— 凭消耗次数多接一条伤害线。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>无懈可击</strong> —— 消耗流靠消耗放大收益；一次性 30 格挡跟规划相冲。</li>
+            <li><strong>恶魔形态</strong> —— 要求长战，可是消耗引擎结束得太快，不值得 3 费。</li>
+            <li><strong>再战</strong> —— 手牌多是攻击／能力，没几张可消耗的技能。</li>
+            <li><strong>怒气 · Anger</strong> —— 自我复制进弃牌堆；没有腐化只是在冲淡抽牌。</li>
+            <li><strong>狂怒 · Rage</strong> —— 攻击回格挡的窗口与"连打技能触发消耗"思路冲突。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>优先凑的遗物</h4>
+      <div class="pills">
+        <span class="pill gold">冥河之灰 · Charon's Ashes</span>
+        <span class="pill gold">枯枝 · Dead Branch <small>（若存在）</small></span>
+        <span class="pill">被遗忘的灵魂 · Forgotten Soul</span>
+        <span class="pill">纸钱 · Joss Paper</span>
+        <span class="pill">燃柴 · Burning Sticks</span>
+        <span class="pill">符文金字塔 · Runic Pyramid</span>
+      </div>
+    </div>
+
+    <!-- ---- 格挡／壁垒 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · 撞击 / 壁垒</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:82%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">把格挡变伤害。配合壁垒，格挡可以一回合一回合叠着滚。</p>
+
+      <p>撞击造成等同于当前格挡的伤害。没有壁垒时，这只是一次当前格挡量级的爆发；配上<em>壁垒</em>（格挡不再在回合开始时清零），格挡每回合持续累积，到首领抬手那回合一次炸出来。本流派的秘密武器是<strong>无坚不摧</strong> —— 每次获得格挡自动打敌方最高血 —— 连你不打撞击的回合都在稳定输出。</p>
+
+      <p>这是铁甲战士的"死不掉"套路。它不是最快的，对带削格挡的第三幕精英也吃亏，但对学习升天和稳打三幕首领而言是最安全的路线。第一幕早期给你甩掉、铁浪、战斗专注而不是成长牌时，就走这条。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">壁垒<span class="card-name-en">Barricade</span></h3>
+          <div class="card-desc">格挡不再在回合开始时移除。本流派的决胜牌 —— 一切优先于它。</div>
+          <div class="card-footer"><span>稀有</span><span>引擎</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">撞击<span class="card-name-en">Body Slam</span></h3>
+          <div class="card-desc">造成等于当前格挡的伤害。升级后 0 费 —— 游戏里最锋利的格挡→伤害转换之一。</div>
+          <div class="card-footer"><span>普通</span><span>决胜</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">无坚不摧<span class="card-name-en">Juggernaut</span></h3>
+          <div class="card-desc">每次你获得格挡时，对随机敌人造成伤害。被动式"战斗已经赢一半"的压迫。</div>
+          <div class="card-footer"><span>精英</span><span>格挡收益</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">甩掉<span class="card-name-en">Shrug It Off</span></h3>
+          <div class="card-desc">获得 8 点格挡，抽 1 张牌。每副铁甲牌里最强的普通格挡牌，无例外。</div>
+          <div class="card-footer"><span>普通</span><span>保底格挡</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">烈焰屏障<span class="card-name-en">Flame Barrier</span></h3>
+          <div class="card-desc">本回合获得格挡并对所有攻击者反伤。对多段攻击的克制；配合壁垒极好。</div>
+          <div class="card-footer"><span>精英</span><span>反制</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">金属化<span class="card-name-en">Metallicize</span></h3>
+          <div class="card-desc">每回合结束获得 3 格挡。配壁垒等于永久 +3 格挡。</div>
+          <div class="card-footer"><span>精英</span><span>被动格挡</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">无懈可击<span class="card-name-en">Impervious</span></h3>
+          <div class="card-desc">获得 30 格挡。消耗。配壁垒可以一路撑过去 —— 一张牌等于一整幕的格挡量。</div>
+          <div class="card-footer"><span>稀有</span><span>紧急按钮</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">巩固<span class="card-name-en">Entrench</span></h3>
+          <div class="card-desc">将当前格挡翻倍。配壁垒等于把早已翻过一倍的格挡再翻一倍 —— 指数增长。</div>
+          <div class="card-footer"><span>精英</span><span>格挡乘数</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li>见到<strong>壁垒</strong>必拿，甚至可以专门改路线去取它。</li>
+            <li><strong>巩固</strong>配壁垒 = 格挡翻倍引擎。</li>
+            <li><strong>升级撞击</strong> —— 0 费是"尚可"与"赢局"的分水岭。</li>
+            <li><strong>无坚不摧</strong> —— 抽到当回合直接生效，无需布局。</li>
+            <li><strong>烈焰屏障</strong> —— 预判多段攻击（二幕那种小怪）的反制。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>恶魔形态</strong> —— 提供你不需要的伤害；挤占格挡卡位。</li>
+            <li><strong>进食 · Feed</strong> —— 堵组却没格挡反馈。</li>
+            <li><strong>痛殴 · Bludgeon</strong> —— 2 费单段；你的撞击已是"伤害出口"，且它能跟着格挡翻滚。</li>
+            <li><strong>自损类</strong>（祭品、血念力、烙印）—— 与放血流冲突，跟壁垒无缘。</li>
+            <li><strong>破坏 · Havoc</strong> —— 回顶牌随机打出，会赌掉你的撞击回合。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- 完美打击 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">4 · 完美打击（打击殿堂）</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:74%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">留下所有打击。真的。然后把它们变成一门火炮。</p>
+
+      <p>一个反直觉的构筑 —— 颠覆"必删打击"的通识。完美打击造成保底 6 伤害外加"名字里含打击"的卡每张 +X。柄击增加过牌、双重打击结算两次力量、头锤循环打击、地狱狂徒加入更多独立名字的打击卡。两张升级完美打击配上 8 张带"Strike"的卡，一张伤害就能打 40+。</p>
+
+      <p>对操作要求高，因为你刻意留下低下限卡，中期抽牌质量差于其他铁甲流派。它奖励那些能拿到能量遗物（诅咒钥匙、红骷髅）和各类过牌选项的走位。没有过牌，这就是一张决胜牌的昙花一现。</p>
+
+      <h4>关键卡牌</h4>
+      <div class="card-grid">
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">完美打击<span class="card-name-en">Perfected Strike</span></h3>
+          <div class="card-desc">造成 6 伤害，外加每张名字含"打击"的卡额外伤害。拿两张。两张都升级。</div>
+          <div class="card-footer"><span>精英</span><span>决胜</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">柄击<span class="card-name-en">Pommel Strike</span></h3>
+          <div class="card-desc">造成 9 伤害。抽 1 张牌。引擎件 —— 既是过牌又算一张打击。</div>
+          <div class="card-footer"><span>普通</span><span>打击+过牌</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">双重打击<span class="card-name-en">Twin Strike</span></h3>
+          <div class="card-desc">带"打击"字样，吃两次力量。任何铁甲组里都是强保底。</div>
+          <div class="card-footer"><span>普通</span><span>两段打击</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">地狱狂徒<span class="card-name-en">Hellraiser</span></h3>
+          <div class="card-desc">每当你抽到名字含"打击"的卡，它自动对随机敌人打出。配柄击＋薄组可形成连锁。</div>
+          <div class="card-footer"><span>稀有</span><span>自动打击引擎</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">备战<span class="card-name-en">Expect a Fight</span></h3>
+          <div class="card-desc">获得 2 能量（升级后 3）。让你一回合连打多张完美打击的关键能量。</div>
+          <div class="card-footer"><span>精英</span><span>能量泵</span></div>
+        </article>
+      </div>
+
+      <div class="callout warn">
+        <h4>警告</h4>
+        <p>此构筑<strong>永远不要</strong>在活动或神殿里转化打击类卡。真的。随机事件可能直接删掉你的成长牌。遇到"转化 2 张"，要么跳过，要么明确只选非打击牌。</p>
+      </div>
+    </div>
+
+    <!-- ---- 放血 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">5 · 放血（裂创 / 进食）</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:70%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">血量是资源。花出去，跑得更快。</p>
+
+      <p>放血流花 HP 换力量（裂创）、抽牌（放血）或群攻（地狱烈焰）。可行的原因：燃血每场战斗回血，因此战中花的血等于"白送"，只要你活着。不行的原因：自损伤害绕过格挡，和敌人碎伤叠加，在抽牌波动差的回合会突然咬你一口。</p>
+
+      <p>成长支柱是裂创，再配两张自损卡。进食是决胜选择 —— 永久最大 HP 外加高伤害。与裂创联动下，每次进食击杀都永久增加最大生命上限和当前力量。此流派在抽不到裂创时，也能无缝过渡到力量流或消耗流。</p>
+
+      <h4>关键卡牌</h4>
+      <div class="card-grid">
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">裂创<span class="card-name-en">Rupture</span></h3>
+          <div class="card-desc">每次你因打出卡牌受到 HP 伤害时，获得 1 点<span class="kw">力量</span>。把自损转为永久成长。</div>
+          <div class="card-footer"><span>精英</span><span>成长</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">进食<span class="card-name-en">Feed</span></h3>
+          <div class="card-desc">造成大量伤害。若击杀，永久增加最大 HP。消耗。对非召唤怪首领是决胜卡。</div>
+          <div class="card-footer"><span>稀有</span><span>永久成长</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">放血<span class="card-name-en">Bloodletting</span></h3>
+          <div class="card-desc">失去 3 HP。获得 2 能量。配裂创等于免费 +1 力量 +2 能量。</div>
+          <div class="card-footer"><span>精英</span><span>能量+成长</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">血念力<span class="card-name-en">Hemokinesis</span></h3>
+          <div class="card-desc">失去 2 HP。造成 15 伤害。1 费 15 伤害，再叠裂创。永远拿一张。</div>
+          <div class="card-footer"><span>精英</span><span>高效单攻</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <h4>铁甲战士的大局观</h4>
+      <p>若二幕中段还没看到成长牌，不要再等恶魔形态了，转向<strong>撞击 / 壁垒</strong>。完成度高的格挡组每次都赢过半成品的力量组。铁甲战士最糟糕的一局就是只带一张怒火中烧加十张打击。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== 静默猎手 -->
+<section id="silent" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">🗡</div>
+      <div>
+        <span class="eyebrow">静默猎手</span>
+        <h2>静默猎手 · The Silent</h2>
+        <p class="char-subtitle">"千刀万剐。耐心与毒素。"</p>
+      </div>
+    </div>
+
+    <p>静默猎手是《杀戮尖塔2》的战术浪人 —— 被正确驾驭时是上限最高、技术最吃操作的职业；被错误驾驭时也是死得最快的那个。她没有燃血的安全网，没有自回血，没有血量优势。她所拥有的是<strong>抽牌</strong>、<strong>减益密度</strong>、<strong>弃牌机制</strong>，以及全游戏最强的两条成长轴 —— <strong>中毒</strong>与<strong>小刀</strong>。</p>
+
+    <p>《杀戮尖塔2》新增了<strong>奇巧</strong>关键词 —— 奇巧牌被弃时自动免费打出。这一机制把她过去"弃牌是亏"的设计扭转为"弃牌是第二种过牌"。杂耍、战术家、蓄意豪赌、反射都成为能开启巨大循环回合的起手。</p>
+
+    <p>她的初始遗物<strong>蛇环</strong>在每场战斗首回合多抽两张牌 —— 起手手牌达到 7 张。足以在第一回合布置中毒能力、打出披风匕首获得前期格挡、再打出一张攻击。强力首回合布局是静默猎手的超能力；最厉害的玩家把每场战斗当棋局开局来下。</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>初始遗物 —— 蛇环 · Ring of the Snake</h4>
+        <p>每场战斗首回合多抽 2 张。游戏里最强的首回合遗物。一整局 30 场战斗里，每场多出两次动作 —— 任何初始遗物都难以匹敌。</p>
+      </div>
+      <div class="info-box">
+        <h4>初始血量</h4>
+        <p>70 HP —— 比铁甲低、比故障高。没有战斗回血，每次掉血都是持久损失。路线要更积极地蹭篝火。</p>
+      </div>
+      <div class="info-box">
+        <h4>核心机制</h4>
+        <p><strong>小刀</strong> —— 由技能生成的免费 4 伤害 0 费攻击。<strong>中毒</strong> —— 敌人回合结束受毒伤并 -1 层。<strong>弃牌联动</strong> —— 弃牌时触发的卡牌。</p>
+      </div>
+      <div class="info-box">
+        <h4>她做不到的事</h4>
+        <p>没有类似力量的直接成长属性（中毒成长，但对单体更有效）。没有自回血。二幕前格挡很紧。带神器的精英直接无效中毒 —— 要有 B 计划。</p>
+      </div>
+    </div>
+
+    <!-- ---- 小刀流 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · 小刀（刀舞）</span>
+        <span class="archetype-rating">稳定度 <span class="rating-bar" style="--pct:86%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">生成几十张 0 费 4 伤害小攻击，再用精准与飞镖叠加乘数。</p>
+
+      <p>小刀流让静默猎手化为搅拌机。刀舞、披风匕首、无尽刀刃这些技能把免费小刀塞进手牌。每张小刀默认 4 伤害 0 费。乘数牌 —— <strong>精准</strong>（本场每张小刀 +3 伤害）、<strong>无尽刀刃</strong>（每回合新增一张小刀）、<strong>余像 · After Image</strong>（每打一张牌获得 1 格挡） —— 把 4 伤害陈货变成 10+，每回合 5 到 10 张。</p>
+
+      <p>小刀是攻击类卡，所以会吃力量（不是敏捷）和打击类遗物（打击假人、飞镖、手里剑）。每回合打出 3 张小刀触发一次手里剑 +1 力量。精准 + 无尽刀刃 + 手里剑循环下，成长无尽。你最大的脆弱期是精准落地前的前期伤害 —— 一定要先拿一件防具再专心输出。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">精准<span class="card-name-en">Accuracy</span></h3>
+          <div class="card-desc">本场小刀 +3 伤害（升级 +5）。关键键位 —— 每张小刀、每次打出都乘上去。</div>
+          <div class="card-footer"><span>稀有</span><span>成长</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">无尽刀刃<span class="card-name-en">Infinite Blades</span></h3>
+          <div class="card-desc">每回合开始加一张小刀到手。永动小刀引擎，配所有小刀收益都强。</div>
+          <div class="card-footer"><span>精英</span><span>引擎</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">刀舞<span class="card-name-en">Blade Dance</span></h3>
+          <div class="card-desc">添加 3 张小刀到手（升级 4 张）。主力刀源 —— 可拿多张。</div>
+          <div class="card-footer"><span>普通</span><span>刀生成</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">披风匕首<span class="card-name-en">Cloak and Dagger</span></h3>
+          <div class="card-desc">获得 6 格挡。添加 1 张小刀到手。一手完成格挡+刀 —— 本流派最强保底。</div>
+          <div class="card-footer"><span>普通</span><span>格挡+刀</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">钢铁风暴<span class="card-name-en">Storm of Steel</span></h3>
+          <div class="card-desc">弃掉手牌，加入等量的小刀。爆炸性收益 —— 精准落地后的决胜手。</div>
+          <div class="card-footer"><span>稀有</span><span>手牌转刀</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">藏匿匕首<span class="card-name-en">Hidden Daggers</span></h3>
+          <div class="card-desc">弃 2 张。手牌新增 2 张小刀。0 费小刀来源，同时触发奇巧关键词 —— 实际强度被低估。</div>
+          <div class="card-footer"><span>精英</span><span>小刀+弃牌</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">飞膝<span class="card-name-en">Flying Knee</span></h3>
+          <div class="card-desc">造成 8 伤害。下回合 +1 能量。升级顺滑，配合小刀爆发回合很好。</div>
+          <div class="card-footer"><span>精英</span><span>能量生成</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">飞刀<span class="card-name-en">Dagger Throw</span></h3>
+          <div class="card-desc">造成 9 伤害。抽 1 张。弃 1 张。便宜伤害 + 循环 —— 还能触发奇巧弃牌。</div>
+          <div class="card-footer"><span>精英</span><span>循环攻击</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>精准</strong> —— 见到即首抢，值得专门改路线追它。</li>
+            <li><strong>刀舞</strong> —— 最多拿三张。组里要有大量小刀。</li>
+            <li><strong>披风匕首</strong> —— 最多拿两张，格挡不能少。</li>
+            <li><strong>无尽刀刃</strong> —— 一张就能带动全组。</li>
+            <li><strong>手里剑 · Shuriken</strong> / <strong>飞镖 · Kunai</strong> / <strong>观赏折扇 · Ornamental Fan</strong> —— 每回合刀数乘以一整层遗物收益。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>毒刺 · Poisoned Stab</strong> —— 不产刀也不受益于刀，错轴。</li>
+            <li><strong>致残毒 · Crippling Poison</strong>等纯毒牌 —— 让你在两套成长体系里分心。</li>
+            <li><strong>子弹时间 · Bullet Time</strong> —— 好牌，但禁止 0 费小刀打出 —— 流派冲突。</li>
+            <li><strong>亡灵形态 · Wraith Form</strong> —— 对中毒流很棒，对小刀流是次级选择。</li>
+            <li><strong>盛大谢幕 · Grand Finale</strong> —— 要求空抽堆，与"每回合加小刀"的无尽刀刃冲突。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- 中毒流 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · 中毒（毒素循环）</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:94%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">开局慢，上限无限。涂毒，等待，看着首领融化。</p>
+
+      <p>中毒是静默猎手最高上限的流派，与故障机器人的专注流并列全游戏最耐久的成长体系。毒伤每个敌人回合结算一次，无视格挡、虚弱、非神器增益。构筑需要三件：<strong>涂毒来源</strong>（毒烟被动、致命毒药爆发）、<strong>毒素乘数</strong>（催化剂翻倍）、<strong>循环引擎</strong>（有备无患、战术家、反射或蓄意豪赌）。</p>
+
+      <p>新关键词<strong>奇巧</strong>使中毒流如虎添翼。过去被浪费的弃牌如今自动在同回合打出。战术家从手中弃掉即自动释放，既能发电又维持引擎。搭配催化剂（毒素翻倍）可做出三回合秒杀首领的起手 —— 直接删除类似时空飞贼的对手。</p>
+
+      <div class="callout warn">
+        <h4>硬克制 —— 神器 · Artifact</h4>
+        <p>任何自带神器的敌人会吃掉你的第一次涂毒。面对三幕堆神器的精英你会输掉，除非（a）涂毒层数够高穿透它，或（b）有备用伤害。<strong>永远</strong>保留一张单体决胜手，例如终结者、淬毒+小刀、盛大谢幕，用于神器局。</p>
+      </div>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">毒烟<span class="card-name-en">Noxious Fumes</span></h3>
+          <div class="card-desc">每回合开始对所有敌人施加 2 层中毒。关键键位 —— 被动、不可阻挡的成长。</div>
+          <div class="card-footer"><span>精英</span><span>成长</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">致命毒药<span class="card-name-en">Deadly Poison</span></h3>
+          <div class="card-desc">对敌人施加 5 层中毒（升级 7）。爆发涂毒源 —— 与催化剂连杀。</div>
+          <div class="card-footer"><span>普通</span><span>爆发毒</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">催化剂<span class="card-name-en">Catalyst</span></h3>
+          <div class="card-desc">使目标敌人身上的毒素翻倍。消耗。毒素乘数 —— 能拿两张最好。</div>
+          <div class="card-footer"><span>稀有</span><span>乘数</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">毒刺<span class="card-name-en">Poisoned Stab</span></h3>
+          <div class="card-desc">造成 6 伤害。施加 3 层中毒。双轴合一 —— 组里的保底。</div>
+          <div class="card-footer"><span>普通</span><span>双功能攻击</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">弹跳烧瓶<span class="card-name-en">Bouncing Flask</span></h3>
+          <div class="card-desc">对随机敌人施毒 3 次。极好的群体涂毒。</div>
+          <div class="card-footer"><span>精英</span><span>群体毒</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">淬毒<span class="card-name-en">Envenom</span></h3>
+          <div class="card-desc">每次攻击造成未格挡伤害时，施加 1 层中毒。每张小刀、每次打击都是涂毒。</div>
+          <div class="card-footer"><span>稀有</span><span>双轴桥</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">致残毒<span class="card-name-en">Crippling Poison</span></h3>
+          <div class="card-desc">施加中毒和虚弱。虚弱降低来袭伤害 —— 一张卡既防又成长。</div>
+          <div class="card-footer"><span>精英</span><span>减益+成长</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">加速剂<span class="card-name-en">Accelerant</span></h3>
+          <div class="card-desc">消耗敌人身上的毒素结算爆发伤害。需要即时伤害时的毒素变现手。</div>
+          <div class="card-footer"><span>精英</span><span>毒素决胜</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>毒烟</strong> —— 永远首选。没它不成组。</li>
+            <li><strong>催化剂</strong> —— 最好两张都升级。40 层毒翻倍就是秒杀。</li>
+            <li><strong>加速剂 · Accelerant</strong> —— 一次性决胜手，按毒素爆发。</li>
+            <li><strong>泡泡 · Bubble Bubble</strong> / <strong>扭曲烟斗 · Twisted Funnel</strong>（遗物）—— 每回合毒素增幅器。</li>
+            <li><strong>淬毒 · Envenom</strong> —— 桥接小刀／攻击流派，让每一次命中都涂一层毒。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>无尽刀刃</strong> —— 塞满手牌的小刀你用不到。</li>
+            <li><strong>终结者 · Finisher</strong> —— 按本回合打出的攻击数成长；没搭组连击组就是错轴。</li>
+            <li><strong>死灭 · Die Die Die</strong> —— 本身不错，但占掉你毒素卡位。</li>
+            <li><strong>专注精神 · Concentrate</strong> —— 能量换弃牌；配奇巧反而太慢。</li>
+            <li><strong>等价重锤类</strong> —— 你要的是滴血，不是一锤。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>优先凑的遗物</h4>
+      <div class="pills">
+        <span class="pill gold">扭曲烟斗 · Twisted Funnel</span>
+        <span class="pill gold">泡泡 · Bubble Bubble</span>
+        <span class="pill">斯奈柯之颅 · Snecko Skull</span>
+        <span class="pill">不安灯 · Unsettling Lamp</span>
+        <span class="pill">船锚 · Anchor</span>
+        <span class="pill">游标卡尺 · Calipers</span>
+      </div>
+    </div>
+
+    <!-- ---- 奇巧／弃牌 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · 奇巧（弃牌联动）</span>
+        <span class="archetype-rating">技术上限 <span class="rating-bar" style="--pct:90%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">《杀戮尖塔2》的招牌。每次弃牌都是免费施法。</p>
+
+      <p>奇巧是静默猎手的全新关键词，也是让《杀戮尖塔2》的重做令人刮目相看的核心。一张奇巧牌从手中弃掉时自动释放、零费，且不算"打出一张牌"的事件。一旦<strong>战术家</strong>（奇巧）与<strong>蓄意豪赌</strong>（弃全手，抽等量）合体，整手都会在一回合内连环执行 —— 所有奇巧打出，所有非奇巧洗回牌堆，加上蛇环开场多抽 2 张，你每回合 7+ 张卡。</p>
+
+      <p>终极件是<strong>运筹帷幄 · Master Planner</strong> —— 它让你组里<em>所有</em>非奇巧技能都变成奇巧。突然之间披风匕首弃掉免费释放带格挡带小刀；毒烟中途弃掉免费发动。牌组上限是所有《杀戮尖塔》作品里最高之一，但操作下限也极陡。排错一个弃牌顺序就可能失去这一回合。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">战术家<span class="card-name-en">Tactician</span></h3>
+          <div class="card-desc">被弃时获得 1 能量。<span class="kw">奇巧</span>。连击起手 —— 每次弃牌都触发。</div>
+          <div class="card-footer"><span>精英</span><span>弃牌能量</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">蓄意豪赌<span class="card-name-en">Calculated Gamble</span></h3>
+          <div class="card-desc">弃掉手牌。抽等量。在奇巧组里等于<em>白嫖循环</em>加一堆免费释放。</div>
+          <div class="card-footer"><span>精英</span><span>大量过牌</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">运筹帷幄<span class="card-name-en">Master Planner</span></h3>
+          <div class="card-desc">让当前<em>手牌中</em>的每张技能获得<span class="kw">奇巧</span>。随后一次全弃即可全部免费释放。</div>
+          <div class="card-footer"><span>稀有</span><span>整手奇巧</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">杂耍<span class="card-name-en">Acrobatics</span></h3>
+          <div class="card-desc">抽 3 张。弃 1 张（升级抽 4）。顶级循环工具 —— 触发奇巧链。</div>
+          <div class="card-footer"><span>普通</span><span>抽+弃</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">有备无患<span class="card-name-en">Prepared</span></h3>
+          <div class="card-desc">抽 1。弃 1。足够便宜以至于能每回合使用，触发奇巧链。</div>
+          <div class="card-footer"><span>普通</span><span>循环</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">反射<span class="card-name-en">Reflex</span></h3>
+          <div class="card-desc">被弃时抽 2 张。<span class="kw">奇巧</span>。如同战术家之于能量，反射之于过牌。</div>
+          <div class="card-footer"><span>精英</span><span>弃牌过牌</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">掏心<span class="card-name-en">Eviscerate</span></h3>
+          <div class="card-desc">本回合每弃一张减少 1 费用。3 次弃牌后免费打出 —— 巨额多段决胜。</div>
+          <div class="card-footer"><span>精英</span><span>折扣攻击</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">看家本领<span class="card-name-en">Tools of the Trade</span></h3>
+          <div class="card-desc">每回合开始抽 1 张再弃 1 张。持续的奇巧触发器。</div>
+          <div class="card-footer"><span>精英</span><span>自动循环</span></div>
+        </article>
+      </div>
+
+      <div class="callout tip">
+        <h4>提示 —— 先看手牌再弃</h4>
+        <p>奇巧流最大的错误是没看手牌就狂弃。永远先打出格挡和成长<em>再</em>循环。<em>主动</em>弃战术家／反射，别无脑点蓄意豪赌。一个顺序错误就是一整回合输掉。</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>静默猎手的大局观</h4>
+      <p>静默猎手的三大流派彼此交织程度远高于其他职业。一副带淬毒的小刀组 70% 是中毒组；一副带催化剂和战术家的中毒组天然就是奇巧组。一幕别急着贴标签 —— 保持弹性，二幕的稀有奖励会告诉你路在哪里。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== 故障机器人 -->
+<section id="defect" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">◈</div>
+      <div>
+        <span class="eyebrow">故障机器人</span>
+        <h2>故障机器人 · The Defect</h2>
+        <p class="char-subtitle">"充能球、算法、过载的复仇。"</p>
+      </div>
+    </div>
+
+    <p>故障机器人是精打细算的工程师型角色。他的全部身份就是<strong>充能球管理</strong> —— 在头顶环绕的小型伤害/格挡/资源卫星。每颗球都带<em>被动</em>（回合结束触发）和<em>释放</em>（被消耗时触发）。闪电球造成小伤害；冰霜球产生格挡；黑暗球蓄能后释放爆发；电浆球提供额外能量；玻璃球造成群攻。每种构筑都是一道题：槽位、专注（加成所有球的属性）、以及释放顺序如何最优。</p>
+
+    <p>《杀戮尖塔2》对他做了两处显著加强。第一，他拿到了铁甲战士原本的状态牌联动能力 —— 垃圾状态牌也能变成收益触发。第二，起手槽位数、专注成长和扩容的组合造就了游戏里爬得最快的球引擎。他的上限几乎离谱：三幕中段的故障机能每回合释放 150 伤害的黑暗球，同时产出 60 格挡。</p>
+
+    <p>他的短板是启动时间。如果抽不到启动手，他会被一幕那些惩罚首回合格挡的精英弄死（哨兵系、拉加温 Wake Up 系）。一幕求稳，二幕堆专注，三幕才是释放回报的舞台。</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>初始遗物 —— 破碎核心 · Cracked Core</h4>
+        <p>战斗开始充能 1 颗闪电球。一点常态化的伤害，也是实质的一颗槽位存在。绝对值不高，但<em>永远</em>在运转，每场战斗都有收益。</p>
+      </div>
+      <div class="info-box">
+        <h4>初始血量</h4>
+        <p>75 HP。中游水平。结合慢启动，一幕要积极走篝火。</p>
+      </div>
+      <div class="info-box">
+        <h4>充能球类型</h4>
+        <p><strong>闪电</strong> —— 被动打碎伤，释放爆发。<strong>冰霜</strong> —— 被动格挡，释放格挡。<strong>黑暗</strong> —— 每回合增长（6+专注），释放巨额单体。<strong>电浆</strong> —— 被动给能量，释放给能量。<strong>玻璃</strong> —— 被动群攻，释放群攻。</p>
+      </div>
+      <div class="info-box">
+        <h4>专注 · Focus</h4>
+        <p>每点专注令所有球的被动和释放值 +1（电浆除外）。故障机器人全局最高杠杆的行为就是堆专注。</p>
+      </div>
+    </div>
+
+    <!-- ---- 冰闪均衡 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · 冰闪均衡</span>
+        <span class="archetype-rating">稳定度 <span class="rating-bar" style="--pct:92%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">默认均衡构筑。同一个引擎既防又打。</p>
+
+      <p>这是故障机器人版的"老老实实打"。首回合充冰霜格挡，次回合充闪电输出。再拿个冷静过牌、球状闪电刷伤害加球、冰川堆格挡。每颗球的被动都叠专注。二幕时你每回合不经意就能产出 15-20 格挡、10 伤害。</p>
+
+      <p>此流派最大优势在于稳定。它不依赖某张稀有就能赢 —— 线性累积好选择就行。一张碎片整理（永久 +1 专注）足以带你通第三幕。两张碎片整理加一张扩容可以稳升天 20。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">碎片整理<span class="card-name-en">Defragment</span></h3>
+          <div class="card-desc">获得 +1 <span class="kw">专注</span>。永久成长 —— 故障机器人池里最重要的一张。</div>
+          <div class="card-footer"><span>稀有</span><span>成长</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">扩容<span class="card-name-en">Capacitor</span></h3>
+          <div class="card-desc">增加 2 个球槽（升级 3）。让黑暗流和释放连击成为可能。</div>
+          <div class="card-footer"><span>精英</span><span>槽位扩张</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">球状闪电<span class="card-name-en">Ball Lightning</span></h3>
+          <div class="card-desc">造成 7 伤害。充能 1 颗闪电球。伤害+球一条龙 —— 至少拿一两张。</div>
+          <div class="card-footer"><span>普通</span><span>伤害+充能</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">冰冻<span class="card-name-en">Cold Snap</span></h3>
+          <div class="card-desc">造成 6 伤害。充能 1 颗冰霜球。故障机器人的防御版球状闪电。</div>
+          <div class="card-footer"><span>普通</span><span>伤害+冰</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">冷静<span class="card-name-en">Coolheaded</span></h3>
+          <div class="card-desc">充能 1 颗冰霜球。抽 1 张（升级 2 张）。每副故障组必拿。</div>
+          <div class="card-footer"><span>普通</span><span>过牌+冰</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">避雷针<span class="card-name-en">Lightning Rod</span></h3>
+          <div class="card-desc">获得 5 格挡。充能 1 颗闪电球。比防御更好 —— 故障组的保底牌。</div>
+          <div class="card-footer"><span>普通</span><span>格挡+闪电</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">冰川<span class="card-name-en">Glacier</span></h3>
+          <div class="card-desc">获得 7 格挡。充能 2 颗冰霜球。格挡成长 —— 每次打出 7 + 2×冰霜被动。</div>
+          <div class="card-footer"><span>精英</span><span>双冰</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">离断<span class="card-name-en">Sunder</span></h3>
+          <div class="card-desc">对血量 50% 以上的目标造成巨额伤害（升级更高）。首领斩杀利器。</div>
+          <div class="card-footer"><span>精英</span><span>斩杀</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>碎片整理</strong> —— 最多三张。永久专注是稀世资源。</li>
+            <li><strong>冷静</strong> —— 永远拿。每副组都要过牌。冰霜球是白送。</li>
+            <li><strong>扩容</strong> —— 有了碎片整理后，槽位价值暴涨。</li>
+            <li><strong>球状闪电 / 冰冻</strong> —— 便宜伤害加球。保底。</li>
+            <li><strong>偏见认知 · Biased Cognition</strong> —— 大幅 +专注带缺点；有过牌就没问题。</li>
+            <li><strong>冰川</strong> / <strong>暴雪</strong> —— 单卡大量格挡。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>递归 · Recursion</strong> —— 只有黑暗/释放流要，纯均衡用不上。</li>
+            <li><strong>自修 · Self Repair</strong> —— 战后回血，此格挡量级用不到。</li>
+            <li><strong>重启 · Reboot</strong> —— 洗组是利爪流专用，不通用。</li>
+            <li>单独的<strong>利爪</strong> —— 没有三四张加回报就是过渡。</li>
+            <li><strong>状态联动卡</strong> —— 不搭对应回报就跳过。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- 黑暗球释放 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · 黑暗球释放爆轰</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:96%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">让一颗黑暗球"煮"20 回合，一次释放，杀任何目标。</p>
+
+      <p>黑暗球被动每回合增长 6 + 专注 的伤害。释放时对血量最低目标造成全部累积伤害。配<strong>扩容</strong>（更多蓄积槽位）、<strong>碎片整理</strong>（更高每回合增长）、<strong>暴雪 / 末日与阴郁</strong>（拉升释放数值），一颗黑暗球累积到 100+ 伤害，再翻倍三倍。</p>
+
+      <p>关键操作：黑暗球永远<em>最后</em>充能，让它停在槽位右侧。槽满再充，<em>最左</em>的球释放 —— 也就是说你的冰霜释放了给格挡，黑暗球还在右边继续煮。配合冷静整理球位、递归重复释放高价值球。这副组对单体大血条的三幕首领尤为强 —— 单体斩杀正是黑暗球的绝活。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">扫射光束<span class="card-name-en">Sweeping Beam</span></h3>
+          <div class="card-desc">群攻伤害。若有空槽则充 1 颗黑暗球。群攻兼黑暗燃料。</div>
+          <div class="card-footer"><span>普通</span><span>群攻+黑暗</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">末日与阴郁<span class="card-name-en">Doom and Gloom</span></h3>
+          <div class="card-desc">充 1 颗黑暗球。造成群攻伤害。双功能黑暗启动件。</div>
+          <div class="card-footer"><span>精英</span><span>群攻+充能</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">暴雪<span class="card-name-en">Blizzard</span></h3>
+          <div class="card-desc">对所有敌人造成等于本场所充能球总数两倍的伤害。无上限成长。</div>
+          <div class="card-footer"><span>稀有</span><span>球数群攻</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">递归<span class="card-name-en">Recursion</span></h3>
+          <div class="card-desc">释放最右球，然后将其重新充能。"释放+再上"工具。</div>
+          <div class="card-footer"><span>稀有</span><span>释放回收</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">探寻<span class="card-name-en">Seek</span></h3>
+          <div class="card-desc">把抽牌堆里 2 张任意卡放入手牌。游戏里最强教师机 —— 定点捞决胜牌。</div>
+          <div class="card-footer"><span>精英</span><span>教师机</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">回响形态<span class="card-name-en">Echo Form</span></h3>
+          <div class="card-desc">每回合你打出的第一张牌会被打两次。双发探寻／暴雪／冷静 —— 失控级引擎。</div>
+          <div class="card-footer"><span>稀有</span><span>引擎</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">多重施法<span class="card-name-en">Multi-Cast</span></h3>
+          <div class="card-desc">释放最右球 X 次（X = 花费能量）。配电浆和黑暗就是致命。</div>
+          <div class="card-footer"><span>精英</span><span>X 释放</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">创造性AI<span class="card-name-en">Creative AI</span></h3>
+          <div class="card-desc">每回合开始向手牌加入随机能力牌。后期上限超高。</div>
+          <div class="card-footer"><span>稀有</span><span>变奏引擎</span></div>
+        </article>
+      </div>
+
+      <div class="callout tip">
+        <h4>顺序规则</h4>
+        <p>充能顺序即释放顺序。黑暗球<em>最后</em>充能让它停在右侧槽位。收尾时一次多重施法 X=3 按顺序释放最右三颗 —— 黑暗、黑暗、黑暗 —— 把全部累积伤害一口气倾泻到首领头上。</p>
+      </div>
+    </div>
+
+    <!-- ---- 利爪 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · 利爪（零费循环）</span>
+        <span class="archetype-rating">爆发力 <span class="rating-bar" style="--pct:78%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">每张利爪都加强每张利爪。永远循环，永远赢。</p>
+
+      <p>利爪是 0 费攻击，造成 3 伤害，同时永久为本场<em>所有</em>利爪 +2 伤害。你抽到、打出的利爪越多，后续利爪越疼。组件三要素：<strong>多张利爪</strong>（最好 4-6 张）、<strong>循环引擎</strong>（刮擦、全息图、冷静）、<strong>回收器</strong>（我为人人、狂野）。后期一张利爪打 20+，一回合打 5 张 = 100+，零费。</p>
+
+      <p>这是故障机器人的"单件引擎"流派。不需要专注、不需要球、不要贵稀有。它要的是<em>抽牌质量</em>。二幕每次奖励不是利爪、过牌或复印件都得跳过。重启类效果直接破坏流派 —— 利爪出到场后，把它们洗回去才是全部计划。</p>
+
+      <h4>关键卡牌</h4>
+      <div class="card-grid">
+        <article class="card-tile attack common">
+          <span class="card-cost">0</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">利爪<span class="card-name-en">Claw</span></h3>
+          <div class="card-desc">造成 3 伤害。本场所有利爪 +2 伤害。整副组的基础。</div>
+          <div class="card-footer"><span>普通</span><span>引擎</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">刮擦<span class="card-name-en">Scrape</span></h3>
+          <div class="card-desc">造成 7 伤害。抽 X 张，每张非 0 费的弃掉。职业最强循环。</div>
+          <div class="card-footer"><span>普通</span><span>循环</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">我为人人<span class="card-name-en">All for One</span></h3>
+          <div class="card-desc">把弃牌堆里所有 0 费卡加入手中。利爪回收器 —— 拿两张。</div>
+          <div class="card-footer"><span>精英</span><span>回收器</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">狂野<span class="card-name-en">Feral</span></h3>
+          <div class="card-desc">每张 0 费打出时多打一次（升级更便宜）。零费组的回响形态。</div>
+          <div class="card-footer"><span>稀有</span><span>零费复制</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">全息图<span class="card-name-en">Hologram</span></h3>
+          <div class="card-desc">从弃牌堆召回 1 张卡。获得格挡。升级后无消耗 —— 永动回收器。</div>
+          <div class="card-footer"><span>普通</span><span>单张回收</span></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- ---- 电浆连击 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">4 · 电浆连击（能量引擎）</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:88%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">球生能量。能量生球。无限。</p>
+
+      <p>电浆球被动每回合结束 +1 能量；释放 +2 能量。配<strong>电动力学</strong>（闪电球命中全体）、<strong>陨石袭击</strong>（充能黑暗+电浆+闪电）、<strong>混沌</strong>（随机球），你能造出一个能量不会断、槽位始终满、每回合 30 伤害 + 20 格挡的引擎。它在三幕走廊无敌。</p>
+
+      <h4>关键卡牌</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">电动力学<span class="card-name-en">Electrodynamics</span></h3>
+          <div class="card-desc">闪电球改为攻击全体。职业最强群体能力。</div>
+          <div class="card-footer"><span>稀有</span><span>群攻引擎</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">5</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">陨石袭击<span class="card-name-en">Meteor Strike</span></h3>
+          <div class="card-desc">造成 24 伤害。充 3 颗电浆球。能量雪球 —— 5 费投入换 6 能量释放。</div>
+          <div class="card-footer"><span>稀有</span><span>组合拳</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">混沌<span class="card-name-en">Chaos</span></h3>
+          <div class="card-desc">充 1 颗随机球。零费 —— 时不时会中电浆 —— 配扩容特别好。</div>
+          <div class="card-footer"><span>精英</span><span>便宜充能</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">涡轮<span class="card-name-en">Turbo</span></h3>
+          <div class="card-desc">+2 能量。加一张虚空牌到弃牌堆（下次抽到 -1 能量）。净投入 1 能量换 2 能量。</div>
+          <div class="card-footer"><span>精英</span><span>能量爆发</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <h4>故障机器人的大局观</h4>
+      <p>每副故障机器人组都受益于一张探寻、一张碎片整理、一张扩容。任何球类流派里的三张默认拿牌。除此之外，<strong>回响形态</strong>是实打实的决胜稀有 —— 它会把你每回合打出的第一张卡翻倍，无论是探寻、暴雪、蓄意豪赌还是陨石袭击。见到就绕组围着它打。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== 储君 -->
+<section id="regent" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">☼</div>
+      <div>
+        <span class="eyebrow">储君</span>
+        <h2>储君 · The Regent</h2>
+        <p class="char-subtitle">"星辰比铁廉价。尽情挥霍它们。"</p>
+      </div>
+    </div>
+
+    <p>储君是《杀戮尖塔2》新增的两位角色之一，也是设计最野心勃勃的那一个。两条资源并行：<strong>能量</strong>（标准、每回合重置）和<strong>星力</strong>（储君独有、跨回合保留、无上限）。星力驱动法术卡 —— X 费攻击和技能，投入星力越多越强。这种解耦让"本回合能打什么"与"能打多少伤害"彻底分家，造就全游戏最高爆发的回合之一。</p>
+
+    <p>储君的第二条轴是<strong>锻造</strong> —— 为起手卡君主之刃永久提升伤害的战中增益。每张带锻造的卡都永久为君主之刃加伤害，直到本场战斗结束。三幕一张重锻之刃能打 40-60+ 伤害。锻造与星力之间，储君拥有两条迥异、都可行的决胜路线，还有兼用两者的混合构筑。</p>
+
+    <p>储君的难点是<em>资源纪律</em>。星力不重置 —— 它很珍贵。《杀戮尖塔2》第二糟糕的决策模式就是二回合慌了、砸 8 星力炸一个星尘出去只打了个寻常伤害，到首领机制时空空如也。优秀储君玩家在一幕像守财奴一样攒星力，只在算出能一发入魂时才动手。</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>初始遗物 —— 神权 / 星辰之冠 · Divine Right / Crown of Stars</h4>
+        <p>每场战斗开始生成 3 星力。你的星力基线 —— 每场战斗开局前就有 3 星存着。格外珍贵：它是全游戏最具"主动价值"的初始遗物。</p>
+      </div>
+      <div class="info-box">
+        <h4>初始血量</h4>
+        <p>72 HP。偏脆。没有战斗回血。储君的脆弱被"星力可跨场攒"（受遗物限制）抵消一部分。</p>
+      </div>
+      <div class="info-box">
+        <h4>初始招牌牌 —— 君主之刃 · Sovereign Blade</h4>
+        <p>一张 1 费攻击，基础伤害较低，依靠本场锻造永久提升。永远不要转化它。永远优先升级它。</p>
+      </div>
+      <div class="info-box">
+        <h4>他做不到的事</h4>
+        <p>没中毒、没球、没力量、没小刀。不能打碎伤 —— 只能爆发。一幕多敌房间是最难的阶段；提前规划群攻或带上伽马爆破。</p>
+      </div>
+    </div>
+
+    <!-- ---- 星力爆发 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · 星辰爆发（星力引擎）</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:95%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">攒三回合星力，一发星尘，秒杀首领。</p>
+
+      <p>星力流玩起来像 RPG 里的大法师。铺垫回合用聚光、流光、秘藏、日光打击生成星力。爆发回合用星尘（按星力多段攻击）或辉耀（群攻大招）倾泻出来。关键是<strong>星位 · Alignment</strong>，以极优比率把星力转成能量 —— 有时一回合能把整个手牌打完接一发星尘，9 星力满级约 9 × 10 伤害。也就是三回合的 90 伤害单体决胜手。</p>
+
+      <p>此流派对三幕极其适配 —— 爆发胜于稳定。它的一幕弱点是你得<em>撑到</em>爆发期 —— 群星披风、反射 · Reflect、月亮蛋糕 · Lunar Pastry（遗物）是你的保险。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">日光打击<span class="card-name-en">Solar Strike</span></h3>
+          <div class="card-desc">造成 8 伤害。+1 星力。伤害+星力 —— 本流派的保底牌。</div>
+          <div class="card-footer"><span>普通</span><span>攻击+星力</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">聚光<span class="card-name-en">Gather Light</span></h3>
+          <div class="card-desc">获得格挡 + 2 星力（升级后格挡更高）。防御回合效率极佳。</div>
+          <div class="card-footer"><span>普通</span><span>格挡+星力</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">X</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">星尘<span class="card-name-en">Stardust</span></h3>
+          <div class="card-desc">造成 5 伤害 X 次（X = 花费星力）。决胜牌 —— 升级每次伤害翻倍。</div>
+          <div class="card-footer"><span>稀有</span><span>X 星决胜</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">X</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">辉耀<span class="card-name-en">Radiant</span></h3>
+          <div class="card-desc">群攻 X 次（X = 花费星力）。星力版群攻决胜 —— 首领房清场。</div>
+          <div class="card-footer"><span>稀有</span><span>群 X 爆发</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">星位<span class="card-name-en">Alignment</span></h3>
+          <div class="card-desc">花费星力。获得能量。关键资源转换器 —— 让多次星尘回合成为可能。</div>
+          <div class="card-footer"><span>精英</span><span>星→能</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">流光<span class="card-name-en">Glow</span></h3>
+          <div class="card-desc">+1 星力。抽 1 张。循环式星力生成器 —— 让引擎常青。</div>
+          <div class="card-footer"><span>普通</span><span>免费星力</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">群星披风<span class="card-name-en">Cloak of Stars</span></h3>
+          <div class="card-desc">花费星力按倍率获得格挡。便宜、大量格挡 —— 星尘的防御翻版。</div>
+          <div class="card-footer"><span>精英</span><span>星→格挡</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">秘藏<span class="card-name-en">Hidden Cache</span></h3>
+          <div class="card-desc">一次获得大量星力。一发铺垫牌 —— 开局手牌里极好。</div>
+          <div class="card-footer"><span>精英</span><span>星力灌注</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">星之子<span class="card-name-en">Child of the Stars</span></h3>
+          <div class="card-desc">每回合开始 +1 星力。永久成长基线 —— 必拿。</div>
+          <div class="card-footer"><span>稀有</span><span>被动星力</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">创世纪<span class="card-name-en">Genesis</span></h3>
+          <div class="card-desc">一次获得大量星力。一发引爆器 —— 直接铺出 40 星力星尘。</div>
+          <div class="card-footer"><span>稀有</span><span>巨量星力</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>星尘</strong> —— 决胜牌。尽快升级；第二张也可以。</li>
+            <li><strong>星位</strong> —— 第二关键；把多动作的星力回合变现。</li>
+            <li><strong>星之子</strong> —— 永远拿。</li>
+            <li><strong>聚光</strong> —— 池里最强普通技能。</li>
+            <li><strong>混沌 X · Chemical X</strong>（遗物）—— 提升每张 X 费牌收益；决胜级遗物。</li>
+            <li><strong>月亮蛋糕 · Lunar Pastry</strong>（遗物）—— 每回合每一场都在生成星力。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>战场锻造 · Wrought in War</strong> —— 锻造轴，跟这里不搭。</li>
+            <li><strong>征服者 / 千锤百炼</strong> —— 纯锻造件，不要污染星力组。</li>
+            <li>无星力联动的<strong>单段攻击</strong> —— 二幕就是废牌。</li>
+            <li><strong>召还 · Summon Forth</strong> —— 君主之刃取向，与星力回合冲突。</li>
+            <li><strong>熔炉</strong> —— 锻造能力，对星力无感。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>优先凑的遗物</h4>
+      <div class="pills">
+        <span class="pill gold">混沌 X · Chemical X</span>
+        <span class="pill gold">银河尘埃 · Galactic Dust</span>
+        <span class="pill gold">月亮蛋糕 · Lunar Pastry</span>
+        <span class="pill">迷你储君 · Mini Regent</span>
+        <span class="pill">游标卡尺 · Calipers</span>
+        <span class="pill">符文金字塔 · Runic Pyramid</span>
+      </div>
+    </div>
+
+    <!-- ---- 锻造 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · 君主之刃锻造</span>
+        <span class="archetype-rating">稳定度 <span class="rating-bar" style="--pct:85%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">一张牌。反复使用。永远在长大。</p>
+
+      <p>锻造组核心是君主之刃 —— 初始攻击。每张锻造件（千锤百炼、战场锻造、熔炉）永久强化它，持续整场战斗。三幕一发君主之刃 40-60+。关键是让它维持轮换 —— <strong>宇宙漠视</strong>、<strong>召还</strong>和调教得当的过牌引擎能每回合循环它。</p>
+
+      <p>这是储君里最稳的首领流派。没有会失手的爆发窗口 —— 你有的是<em>稳定、逐步增强的伤害</em>，战斗越长越强。对马拉松型的三幕首领，这副组纯粹是压倒性输出。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">千锤百炼<span class="card-name-en">Beat Into Shape</span></h3>
+          <div class="card-desc">锻造并获得格挡。高效主锻件 —— 可多张。</div>
+          <div class="card-footer"><span>普通</span><span>锻造+格挡</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">战场锻造<span class="card-name-en">Wrought in War</span></h3>
+          <div class="card-desc">造成伤害并锻造。二合一 —— 任何储君组都想要一张。</div>
+          <div class="card-footer"><span>普通</span><span>伤害+锻造</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">召还<span class="card-name-en">Summon Forth</span></h3>
+          <div class="card-desc">把君主之刃放回手牌。回收器 —— 维持刃的轮换。</div>
+          <div class="card-footer"><span>普通</span><span>刃回手</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">宇宙漠视<span class="card-name-en">Cosmic Indifference</span></h3>
+          <div class="card-desc">让君主之刃下回合回到手牌。比召还更优雅的轮换工具。</div>
+          <div class="card-footer"><span>精英</span><span>触发回手</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">熔炉<span class="card-name-en">Furnace</span></h3>
+          <div class="card-desc">每回合开始自动锻造。永久的锻造成长 —— 长战决胜。</div>
+          <div class="card-footer"><span>稀有</span><span>被动锻造</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">堡垒<span class="card-name-en">Bulwark</span></h3>
+          <div class="card-desc">获得大量格挡 + 锻造。双功能首回合牌 —— 值那 2 能量。</div>
+          <div class="card-footer"><span>精英</span><span>格挡+锻造</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">2</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">征服者<span class="card-name-en">Conqueror</span></h3>
+          <div class="card-desc">造成伤害等于君主之刃加成的两倍。秒精英工具 —— 锻造的变现手。</div>
+          <div class="card-footer"><span>稀有</span><span>刃翻倍</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">追寻之刃<span class="card-name-en">Seeking Edge</span></h3>
+          <div class="card-desc">多目标君主之刃变体。弥补本流派的群攻短板。</div>
+          <div class="card-footer"><span>精英</span><span>群攻刃</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>熔炉</strong> —— 永远。一张就能单卡赢局。</li>
+            <li><strong>千锤百炼</strong> —— 两张，都升级。</li>
+            <li><strong>宇宙漠视</strong> —— 优雅的回手工具。</li>
+            <li><strong>剑术手册 · Fencing Manual</strong>（遗物）—— 锻造增幅器。</li>
+            <li><strong>能量遗物</strong> —— 每回合更多次君主之刃 = 更多伤害。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>星尘 / 辉耀</strong> —— 星力轴，会分散资源。</li>
+            <li><strong>星位</strong> —— 没星力可转。</li>
+            <li><strong>秘藏</strong> —— 星力铺垫，不用。</li>
+            <li>不带锻造的<strong>纯技能</strong> —— 理想状态下每张技能都该锻造。</li>
+            <li><strong>伽马爆破</strong> —— 星力消费者，不是锻造。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- 铸匠混合 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · 混合铸匠（无限）</span>
+        <span class="archetype-rating">技术上限 <span class="rating-bar" style="--pct:92%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">铸匠落地，整副组开始自我循环。</p>
+
+      <p>储君的隐藏终局 —— <strong>铸匠 · The Smith</strong>（稀有能力）让打出的卡可以回到手。配合<strong>星位</strong>、<strong>召还</strong>、<strong>宇宙漠视</strong>，你的牌组变成每回合都在打、在锻、在打伤害的自给自足引擎。这是储君的无限 —— 一副三幕走廊清场组，能把长战斗变成走过场。</p>
+
+      <p>此流派需要稀有牌和高操作水平。一幕别 All in —— 保持牌组弹性，二三幕铸匠落地时再转向。</p>
+
+      <h4>关键卡牌</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">铸匠<span class="card-name-en">The Smith</span></h3>
+          <div class="card-desc">授予锻造和法术牌的"回手"机制。定义本流派的引擎。</div>
+          <div class="card-footer"><span>稀有</span><span>引擎</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">伽马爆破<span class="card-name-en">Gamma Blast</span></h3>
+          <div class="card-desc">花 1 星力施加易伤。配任何星力／锻造混合组都好用 —— 便宜减益。</div>
+          <div class="card-footer"><span>精英</span><span>减益</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">垂死之星<span class="card-name-en">Dying Star</span></h3>
+          <div class="card-desc">每花费 1 星力获得群体格挡。重压回合的专用防御牌。</div>
+          <div class="card-footer"><span>精英</span><span>群体格挡</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <h4>储君的大局观</h4>
+      <p>永远不要为一张不必打的牌浪费星力。储君玩家的典型失误是二回合慌张甩 6 星力。留着。存下来。只在算出能击杀或关键格挡窗口时才花。星力经济是储君的决策层全部。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== 亡灵契约师 -->
+<section id="necrobinder" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">☠</div>
+      <div>
+        <span class="eyebrow">亡灵契约师</span>
+        <h2>亡灵契约师 · The Necrobinder</h2>
+        <p class="char-subtitle">"死亡是延迟，不是结束。让奥斯提去做脏活。"</p>
+      </div>
+    </div>
+
+    <p>亡灵契约师是《杀戮尖塔2》的第二位新面孔，也是全游戏机制最奇特的职业。她的身份建立在三根支柱上：持久<strong>召唤物（奥斯提）</strong>、<strong>灾厄</strong>斩杀减益、以及被重新定义为<em>优势</em>的过去缺点（<strong>虚无</strong>、<strong>灵魂</strong>）。她是最像"引擎构筑者"的职业 —— 一副合格的亡灵组看起来像一团相互咬合的零件，整体远大于任何单卡。</p>
+
+    <p>她的初始遗物<strong>奥斯提契约 · Osty's Binding</strong>每场战斗开始召唤奥斯提。奥斯提是一只 1 HP 的骷髅骨手，会独立攻击敌人、替你挡刀，可被召唤类卡升级。三幕一只喂得好的奥斯提有 40+ HP 且每回合打 15+ 伤害，同时还替你挡着。他是全游戏最具定义性的角色机能 —— 尖塔里没有任何别的玩法像它。</p>
+
+    <p>亡灵契约师比其他职业更考验读盘。这回合敌人攻击还是格挡？奥斯提一下就没还是能扛三下？灾厄 X 层 + 回合 N 是否足够在大招前斩杀？她要求更多 —— 也回报更多。</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>初始遗物 —— 奥斯提契约 · Osty's Binding</h4>
+        <p>战斗开始召唤奥斯提（1 HP，独立攻击敌人）。奥斯提替你挡包括致命伤在内的攻击 —— 实质把你的血条翻倍。</p>
+      </div>
+      <div class="info-box">
+        <h4>初始血量</h4>
+        <p>68 HP —— 全游戏最低。亡灵契约师把奥斯提当真正的血条，自己的脸血只是计时器。</p>
+      </div>
+      <div class="info-box">
+        <h4>核心机制</h4>
+        <p><strong>召唤</strong> —— 增长奥斯提的 HP 和伤害。<strong>灾厄</strong> —— 敌人身上叠层；HP 降至该层时即死。<strong>灵魂</strong> —— 0 费"抽 2 张后消耗"的技能。<strong>血魔法</strong> —— 花 HP 换效果。</p>
+      </div>
+      <div class="info-box">
+        <h4>她做不到的事</h4>
+        <p>没有力量、小刀、球、星力。她的伤害要么来自奥斯提、要么来自灾厄斩杀、要么来自直接攻击。一幕稳定性差 —— 很多局都会感觉一幕挺难过。</p>
+      </div>
+    </div>
+
+    <!-- ---- 奥斯提 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · 奥斯提（召唤物指挥）</span>
+        <span class="archetype-rating">稳定度 <span class="rating-bar" style="--pct:87%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">你的召唤物攻击。你的召唤物挡刀。你坐着抽牌。</p>
+
+      <p>奥斯提组建造一只肉盾骷髅。前期召唤类卡（响指、嗾使、吸引仇恨）喂血、触发攻击。奥斯提的 HP 跨回合保留 —— 不是回合结束消失的格挡。二幕时奥斯提每回合吃掉 25+ 伤害（本来会砸你那脆脆的血条），同时还打 10+ 伤害回去。你扮演指挥官：召唤、增益、触发组合、保护召唤物。</p>
+
+      <p>流派优势是<em>首回合价值</em>。奥斯提自动登场。召唤卡 1 费。第二回合前期场面就有意义。它的劣势是绕过奥斯提直接打你的敌人 —— 三幕某些精英带绕盾减益，需要备选方案。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">响指<span class="card-name-en">Snap</span></h3>
+          <div class="card-desc">奥斯提发动便宜攻击。保留。保底召唤件 —— 可拿两三张。</div>
+          <div class="card-footer"><span>普通</span><span>保留奥斯提</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">吸引仇恨<span class="card-name-en">Pull Aggro</span></h3>
+          <div class="card-desc">奥斯提拦下攻击。获得格挡。亡灵契约师最好的单卡防御操作。</div>
+          <div class="card-footer"><span>普通</span><span>拉仇恨</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">嗾使<span class="card-name-en">Sic 'Em</span></h3>
+          <div class="card-desc">奥斯提带召唤的攻击。在输出同时强化奥斯提的属性。</div>
+          <div class="card-footer"><span>精英</span><span>召唤攻击</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">击掌<span class="card-name-en">High Five</span></h3>
+          <div class="card-desc">群攻伤害并施加易伤。奥斯提组的走廊答案。</div>
+          <div class="card-footer"><span>普通</span><span>群攻</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">骨鸣<span class="card-name-en">Rattle</span></h3>
+          <div class="card-desc">奥斯提多段攻击。奥斯提喂饱后成长凶猛 —— 组合爆发工具。</div>
+          <div class="card-footer"><span>精英</span><span>多段召唤</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">压扁<span class="card-name-en">Flatten</span></h3>
+          <div class="card-desc">奥斯提缓冲足够高时变成免费伤害。零费收尾件。</div>
+          <div class="card-footer"><span>精英</span><span>条件免费</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">骨笛<span class="card-name-en">Bone Flute</span></h3>
+          <div class="card-desc">每回合奥斯提额外获得 HP 与伤害。相当于奥斯提版的恶魔形态。</div>
+          <div class="card-footer"><span>稀有</span><span>被动召唤</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">修书刀<span class="card-name-en">Book Repair Knife</span></h3>
+          <div class="card-desc">治疗奥斯提（也能治疗你）。长战维续。</div>
+          <div class="card-footer"><span>稀有</span><span>治疗</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>优先拿</h4>
+          <ul>
+            <li><strong>骨笛</strong> —— 永远，首抢。</li>
+            <li><strong>响指</strong> —— 最多三张。保留让连击跨回合。</li>
+            <li><strong>吸引仇恨</strong> —— 一幕最好的保命工具。</li>
+            <li><strong>嗾使</strong> —— 攻击+召唤；动作效率最高。</li>
+            <li><strong>不死印记 · Undying Sigil</strong>（遗物）—— 削弱敌人，减少奥斯提挨的伤害。</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>优先跳过</h4>
+          <ul>
+            <li><strong>书页风暴 · Pagestorm</strong> —— 虚无成长件，错流派。</li>
+            <li><strong>自下而上 · Pull From Below</strong> —— 虚无专属收益，跳。</li>
+            <li><strong>末日审判 · End of Days</strong> —— 灾厄紧急按钮；奥斯提用不到。</li>
+            <li><strong>玷污 · Defile</strong> —— 灾厄爆发；错轴。</li>
+            <li><strong>血魔法类</strong> —— 亡灵契约师底血量就低，血掉不起。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- 灾厄 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · 灾厄（斩杀减益）</span>
+        <span class="archetype-rating">上限 <span class="rating-bar" style="--pct:91%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">叠灾厄。敌人 HP 跌到灾厄层数即死。不用算伤害。</p>
+
+      <p>灾厄是斩杀机制 —— 敌人 HP 降至其灾厄层数或更低时，其回合结束立刻死亡。通过负脉冲（群）、亡者引使（群+虚弱）、灾厄使者（伤害+抽牌）、枯萎打击堆层。变现件：<strong>时日无多</strong>（高血量区斩杀）、<strong>末日审判</strong>（即时结算灾厄）。</p>
+
+      <p>灾厄是亡灵契约师最友好的群体轴。走廊尾部四个敌人每个 3 层灾厄，他们回合结束就死。缺点：你必须撑到灾厄生效。需要格挡。格挡。更多格挡。</p>
+
+      <h4>优先选取</h4>
+      <div class="card-grid">
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">负脉冲<span class="card-name-en">Negative Pulse</span></h3>
+          <div class="card-desc">群施灾厄 + 格挡。双功能骨干。</div>
+          <div class="card-footer"><span>普通</span><span>群灾厄</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">亡者引使<span class="card-name-en">Deathbringer</span></h3>
+          <div class="card-desc">群施灾厄+虚弱。减益+斩杀 —— 一次清多间。</div>
+          <div class="card-footer"><span>精英</span><span>群灾厄+虚弱</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">灾厄使者<span class="card-name-en">Scourge</span></h3>
+          <div class="card-desc">造成 13 伤害。抽 1 张。施加灾厄。高效单体攻击。</div>
+          <div class="card-footer"><span>普通</span><span>伤害+灾厄+过牌</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">枯萎打击<span class="card-name-en">Blight Strike</span></h3>
+          <div class="card-desc">伤害随灾厄层数成长。合格保底带上限。</div>
+          <div class="card-footer"><span>普通</span><span>灾厄成长</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">玷污<span class="card-name-en">Defile</span></h3>
+          <div class="card-desc">高伤害灾厄启动件 —— 快速把敌人 HP 打到灾厄阈值下。</div>
+          <div class="card-footer"><span>精英</span><span>爆发</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">死亡之门<span class="card-name-en">Death's Door</span></h3>
+          <div class="card-desc">按组里灾厄卡张数获得格挡。按你的投入成长。</div>
+          <div class="card-footer"><span>精英</span><span>灾厄计数格挡</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">3</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">末日审判<span class="card-name-en">End of Days</span></h3>
+          <div class="card-desc">立刻结算敌人身上所有灾厄。紧急按钮 —— 赢下不可赢的房间。</div>
+          <div class="card-footer"><span>稀有</span><span>即时斩杀</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">2</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">时日无多<span class="card-name-en">Time's Up</span></h3>
+          <div class="card-desc">按灾厄成长的斩杀攻击。三幕精英决胜手。</div>
+          <div class="card-footer"><span>稀有</span><span>斩杀</span></div>
+        </article>
+      </div>
+
+      <div class="callout warn">
+        <h4>警告 —— 神器</h4>
+        <p>带神器的敌人会吃掉你的第一次灾厄。早期至少堆 5 层，或备末日审判穿透。</p>
+      </div>
+    </div>
+
+    <!-- ---- 虚无+灵魂 ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · 虚无 + 灵魂</span>
+        <span class="archetype-rating">技术上限 <span class="rating-bar" style="--pct:86%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">把缺点变引擎。亡灵契约师最清爽的无限。</p>
+
+      <p>虚无卡在回合末不打出则消耗。过去纯缺点。亡灵契约师这里，虚无数量触发收益：<strong>书页风暴</strong>按打出的虚无抽牌、<strong>自下而上</strong>按虚无数成长、<strong>穿幕</strong>让下一张虚无免费。灵魂是 0 费抽 2 张后消耗的技能 —— 免费过牌驱动循环。</p>
+
+      <p>流派到位后回合长这样：抽一张虚无、打穿幕（免费虚无）、打免费虚无、书页风暴 +2 抽、再发现一张虚无、无限连击。它是《杀戮尖塔2》里上手门槛较高的流派之一，但也是最爽的之一。</p>
+
+      <h4>关键卡牌</h4>
+      <div class="card-grid">
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">虚空召唤<span class="card-name-en">Call of the Void</span></h3>
+          <div class="card-desc">向手牌加入虚无类卡。虚无触发器的启动件。</div>
+          <div class="card-footer"><span>精英</span><span>启动件</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">能力</span>
+          <h3 class="card-name">书页风暴<span class="card-name-en">Pagestorm</span></h3>
+          <div class="card-desc">每打出一张虚无卡抽一张。过牌引擎。</div>
+          <div class="card-footer"><span>稀有</span><span>虚无抽牌</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">攻击</span>
+          <h3 class="card-name">自下而上<span class="card-name-en">Pull From Below</span></h3>
+          <div class="card-desc">伤害按本场打出的虚无卡数成长。4 张以上起作决胜手。</div>
+          <div class="card-footer"><span>精英</span><span>成长</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">穿幕<span class="card-name-en">Veilpiercer</span></h3>
+          <div class="card-desc">下一张虚无卡费用变 0。催化免费链。</div>
+          <div class="card-footer"><span>精英</span><span>虚无启动</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">雕琢打击<span class="card-name-en">Sculpting Strike</span></h3>
+          <div class="card-desc">把一张卡变为虚无。与虚无收益联动 —— 每回合触发更多。</div>
+          <div class="card-footer"><span>普通</span><span>虚无化</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">0</span><span class="card-type-badge">技能</span>
+          <h3 class="card-name">灵魂<span class="card-name-en">Soul (令牌)</span></h3>
+          <div class="card-desc">抽 2 张。消耗。由亡灵契约师的卡生成 —— 0 费引擎燃料。</div>
+          <div class="card-footer"><span>普通</span><span>免费抽牌</span></div>
+        </article>
+      </div>
+
+      <div class="callout tip">
+        <h4>提示 —— 灵魂抽到就打</h4>
+        <p>灵魂打出后消耗 —— 每个灵魂都是保证 +2 抽加一次削组。永远在循环决胜手之前就打；别想着"留着待会儿"。</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>亡灵契约师的大局观</h4>
+      <p>这个职业里没有什么"通用件" —— 每个流派都想要特定卡，奥斯提混虚无会让你二幕溺死。第三次奖励就得贴死一条赛道。亡灵契约师也是最吃错删卡的职业 —— 商店删卡<strong>只</strong>针对起手卡，永远不要删你流派的卡哪怕它看起来弱。联动就是一切。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== 首领指南 -->
+<section id="bosses">
+  <div class="container">
+    <span class="eyebrow">第三章</span>
+    <h2>首领与精英先验</h2>
+    <p class="section-intro">决定胜负的那些时刻的一般规则。跨职业通用。</p>
+
+    <div class="grid-2">
+      <div class="info-box">
+        <h4>第一幕首领</h4>
+        <p>一次打大数字。优先一次性高格挡（升级甩掉、聚光、吸引仇恨）。成长型此时还没起来 —— 大方用药。至少升级一张决胜牌。</p>
+      </div>
+      <div class="info-box">
+        <h4>第二幕首领</h4>
+        <p>成长型压力：惩罚长战胜于短战。中毒、黑暗球蓄能、锻造在这里登顶。至少一张可靠的群攻应付多目标变体。</p>
+      </div>
+      <div class="info-box">
+        <h4>第三幕首领</h4>
+        <p>上状态牌和带神器的变体。必备：
+        <ul>
+          <li>不依赖第一次效果命中的成长（针对神器）。</li>
+          <li>应对召唤小弟的群攻或多段。</li>
+          <li>首回合至少 15 格挡 —— 布局回合会被打死。</li>
+        </ul></p>
+      </div>
+      <div class="info-box">
+        <h4>第四幕 / 真结局（EA 暂未开放）</h4>
+        <p>心脏战和第四幕目前<em>不在</em>《杀戮尖塔2》抢先体验版本中 —— 跑图以三幕首领作结。Mega Crit 已确认真结局会在后续 EA 补丁里加入；在此之前，每角色的升天阶梯就是最具完成感的目标。</p>
+      </div>
+    </div>
+
+    <h3>精英优先级指南</h3>
+    <table class="tier-table">
+      <thead>
+        <tr><th>精英类型</th><th>优先级</th><th>理由</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>二幕精英，卡组 70% HP 以上</td><td class="diff-easy">打</td><td>精英遗物是全游戏最大战力跃升。能承受血量代价就打。</td></tr>
+        <tr><td>一幕精英，低于 50% HP</td><td class="diff-moderate">绕过</td><td>没有燃血 + 起手组 = 难扛。风险收益为负。</td></tr>
+        <tr><td>三幕精英，组还没成型</td><td class="diff-hard">非必要不打</td><td>三幕精英遗物是决胜级（钥匙形等），但需要已完成的组。</td></tr>
+        <tr><td>地精诺伯等价（惩罚技能）</td><td class="diff-hard">只有格挡组</td><td>惩罚技能牌 —— 静默、储君受损；铁甲受益。</td></tr>
+        <tr><td>拉加温等价（按减益成长）</td><td class="diff-moderate">静默/故障轻松</td><td>第三回合苏醒；在苏醒前秒掉或熬过去。</td></tr>
+      </tbody>
+    </table>
+
+    <h3>药水策略</h3>
+    <p>药水是升天 10+ 最被低估的资源。规则：</p>
+    <ul style="padding-left: 24px; color: var(--ink-dim); line-height: 1.9;">
+      <li><strong>留给首领。</strong>一般走廊你若 60%+ HP，不要喝。</li>
+      <li><strong>精英若不喝会多 15+ 伤害就喝。</strong>你不会后悔。</li>
+      <li><strong>决胜前喝力量药。</strong>旋风斩／双重打击每段 +2 是 20 伤害和 60 伤害之间的差距。</li>
+      <li><strong>瓶中仙女无价。</strong>商店卖药格时，值得为它买下来。</li>
+      <li><strong>炼金师事件</strong> —— 两瓶药转一瓶更稀有的。不是永远划算。普通→精英可以；精英→稀有通常不行（太多废稀有）。</li>
+    </ul>
+
+    <h3>商店先验</h3>
+    <p>有纪律的商店消费是尖塔的隐藏技巧。按顺序：</p>
+    <ol style="padding-left: 24px; color: var(--ink-dim); line-height: 1.9;">
+      <li>删卡服务（永远，除非组已少于 20 张）。</li>
+      <li>能量遗物（二幕前还没有就买）。</li>
+      <li>完成流派的稀有牌（突破极限、精准、毒烟、碎片整理等）。</li>
+      <li>匹配流派的遗物。</li>
+      <li>药格或游标卡尺级遗物。</li>
+      <li>什么都不买 —— 没合适的，走出商店也行。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================================================== 参考来源 -->
+<footer id="sources">
+  <div class="container">
+    <p>&mdash; <em>登临尖塔</em> &mdash;<br />
+    本攻略来源为社区智慧、强度榜和公开构筑分析。《杀戮尖塔2》由 Mega Crit 开发。所有卡牌名称与游戏机制归其合法所有者。</p>
+
+    <div class="callout tip" style="margin-top: 24px;">
+      <h4>关于翻译的说明</h4>
+      <p>每张卡牌均同时标注中英文名称，便于跨源验证。回归自一代的卡牌（铁甲战士、静默猎手、故障机器人）采用杀戮尖塔一代官方简中译名；二代新增角色（储君、亡灵契约师）及其独有关键词依据简中社区主流译名（GamerSky、灰机 Wiki、17173、Urarawin 等），个别尚无稳定译名的新卡以常见社区用法为准；版本更新后译名可能调整。卡面效果均为概述性改写，非官方卡面文字。</p>
+    </div>
+
+    <div class="sources">
+      <h4>资料来源与延伸阅读</h4>
+      <ul>
+        <li>灰机 Wiki · <a href="https://sts2.huijiwiki.com/wiki/%E5%8D%A1%E7%89%8C">《杀戮尖塔2》中文维基 - 卡牌</a></li>
+        <li>游民星空 · <a href="https://www.gamersky.com/handbook/202603/2102031.shtml">《杀戮尖塔2》战士全卡牌分析</a> · <a href="https://www.gamersky.com/handbook/202603/2101871.shtml">亡灵契约师灾厄流攻略</a> · <a href="https://www.gamersky.com/handbook/202603/2102448_2.shtml">全角色玩法指南</a> · <a href="https://www.gamersky.com/tools/sts2wiki/">卡牌数据库</a></li>
+        <li>Urarawin · <a href="https://sts2.urarawin.com/">《杀戮尖塔2》中文资料库</a></li>
+        <li>STS2.GG · <a href="https://slaythespire2.gg/zh/characters/the-regent">储君角色页</a> · <a href="https://slaythespire2.gg/zh/cards">卡牌库</a></li>
+        <li>STS2 Wiki · <a href="https://sts2-wiki.org/zh/slay-the-spire-2-cards">杀戮尖塔2 全卡牌列表（中文）</a></li>
+        <li>英文来源：<a href="https://mobalytics.gg/slay-the-spire-2/characters">Mobalytics</a> · <a href="https://sts2.untapped.gg/">Untapped.gg</a> · <a href="https://www.thegamer.com/slay-the-spire-2-best-builds-relics-cards-the-ironclad-strength-vulnerable-guide/">The Gamer</a> · <a href="https://kotaku.com/slay-the-spire-2-tips-tricks-beginner-deckbuilding-2000680050">Kotaku</a> · <a href="https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:Necrobinder">官方 wiki.gg</a></li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 30px; font-size: 0.7rem; color: var(--ink-muted);">2026 年 4 月构建 · 0.103.x 版本 · 版本迭代后请刷新。</p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

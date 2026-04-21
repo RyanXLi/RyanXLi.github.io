@@ -1,0 +1,1818 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ascend the Spire — The Definitive Slay the Spire 2 Strategy Guide</title>
+<meta name="description" content="A comprehensive, character-by-character strategy guide for Slay the Spire 2 — covering every archetype, key cards, priority picks, and what to skip." />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="googlebot" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ================================================== NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">⚔ Ascend the Spire</div>
+    <ul class="navlinks">
+      <li><a href="#universal">Fundamentals</a></li>
+      <li><a href="#ironclad">Ironclad</a></li>
+      <li><a href="#silent">Silent</a></li>
+      <li><a href="#defect">Defect</a></li>
+      <li><a href="#regent">Regent</a></li>
+      <li><a href="#necrobinder">Necrobinder</a></li>
+      <li><a href="#bosses">Bosses</a></li>
+      <li><a href="#sources">Sources</a></li>
+      <li><a href="zh.html" class="lang-toggle" lang="zh">中文</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================================================== HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">The Definitive Guide · Patch 0.103.x · April 2026</span>
+    <h1>Ascend<br />the Spire</h1>
+    <p class="tagline">A complete, opinionated playbook for every class in Slay the Spire 2.<br />Built for players who want to <em>actually</em> win.</p>
+
+    <div class="char-picker">
+      <a class="char-picker-item" href="#ironclad" style="--char-color: var(--c-ironclad);">
+        <div class="emblem">⚔</div>
+        <span class="cp-name">The Ironclad</span>
+        <span class="cp-role">Strength · Exhaust · HP</span>
+      </a>
+      <a class="char-picker-item" href="#silent" style="--char-color: var(--c-silent);">
+        <div class="emblem">🗡</div>
+        <span class="cp-name">The Silent</span>
+        <span class="cp-role">Poison · Shiv · Sly</span>
+      </a>
+      <a class="char-picker-item" href="#defect" style="--char-color: var(--c-defect);">
+        <div class="emblem">◈</div>
+        <span class="cp-name">The Defect</span>
+        <span class="cp-role">Orbs · Focus · Claw</span>
+      </a>
+      <a class="char-picker-item" href="#regent" style="--char-color: var(--c-regent);">
+        <div class="emblem">☼</div>
+        <span class="cp-name">The Regent</span>
+        <span class="cp-role">Stars · Forge · Sovereign</span>
+      </a>
+      <a class="char-picker-item" href="#necrobinder" style="--char-color: var(--c-necro);">
+        <div class="emblem">☠</div>
+        <span class="cp-name">The Necrobinder</span>
+        <span class="cp-role">Osty · Doom · Souls</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">5</span><span class="label">Classes</span></div>
+      <div class="hero-stat"><span class="num">23</span><span class="label">Archetypes</span></div>
+      <div class="hero-stat"><span class="num">150+</span><span class="label">Cards Reviewed</span></div>
+      <div class="hero-stat"><span class="num">∞</span><span class="label">Ascensions</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================== UNIVERSAL FUNDAMENTALS -->
+<section id="universal">
+  <div class="container">
+    <span class="eyebrow">Part I</span>
+    <h2>Fundamentals That Win Any Run</h2>
+    <p class="section-intro">Before we open the tomb on any class, internalise these truths. They decide more runs than any single card pick. Miss these and even the best deck archetype collapses at the Act 3 boss.</p>
+
+    <h3>The card-evaluation hierarchy</h3>
+    <p>At every card reward, ask these questions <em>in order</em>. Stop at the first "no":</p>
+    <ol style="padding-left: 24px; color: var(--ink-dim); font-size: 1rem; line-height: 1.9;">
+      <li><strong>Does it advance my scaling plan?</strong> Scaling is the engine — Strength, Poison, Focus, Stars, Doom, Osty buffs, Forge. Without scaling you lose to Act 3 bosses no matter how much block you stack.</li>
+      <li><strong>Does it solve a concrete current weakness?</strong> No reliable AOE? No turn-1 block? No card draw? If a card fixes a drafted weakness <em>at the right cost</em>, take it.</li>
+      <li><strong>Can I play it on the turn I want to play it?</strong> A 3-cost bomb you only play on turn 4 is often worse than a 1-cost you play every turn. Energy curve matters more than raw power.</li>
+      <li><strong>Will it still be good at the Act 3 boss?</strong> Early-game filler like single-target 6-damage attacks fall off hard. Scalers and multi-hits stay.</li>
+    </ol>
+
+    <div class="callout">
+      <h4>The Prior You Forget</h4>
+      <p>At least <em>one in three</em> card rewards in a good run should be skipped. The most common Ascension-20 mistake is taking a "fine" card that dilutes draw. A thin deck draws its win condition turn 1; a bloated deck draws Strike, Defend, Strike.</p>
+    </div>
+
+    <h3>The shape of a healthy deck</h3>
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>Floor Size</h4>
+        <p>20–30 cards is the sweet spot for most archetypes. Below 15 you start burning Exhaust/Void. Above 35 your scalers are diluted.</p>
+      </div>
+      <div class="info-box">
+        <h4>Scaling Ratio</h4>
+        <p>You need roughly 2–4 scaling cards (powers, synergy engines). More is gravy, fewer is death.</p>
+      </div>
+      <div class="info-box">
+        <h4>Block Floor</h4>
+        <p>Every deck needs 3–5 reliable block sources for turns where you can't out-damage the incoming hit — bosses hit 30+ uncontested.</p>
+      </div>
+      <div class="info-box">
+        <h4>Energy Sources</h4>
+        <p>At least one reliable card-draw engine and an energy relic by end of Act 2. Without them your 3-cost bombs rot in hand.</p>
+      </div>
+    </div>
+
+    <h3>Act progression — the universal prior</h3>
+    <div class="act-timeline">
+      <div class="act-step">
+        <span class="act-label">Act 1 · Exposition</span>
+        <p>Play to survive, not to win. Take reliable attacks, one defensive tool, and pick the elite fight only if you can handle 20 incoming. The Act 1 boss rewards patience.</p>
+      </div>
+      <div class="act-step">
+        <span class="act-label">Act 2 · Commitment</span>
+        <p>Your scaling plan must come online here. Fight <em>every</em> elite you can survive — elite relics are the single largest power spike in the run. Start removing starter cards aggressively.</p>
+      </div>
+      <div class="act-step">
+        <span class="act-label">Act 3 · Execution</span>
+        <p>You already know your build. Route toward rest sites over shops, upgrade your two or three finishers, and save a single large potion for the boss opener.</p>
+      </div>
+      <div class="act-step">
+        <span class="act-label">Alternate Acts · Variants</span>
+        <p>STS2 early access ships three acts with alternate layouts and encounter variants rather than an Act 4. Runs currently end after the Act 3 boss — Mega Crit has signalled a True Ending is planned for a future EA patch, but the Heart fight from the original is not in the game yet.</p>
+      </div>
+    </div>
+
+    <h3>Keywords you must know cold</h3>
+    <dl class="keywords">
+      <div class="keyword"><dt>Exhaust</dt><dd>Card is removed from the combat deck for the fight. Powers Ironclad's cycle engines.</dd></div>
+      <div class="keyword"><dt>Retain</dt><dd>Card stays in hand between turns. Lets you save burst for openings.</dd></div>
+      <div class="keyword"><dt>Ethereal</dt><dd>If not played this turn, it exhausts. Now a strength for Necrobinder — a cost for everyone else.</dd></div>
+      <div class="keyword"><dt>Innate</dt><dd>Card starts in your opening hand. Fantastic on openers; useless on clutters.</dd></div>
+      <div class="keyword"><dt>Sly</dt><dd>When this card is discarded, it plays itself for free. Silent's new signature.</dd></div>
+      <div class="keyword"><dt>Summon</dt><dd>Strengthens Necrobinder's minion Osty — persistent HP across turns.</dd></div>
+      <div class="keyword"><dt>Forge</dt><dd>Permanently increases Regent's Sovereign Blade damage within a combat.</dd></div>
+      <div class="keyword"><dt>Stars</dt><dd>Regent's secondary resource. Does not reset between turns. Fuels spell cards.</dd></div>
+      <div class="keyword"><dt>Doom</dt><dd>Necrobinder debuff. When an enemy's HP falls at or below its Doom stacks, it dies.</dd></div>
+      <div class="keyword"><dt>Channel</dt><dd>Summons an orb into a slot. When the rightmost slot is full, further Channels Evoke the leftmost.</dd></div>
+      <div class="keyword"><dt>Evoke</dt><dd>Consumes an orb to trigger its powerful effect. Plasma → energy, Dark → huge damage, etc.</dd></div>
+      <div class="keyword"><dt>Focus</dt><dd>Defect's core stat. Adds value to every orb's passive and Evoke effects except Plasma.</dd></div>
+    </dl>
+
+    <div class="callout tip">
+      <h4>Tip — Spend gold early</h4>
+      <p>Shops in Act 1 are usually a waste; shops in Act 2 are where runs are saved. Prioritise card-removal services over any card or relic under 100g. Each remove fixes your deck <em>and</em> denies your opponent (the next bad draw).</p>
+    </div>
+
+    <div class="callout warn">
+      <h4>STS1 vs STS2 — what changed</h4>
+      <p>Every card and relic named in this guide has been cross-checked against STS2-specific sources (the STS2 wiki, Untapped.gg STS2 card database, Mobalytics STS2 hub). A few well-known STS1 cards are <strong>not in STS2</strong> and are <em>not</em> mentioned here as picks: <strong>Reaper</strong> (removed), <strong>Corpse Explosion</strong> (removed for Silent), <strong>Grapple</strong> (deprecated). STS2 is in early access — the card pool will keep shifting, so always verify against the current patch before a run.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== IRONCLAD -->
+<section id="ironclad" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">⚔</div>
+      <div>
+        <span class="eyebrow">The Ironclad</span>
+        <h2>The Ironclad</h2>
+        <p class="char-subtitle">"The soldier who sold his soul — still paying for it."</p>
+      </div>
+    </div>
+
+    <p>The Ironclad is the safest introduction to the Spire and, simultaneously, the character with the most glass-cannon ceilings. His identity is built on three pillars — <strong>Strength</strong> as a damage multiplier, <strong>Exhaust</strong> as a deck-thinning and power-trigger engine, and <strong>self-damage</strong> as a scaling cost. He is the only class with a starter relic that heals after every combat, so mistakes forgive themselves when other classes would slowly bleed out.</p>
+
+    <p>His weakness is that his damage ceiling is <em>real</em> but linear — he never breaks into the absurd burst seen on late-game Defect or Regent. That means against hard elites and Act 3/4 bosses, you must genuinely have a plan: a multi-hit card that benefits per-hit from your Strength, an exhaust payoff that doesn't die to draw variance, or a Body Slam window that survives the setup.</p>
+
+    <p>Ironclad wins when you pick a lane early (by the second card reward of Act 1) and commit. He loses when you assemble three uncommon cards from three different archetypes and hope synergy will emerge. It won't.</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>Starter Relic — Burning Blood</h4>
+        <p>Heals 6 HP at the end of every combat. This is the single most important new-player training wheel in the game. It converts small HP chip into free survival, letting you take greedy lines in Act 1 with minimal penalty.</p>
+      </div>
+      <div class="info-box">
+        <h4>Starting HP</h4>
+        <p>80 HP — the highest in the game. Combined with Burning Blood, you have the largest HP buffer for experimentation. Use it to take one extra elite in Act 1 that another class would skip.</p>
+      </div>
+      <div class="info-box">
+        <h4>Signature Cards in Starting Deck</h4>
+        <p>Five Strikes, four Defends, a Bash (deals damage and applies Vulnerable), and an Ascender's Bane curse on Ascension 10+. The Bash is a keeper; the rest are removal fodder.</p>
+      </div>
+      <div class="info-box">
+        <h4>What he cannot do</h4>
+        <p>No innate poison, no orbs, no mid-combat summons, no multi-target free scaling. AOE is bought on cards like Whirlwind or Cleave — build it in or lose to hallway fights.</p>
+      </div>
+    </div>
+
+    <!-- ---- Archetype: Strength ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · Strength (Heavy Hitters)</span>
+        <span class="archetype-rating">Consistency <span class="rating-bar" style="--pct:88%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">The cleanest win condition in the game. Stack Strength, multiply hits, win fights.</p>
+
+      <p>Strength adds flat damage to every attack-card hit. On a single-hit card, that's linear; on a multi-hit card, it multiplies. Whirlwind with +6 Strength is not +6 damage — it's +6 per hit, applied to every target. The core loop: drop a Strength-gain card early, then pound multi-hit attacks for the rest of the fight.</p>
+
+      <p>This is the archetype you default to if rewards are ambiguous through Act 1. It works with <em>any</em> deck size, plays well under low energy, and survives card-draw variance because the power cards gain Strength once and keep paying forever.</p>
+
+      <h4>Priority picks (cards you take on sight)</h4>
+      <div class="card-grid">
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Inflame</h3>
+          <div class="card-desc">Gain 2 <span class="kw">Strength</span>. A one-energy, one-card Strength accelerant that wins fights outright if you draw it turn one.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Attack scaling</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Spot Weakness</h3>
+          <div class="card-desc">If the enemy intends to attack, gain 3 <span class="kw">Strength</span>. Extreme value against bosses — practically every boss signals an attack.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Conditional scaling</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Demon Form</h3>
+          <div class="card-desc">Gain 2 <span class="kw">Strength</span> at the start of every turn. The best scaler in the class — one cast wins any long fight.</div>
+          <div class="card-footer"><span>Rare</span><span>Late-fight win con</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Twin Strike</h3>
+          <div class="card-desc">Deal 5 damage <span class="kw">twice</span>. Two Strength instances per play. Pairs with Perfected Strike as a bonus.</div>
+          <div class="card-footer"><span>Common</span><span>Multi-hit</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Whirlwind</h3>
+          <div class="card-desc">Deal damage to ALL enemies, X times. Your most scalable AOE — solves hallway fights once Strength is online.</div>
+          <div class="card-footer"><span>Uncommon</span><span>X-cost AOE</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Limit Break</h3>
+          <div class="card-desc">Doubles your current <span class="kw">Strength</span>. Exhausts (unless upgraded). Upgraded, it is the single most broken card in the deck.</div>
+          <div class="card-footer"><span>Rare</span><span>Strength multiplier</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">0</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Flex</h3>
+          <div class="card-desc">Gain 2 <span class="kw">Strength</span> for this turn only. Cheap burst — play it before your finisher, not before your block.</div>
+          <div class="card-footer"><span>Common</span><span>Temporary Strength</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Sword Boomerang</h3>
+          <div class="card-desc">Deal 3 damage to a random enemy 3 times. Gains +3 per hit from Strength. Excellent hallway clear.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Random-target multi-hit</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Demon Form</strong> — always first pick in Act 2+ if deck can enable a 3-cost setup turn.</li>
+            <li><strong>Limit Break (upgraded)</strong> — winrate jumps double-digit percentages. Prioritise upgrading at rest sites.</li>
+            <li><strong>Twin Strike</strong> — the backbone multi-hit common. Take two. Upgrades well.</li>
+            <li><strong>Spot Weakness</strong> — non-negotiable against anything that attacks (all bosses).</li>
+            <li><strong>Whirlwind</strong> — AOE ceiling. Scales without bound when Strength ramps.</li>
+            <li><strong>Pommel Strike</strong> — 9 damage + draw. Solves mid-fight card starvation.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Headbutt</strong> — the topdeck recycling is almost never worth the card slot; take only with Exhaust deck.</li>
+            <li><strong>Uppercut</strong> — 13 damage for 2 is okay, but scales like a single-hit and eats slots your scalers need.</li>
+            <li><strong>Second Wind</strong> — Strength decks rarely have enough skills in hand to convert.</li>
+            <li><strong>Anger</strong> — spam filler; dilutes draws without helping scaling.</li>
+            <li><strong>Iron Wave</strong> — fine as Act 1 floor but replaceable by Shrug It Off once drafted.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Best relics for this archetype</h4>
+      <div class="pills">
+        <span class="pill gold">Pen Nib</span>
+        <span class="pill gold">Akabeko</span>
+        <span class="pill">Strike Dummy</span>
+        <span class="pill">Ornamental Fan</span>
+        <span class="pill">Sword of Jade</span>
+        <span class="pill">Anchor</span>
+        <span class="pill">Horn Cleat</span>
+        <span class="pill">Vajra</span>
+      </div>
+    </div>
+
+    <!-- ---- Archetype: Exhaust ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · Exhaust (Cycling Engine)</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:92%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Delete your own cards for profit. The hardest-hitting Ironclad ceiling deck.</p>
+
+      <p>Exhaust plays the opposite game from Strength. Instead of <em>scaling</em> cards, you <em>remove</em> them — turning every exhaust into a power trigger, block generator, or free energy. The archetype needs three interlocking engines to come online: <strong>Dark Embrace</strong> (draws on exhaust), <strong>Feel No Pain</strong> (blocks on exhaust), and <strong>Corruption</strong> (skills exhaust and become free). Any two of these three are enough for a fully-operational infinite engine.</p>
+
+      <p>Corruption is the transformer card. Before it, Forgotten Ritual is a 1-cost skill; after it, Forgotten Ritual exhausts for 0 energy and triggers Dark Embrace. You draw every card, block every attack, and deal free damage via Pact's End or Ashen Strike. In a well-built Corruption engine, the only bottleneck is "how many turns can I chain this before the fight ends". The answer is often "all of them".</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Corruption</h3>
+          <div class="card-desc">All <span class="kw">Skills</span> cost 0 and <span class="kw">Exhaust</span>. The keystone — the engine does not start without this card (or an equivalent).</div>
+          <div class="card-footer"><span>Rare</span><span>Engine piece</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Dark Embrace</h3>
+          <div class="card-desc">When a card is <span class="kw">Exhausted</span>, draw 1. Makes every exhaust equal draw. With Corruption, draws your entire deck.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Engine piece</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Feel No Pain</h3>
+          <div class="card-desc">When a card is <span class="kw">Exhausted</span>, gain 3 Block. Your block engine — scales infinitely with exhaust cycles.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Block source</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Offering</h3>
+          <div class="card-desc">Lose 6 HP. Gain 2 Energy. Draw 3 cards. Exhaust. Criminally strong — with Corruption it costs 0 for the whole package.</div>
+          <div class="card-footer"><span>Rare</span><span>Resource pump</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">True Grit</h3>
+          <div class="card-desc">Gain 7 Block. Exhaust a random card from your hand (specific if upgraded). Block + deck thin rolled into one.</div>
+          <div class="card-footer"><span>Common</span><span>Filler fixer</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">0</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Pact's End</h3>
+          <div class="card-desc">Deal large AOE damage based on exhausted cards this combat. Your engine's finisher.</div>
+          <div class="card-footer"><span>Rare</span><span>AOE payoff</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Forgotten Ritual</h3>
+          <div class="card-desc">Gain 2 Energy. <span class="kw">Exhaust</span>. With Corruption this becomes free energy + draw + block every turn.</div>
+          <div class="card-footer"><span>Common</span><span>Engine fuel</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Evil Eye</h3>
+          <div class="card-desc">Gain Block. If you exhausted a card this turn, gain significantly more. One-card 16-block spike.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Burst block</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Corruption</strong> is a win-the-run pick by Act 2 — worth transforming other cards for at Events.</li>
+            <li><strong>Dark Embrace</strong> + <strong>Feel No Pain</strong> — take both; one is engine, the other is the safety.</li>
+            <li><strong>Offering</strong> — in a Corruption deck this is a 0-cost "+2 energy, +3 draw". Mandatory.</li>
+            <li><strong>Brand</strong> / <strong>Burning Pact</strong> — cheap exhaust enablers for hands before Corruption lands.</li>
+            <li><strong>Charon's Ashes</strong> (relic) — a whole second damage engine purely from exhausts.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Impervious</strong> — exhaust-decks need their exhausts to scale; a 1-shot 30-block is counter-plan.</li>
+            <li><strong>Demon Form</strong> — requires long fights; exhaust engine ends them too fast to justify 3 energy.</li>
+            <li><strong>Second Wind</strong> — hand is mostly Attacks/Powers; almost no skills to exhaust.</li>
+            <li><strong>Anger</strong> — clones itself into discard; without Corruption it just bloats your draws.</li>
+            <li><strong>Rage</strong> — its block-on-attack window fights with your want to chain skills for the exhaust triggers.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Best relics for this archetype</h4>
+      <div class="pills">
+        <span class="pill gold">Charon's Ashes</span>
+        <span class="pill gold">Dead Branch <small>(if present)</small></span>
+        <span class="pill">Forgotten Soul</span>
+        <span class="pill">Joss Paper</span>
+        <span class="pill">Burning Sticks</span>
+        <span class="pill">Runic Pyramid</span>
+      </div>
+    </div>
+
+    <!-- ---- Archetype: Block / Body Slam ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · Body Slam / Barricade</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:82%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Turn block into damage. With Barricade, block snowballs across every turn.</p>
+
+      <p>Body Slam deals damage equal to your current Block — a classic Slay the Spire win condition that returns unchanged in STS2. Without Barricade, this is a once-per-turn burst at your current block cap. <em>With</em> Barricade (block persists between turns), you accumulate block every round and dump it all on the boss's ouchy turn. The build's secret weapon is <strong>Juggernaut</strong>, a power that auto-damages the highest-HP enemy every time you gain block — it continues dealing damage on turns you don't cast Body Slam at all.</p>
+
+      <p>This is Ironclad's "I can't die" deck. It's not the fastest, and it struggles against enemies that drain block (certain Act 3 elites with block-removal), but for learning Ascension runs and for durable Act 3 boss attempts, it's the safest path. Take it when your early Act 1 offers tier-A block cards (Shrug It Off, Iron Wave, Battle Trance) instead of scalers.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Barricade</h3>
+          <div class="card-desc">Your Block is no longer removed at the start of your turn. The deck's defining win condition — prioritise above all.</div>
+          <div class="card-footer"><span>Rare</span><span>Engine piece</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Body Slam</h3>
+          <div class="card-desc">Deal damage equal to your current Block. Upgraded, it costs 0 — one of the sharpest damage conversions in the game.</div>
+          <div class="card-footer"><span>Common</span><span>Payoff</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Juggernaut</h3>
+          <div class="card-desc">Whenever you gain Block, deal damage to a random enemy. Passive "I won the fight already" pressure.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Block payoff</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Shrug It Off</h3>
+          <div class="card-desc">Gain 8 Block. Draw 1. The single best common block card in the game for any Ironclad deck.</div>
+          <div class="card-footer"><span>Common</span><span>Floor block</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Flame Barrier</h3>
+          <div class="card-desc">Block + damage back to attackers this turn. Counters multi-attack enemies; fantastic with Barricade.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Counterplay</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Metallicize</h3>
+          <div class="card-desc">At the end of your turn, gain 3 Block. With Barricade this is net +3 block forever. Bronze auto-include.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Passive block</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Impervious</h3>
+          <div class="card-desc">Gain 30 Block. Exhaust. With Barricade, the 30 carries through the fight. A whole act's worth of block in one card.</div>
+          <div class="card-footer"><span>Rare</span><span>Panic button</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Entrench</h3>
+          <div class="card-desc">Double your current Block. Barricade lets you double an already-doubled stack — exponential scaling.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Block multiplier</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Barricade</strong> is a mandatory first-pick when seen — reroute to get it.</li>
+            <li><strong>Entrench</strong> with Barricade = block-doubling engine.</li>
+            <li><strong>Body Slam (upgraded)</strong> — 0 cost is the difference between "nice" and "wins runs".</li>
+            <li><strong>Juggernaut</strong> — works the turn you draw it, no setup.</li>
+            <li><strong>Flame Barrier</strong> — pre-emptive counter to multi-attackers like Act 2 minions.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Demon Form</strong> — offers damage you don't need; dilutes your block slots.</li>
+            <li><strong>Feed</strong> — bloats deck without block payoff.</li>
+            <li><strong>Bludgeon</strong> — 2-cost single hit; your Body Slam already is the "damage dump" and scales better.</li>
+            <li><strong>Self-damage cards</strong> (Offering, Hemokinesis, Brand) — the Bloodletting axis conflicts.</li>
+            <li><strong>Havoc</strong> — the topdeck play gambles with your Body Slam turn.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- Archetype: Perfected Strike ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">4 · Perfected Strike (Hall of Strikes)</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:74%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Keep every Strike. Yes, really. Now turn them into a cannon.</p>
+
+      <p>A contrarian build that inverts the universal advice "remove Strikes". Perfected Strike deals a minimum of 6 damage plus a bonus per Strike-named card in your <em>entire</em> deck (deck + draw + discard). Pommel Strike adds card-draw, Twin Strike adds double-Strength instances, Headbutt cycles Strikes back, and (critically) Hellraiser adds more uniquely-named Strikes that all count toward the bonus. Two upgraded Perfected Strikes with eight Strike-type cards in deck deal upwards of 40 damage per cast.</p>
+
+      <p>The archetype is skill-intensive. Your mid-fight draw quality is noticeably worse than other Ironclad lines because you intentionally keep low-floor cards. It rewards runs where you pick up energy relics (Cursed Key, Red Skull) and card-draw options that keep your hand cycling. Without card draw, this deck is a single-finisher flash in the pan.</p>
+
+      <h4>Key cards</h4>
+      <div class="card-grid">
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Perfected Strike</h3>
+          <div class="card-desc">Deal 6 damage + bonus per Strike-named card in your deck. Take two. Upgrade both.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Payoff</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Pommel Strike</h3>
+          <div class="card-desc">Deal 9 damage. Draw 1 card. The enabler — cycles you into more cards while counting as a Strike.</div>
+          <div class="card-footer"><span>Common</span><span>Strike + draw</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Twin Strike</h3>
+          <div class="card-desc">Strike-named, benefits twice from Strength, acts as a strong floor for any Ironclad deck.</div>
+          <div class="card-footer"><span>Common</span><span>Dual-hit Strike</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Hellraiser</h3>
+          <div class="card-desc">Whenever you draw a card with "Strike" in its name, it plays itself against a random enemy. Creates runaway chains with Pommel Strike and a thin deck.</div>
+          <div class="card-footer"><span>Rare</span><span>Auto-Strike engine</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Expect a Fight</h3>
+          <div class="card-desc">Gain 2 Energy. Upgraded: 3. A critical energy source to chain multiple Perfected Strikes per turn.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Energy pump</span></div>
+        </article>
+      </div>
+
+      <div class="callout warn">
+        <h4>Warning</h4>
+        <p>Never transform Strike cards at shrines or events in this build. Never. A random event can delete your scaler. If offered a "transform 2 cards", skip or select non-Strike options only.</p>
+      </div>
+    </div>
+
+    <!-- ---- Archetype: Bloodletting ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">5 · Bloodletting (Rupture / Feed)</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:70%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">HP is a resource. Spend it to go faster.</p>
+
+      <p>Bloodletting decks pay HP to gain Strength (Rupture), draw cards (Bloodletting the card), or nuke AOE (Inferno). The reason it works: Ironclad's starter relic heals every combat, so the HP you spend in fights is effectively free — so long as you survive. The reason it doesn't always work: self-damage from your own cards bypasses block, so it stacks with enemy chip to ambush you on variance-heavy turns.</p>
+
+      <p>You need a Rupture for the scaler to function and at least two self-damage cost cards. Feed is a run-defining pick — permanent max HP gain plus high damage. Combined with Rupture, each Feed kill permanently scales your max HP and current Strength in future fights. This archetype transitions seamlessly into Strength or Exhaust mid-run if Rupture doesn't show.</p>
+
+      <h4>Key cards</h4>
+      <div class="card-grid">
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Rupture</h3>
+          <div class="card-desc">When you take HP damage from a card, gain 1 <span class="kw">Strength</span>. Converts self-damage into permanent scaling.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Scaler</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Feed</h3>
+          <div class="card-desc">Deal large damage. If it kills, gain permanent max HP. Exhaust. A win-condition pick against non-minion enemies.</div>
+          <div class="card-footer"><span>Rare</span><span>Permanent scaling</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Bloodletting</h3>
+          <div class="card-desc">Lose 3 HP. Gain 2 Energy. With Rupture this is +1 Strength and +2 Energy for zero cost.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Energy + scaling</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Hemokinesis</h3>
+          <div class="card-desc">Lose 2 HP. Deal 15 damage. A 15-for-1 attack, with a Rupture bonus. Always take one copy.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Efficient single-target</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <h4>Ironclad meta-strategy</h4>
+      <p>If you haven't seen a scaler by mid-Act 2, stop holding out for Demon Form and pivot to <strong>Body Slam / Barricade</strong>. A finished block deck beats a half-built Strength deck every time. The worst Ironclad run is the one with one Inflame and ten Strikes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== SILENT -->
+<section id="silent" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">🗡</div>
+      <div>
+        <span class="eyebrow">The Silent</span>
+        <h2>The Silent</h2>
+        <p class="char-subtitle">"A thousand cuts. Patience and poison."</p>
+      </div>
+    </div>
+
+    <p>The Silent is Slay the Spire 2's tactical rogue — the highest-ceiling, highest-skill class when piloted correctly, and the fastest way to lose if piloted poorly. She has no Burning Blood safety net, no free healing, no raw HP advantage. What she has is <strong>card draw</strong>, <strong>debuff density</strong>, <strong>discard-as-resource</strong>, and two of the most powerful scaling axes in the game: <strong>Poison</strong> and <strong>Shivs</strong>.</p>
+
+    <p>STS2 adds the <strong>Sly</strong> keyword — when a Sly card is discarded, it plays itself for free. That single mechanic transforms her old "discard is a downside" design into a "discard is a second form of draw". Acrobatics, Tactician, Calculated Gamble, and Reflex become setup tools that let you chain huge turns.</p>
+
+    <p>Her starter relic, <strong>Ring of the Snake</strong>, gives you two extra cards on turn 1 — which means turn 1 has seven cards to work with. That's enough to set up a poison power, drop a Cloak and Dagger for early block, and still attack. A strong turn-1 setup is the Silent's superpower; the best Silent players treat every fight as a chess opening.</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>Starter Relic — Ring of the Snake</h4>
+        <p>Draw 2 additional cards on your first turn each combat. The best turn-1 relic in the game. It converts into two extra setup actions in every single combat — worth more than any other starting relic across a 30-combat run.</p>
+      </div>
+      <div class="info-box">
+        <h4>Starting HP</h4>
+        <p>70 HP — lower than Ironclad, higher than Defect. No combat healing, so every HP loss is persistent. Plan routes around rest sites and campfires more aggressively.</p>
+      </div>
+      <div class="info-box">
+        <h4>Core Mechanics</h4>
+        <p><strong>Shivs</strong> — free 0-cost 4-damage attacks generated by skills. <strong>Poison</strong> — at the end of each enemy turn, they take Poison damage and lose 1 Poison. <strong>Discard synergies</strong> — cards that pay off when you discard from hand.</p>
+      </div>
+      <div class="info-box">
+        <h4>What she cannot do</h4>
+        <p>No raw scalers equivalent to Strength (Poison scales, but only against single targets effectively). No self-heal. No easy block until Act 2. Elites with Artifact counter Poison entirely — have a Plan B.</p>
+      </div>
+    </div>
+
+    <!-- ---- Shiv Deck ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · Shiv (Blade Dance)</span>
+        <span class="archetype-rating">Consistency <span class="rating-bar" style="--pct:86%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Generate dozens of 0-cost 4-damage attacks. Multiply them with Accuracy and Shuriken.</p>
+
+      <p>The Shiv deck turns the Silent into a blender. Skills like Blade Dance, Cloak and Dagger, and Infinite Blades add free Shivs to your hand. Each Shiv by default deals 4 damage for 0 energy. The multiplier cards — <strong>Accuracy</strong> (+3 to every Shiv hit forever this combat), <strong>Infinite Blades</strong> (generates Shivs every turn), and <strong>After Image</strong> (gain 1 block per card played) — turn 4-damage chip into 10+ damage each, with five to ten per turn.</p>
+
+      <p>Shivs are Attack-typed, so they benefit from Dexterity (for block? no — from Strength and from attack-hit relics like Strike Dummy, Kunai, Shuriken). Every three Shivs played in a turn triggers Shuriken for +1 Strength. A deck with Accuracy + Infinite Blades + Shuriken cycles into unstoppable scaling. Your single biggest vulnerability is early damage before Accuracy lands — always take one defensive tool before committing.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Accuracy</h3>
+          <div class="card-desc">Shivs deal +3 damage this combat. Upgraded: +5. The keystone — every Shiv, every cast, multiplied.</div>
+          <div class="card-footer"><span>Rare</span><span>Scaler</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Infinite Blades</h3>
+          <div class="card-desc">At the start of each turn, add a Shiv to your hand. Permanent Shiv engine. Synergises with all Shiv payoffs.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Engine</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Blade Dance</h3>
+          <div class="card-desc">Add 3 Shivs to your hand. Upgraded: 4. Your main Shiv-dump card — take multiple copies.</div>
+          <div class="card-footer"><span>Common</span><span>Shiv generator</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Cloak and Dagger</h3>
+          <div class="card-desc">Gain 6 Block. Add 1 Shiv to your hand. Block and Shiv in one — the best floor card in the deck.</div>
+          <div class="card-footer"><span>Common</span><span>Block + Shiv</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Storm of Steel</h3>
+          <div class="card-desc">Discards your hand and replaces it with Shivs. Explosive — the ultimate Shiv payoff with Accuracy up.</div>
+          <div class="card-footer"><span>Rare</span><span>Hand-into-Shiv</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Hidden Daggers</h3>
+          <div class="card-desc">Discard 2 cards. Add 2 Shivs to your hand. A 0-cost Shiv source that doubles as a Sly enabler — sneakily strong.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Shiv + discard</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Flying Knee</h3>
+          <div class="card-desc">Deal 8 damage. Next turn gain 1 Energy. Upgrades smoothly, pairs with Shiv burst turns.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Energy gen</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Dagger Throw</h3>
+          <div class="card-desc">Deal 9 damage. Draw 1 card. Discard 1 card. Cheap damage + cycling — can trigger Sly discards.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Cycling attack</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Accuracy</strong> — first pick when seen. Worth routing to rare rewards for.</li>
+            <li><strong>Blade Dance</strong> — up to three copies. The deck needs Shivs in play.</li>
+            <li><strong>Cloak and Dagger</strong> — up to two. Block is non-negotiable.</li>
+            <li><strong>Infinite Blades</strong> — one copy runs the deck alone.</li>
+            <li><strong>Shuriken</strong> (relic) / <strong>Kunai</strong> / <strong>Ornamental Fan</strong> — relic layer tripled by Shiv-per-turn count.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Poisoned Stab</strong> — doesn't generate or benefit Shivs; wrong axis.</li>
+            <li><strong>Crippling Poison</strong> / pure poison tools — split attention between two scaling systems.</li>
+            <li><strong>Bullet Time</strong> — great card, but disables Shiv generation (can't play 0-cost draws); archetype conflict.</li>
+            <li><strong>Wraith Form</strong> — great for Poison decks, minor for Shiv. Skip unless dire.</li>
+            <li><strong>Grand Finale</strong> — dependent on empty draw, fights with Infinite Blades' "add Shiv" pattern.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- Poison Deck ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · Poison (Venom Cycle)</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:94%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Slow start, infinite ceiling. Apply Poison, wait. Watch bosses melt.</p>
+
+      <p>Poison is the Silent's highest-ceiling archetype and, along with Defect's Focus build, the game's most durable scaling system. Poison damage ticks every enemy turn and doesn't care about enemy block, Weak, or Artifact-less buffs. The build needs three pieces: <strong>a Poison applicator</strong> (Noxious Fumes for passive, Deadly Poison for burst), <strong>a Poison multiplier</strong> (Catalyst doubles stacks), and <strong>a cycle engine</strong> (Prepared, Tactician, Reflex, or Calculated Gamble).</p>
+
+      <p>The new <strong>Sly</strong> keyword turbocharges Poison. Discard-driven builds that previously wasted good cards now play them for free on the same turn. A Tactician discarded from hand plays itself, generates energy, and keeps the engine humming. Combine Sly discards with Catalyst (doubles Poison stacks) for a turn-3 boss-delete combo that one-shots the Time Eater analogue.</p>
+
+      <div class="callout warn">
+        <h4>Hard counter — Artifact</h4>
+        <p>Any enemy with Artifact eats your first Poison application. Against Act 3 elites with stacked Artifact, you will lose unless you either (a) have enough stacks to burn through it or (b) have backup damage. <strong>Always</strong> maintain a single-target finisher like Finisher, Envenom + Shivs, or Grand Finale for the Artifact encounter.</p>
+      </div>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Noxious Fumes</h3>
+          <div class="card-desc">At the start of each turn, apply 2 Poison to ALL enemies. The keystone power — passive, unstoppable scaling.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Scaler</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Deadly Poison</h3>
+          <div class="card-desc">Apply 5 Poison to an enemy. Upgraded: 7. A burst applicator — pairs with Catalyst as an assassin line.</div>
+          <div class="card-footer"><span>Common</span><span>Burst poison</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Catalyst</h3>
+          <div class="card-desc">Double the Poison stacks on the target enemy. Exhaust. The poison multiplier — take two if you can.</div>
+          <div class="card-footer"><span>Rare</span><span>Multiplier</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Poisoned Stab</h3>
+          <div class="card-desc">Deal 6 damage. Apply 3 Poison. Both axes on one card — floor for the deck.</div>
+          <div class="card-footer"><span>Common</span><span>Dual-purpose attack</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Bouncing Flask</h3>
+          <div class="card-desc">Apply Poison to a random enemy 3 times. Excellent AOE spread, scales with Dexterity… wait, no. With Poison stacks.</div>
+          <div class="card-footer"><span>Uncommon</span><span>AOE poison</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Envenom</h3>
+          <div class="card-desc">When an attack deals unblocked damage, apply 1 Poison. Every Shiv, every strike becomes a poison applicator.</div>
+          <div class="card-footer"><span>Rare</span><span>Dual-axis bridge</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Crippling Poison</h3>
+          <div class="card-desc">Apply Poison and Weak. Weak reduces incoming damage, so this card blocks and scales in one.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Debuff + scaler</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Accelerant</h3>
+          <div class="card-desc">Consumes Poison from enemies to deal burst damage. Your poison cash-out button when burst is needed immediately.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Poison finisher</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Noxious Fumes</strong> — always first pick. The deck doesn't exist without it.</li>
+            <li><strong>Catalyst</strong> — take two, upgrade both. Doubling 40 Poison ends any fight.</li>
+            <li><strong>Accelerant</strong> — one-shot finisher that scales with poison stacks.</li>
+            <li><strong>Bubble Bubble</strong> / <strong>Twisted Funnel</strong> (relic) — poison-per-turn amplifiers.</li>
+            <li><strong>Envenom</strong> — bridges into Shiv/attack decks and turns every hit into another poison application.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Infinite Blades</strong> — clogs hand with Shivs you don't need.</li>
+            <li><strong>Finisher</strong> — scales with attacks played, not poison; wrong axis unless combo-decking.</li>
+            <li><strong>Die Die Die</strong> — solid card, but fills a slot you could use for a poison piece.</li>
+            <li><strong>Concentrate</strong> — energy-for-discard; situational at best, bad with Sly.</li>
+            <li><strong>Heavy Blade equivalents</strong> — you want ticks, not big hits.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Relics to route for</h4>
+      <div class="pills">
+        <span class="pill gold">Twisted Funnel</span>
+        <span class="pill gold">Bubble Bubble</span>
+        <span class="pill">Snecko Skull</span>
+        <span class="pill">Unsettling Lamp</span>
+        <span class="pill">Anchor</span>
+        <span class="pill">Calipers</span>
+      </div>
+    </div>
+
+    <!-- ---- Sly/Discard Deck ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · Sly (Discard Combo)</span>
+        <span class="archetype-rating">Skill cap <span class="rating-bar" style="--pct:90%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">The STS2 signature. Every discard is a free cast.</p>
+
+      <p>Sly is the Silent's brand-new mechanic and the reason to care about STS2's class redesign. A Sly card discarded from your hand plays itself at no cost and doesn't count as a card-play for restrictive effects. The moment you combine <strong>Tactician</strong> (Sly) with <strong>Calculated Gamble</strong> (discard hand, draw that many), your entire hand can chain in a single turn — every discarded Sly playing, every non-Sly reshuffling, and you doing it all with 7+ cards drawn on turn 1 thanks to Ring of the Snake.</p>
+
+      <p>The killer card is <strong>Master Planner</strong> — it makes <em>all</em> your non-Sly skills act as Sly. Suddenly Cloak and Dagger discarded plays itself for free, adding Shiv and block. Suddenly Noxious Fumes can be cast mid-turn for free. The deck ceiling is among the highest in any STS game — but the skill floor is brutal. Mis-sequence one discard and you lose your turn.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Tactician</h3>
+          <div class="card-desc">When this card is discarded, gain 1 Energy. <span class="kw">Sly</span>. The combo enabler — discard chains it every time.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Energy on discard</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Calculated Gamble</h3>
+          <div class="card-desc">Discard your hand. Draw that many cards. In a Sly deck, this is <em>free cycles</em> + free plays.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Mass draw</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Master Planner</h3>
+          <div class="card-desc">Grants <span class="kw">Sly</span> to every Skill currently in your hand. A mass-discard afterwards fires them all for free.</div>
+          <div class="card-footer"><span>Rare</span><span>Hand-wide Sly</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Acrobatics</h3>
+          <div class="card-desc">Draw 3 cards. Discard 1 card. Upgraded: draw 4. A premium cycling tool that triggers Sly.</div>
+          <div class="card-footer"><span>Common</span><span>Draw + discard</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Prepared</h3>
+          <div class="card-desc">Draw 1 card. Discard 1 card. Cheap enough to cast every turn; enables Sly trigger chains.</div>
+          <div class="card-footer"><span>Common</span><span>Cycle</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Reflex</h3>
+          <div class="card-desc">When this card is discarded, draw 2 cards. <span class="kw">Sly</span>. Chains draws the way Tactician chains energy.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Draw on discard</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Eviscerate</h3>
+          <div class="card-desc">Costs 1 less for each card you've discarded this turn. Free after 3 discards — a huge multi-hit finisher.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Discount attack</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Tools of the Trade</h3>
+          <div class="card-desc">At the start of your turn, draw and discard 1 card. A permanent Sly-trigger generator.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Automatic cycle</span></div>
+        </article>
+      </div>
+
+      <div class="callout tip">
+        <h4>Tip — "Cook" before committing</h4>
+        <p>The biggest Sly pilot mistake is discarding before you know what's in hand. Always play your block and scalers <em>first</em>, then cycle. Discard Tactician/Reflex <em>intentionally</em>, never by clicking Calculated Gamble without thinking. An order-of-operations error in this deck costs the fight.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>Silent meta-strategy</h4>
+      <p>The Silent's three archetypes <strong>bleed into each other</strong> more than any other class. A Shiv deck with Envenom is 70% a Poison deck. A Poison deck with Catalyst and Tactician picks up Sly "for free". Don't over-commit to a label in Act 1 — stay flexible, and by Act 2 your rares will tell you which path to finish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== DEFECT -->
+<section id="defect" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">◈</div>
+      <div>
+        <span class="eyebrow">The Defect</span>
+        <h2>The Defect</h2>
+        <p class="char-subtitle">"Orbs, algorithms, overclocked vengeance."</p>
+      </div>
+    </div>
+
+    <p>The Defect is the methodical, engineering-mind class. His entire identity is <strong>orb management</strong> — small damage/block/resource satellites that orbit above him. Each orb has a <em>passive</em> effect (triggers end of turn) and an <em>Evoke</em> effect (triggers when consumed). Lightning orbs chip damage; Frost orbs generate block; Dark orbs cook for huge Evoke burst; Plasma orbs fuel extra energy; Glass orbs deal AOE. Every build is a question of slots, Focus (a stat that amplifies every orb), and what sequence of channels gives the best Evoke order.</p>
+
+    <p>STS2 buffs the Defect in two significant ways. First, he gains access to the Ironclad's old Status-card synergies — meaning he can use trash status cards as <em>payoff triggers</em>. Second, his starting orb slot count, Focus scaling, and Capacitor card all combine into the fastest-ramping orb engine in the game. His ceiling is borderline absurd: a mid-Act 3 Defect can Evoke 150-damage Dark orbs every turn while generating 60 block.</p>
+
+    <p>His weakness is setup time. Without a ramp draw, he dies to Act 1 elites that punish turn-1 block (the Sentry-likes, the Lagavulin-like that scales before you do). Prioritise survival in Act 1, Focus in Act 2, and Evoke payoffs in Act 3.</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>Starter Relic — Cracked Core</h4>
+        <p>At the start of combat, Channel 1 Lightning orb. A constant baseline of damage and a free orb slot's worth of presence. Modest in absolute terms, but <em>always</em> active — never a wasted fight.</p>
+      </div>
+      <div class="info-box">
+        <h4>Starting HP</h4>
+        <p>75 HP. Middle of the pack. Combined with slow ramp, take rest sites aggressively in Act 1.</p>
+      </div>
+      <div class="info-box">
+        <h4>Orb Types</h4>
+        <p><strong>Lightning</strong> — passive chip, Evoke burst. <strong>Frost</strong> — passive block, Evoke block. <strong>Dark</strong> — passive grows (6+Focus/turn), Evoke nukes. <strong>Plasma</strong> — passive energy, Evoke energy. <strong>Glass</strong> — passive AOE, Evoke AOE.</p>
+      </div>
+      <div class="info-box">
+        <h4>Focus</h4>
+        <p>Every point of Focus increases every orb's passive and Evoke value by 1 (Plasma excluded). Stacking Focus is the single highest-leverage activity in any Defect run.</p>
+      </div>
+    </div>
+
+    <!-- ---- Frost-Lightning Standard ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · Frost-Lightning Standard</span>
+        <span class="archetype-rating">Consistency <span class="rating-bar" style="--pct:92%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">The balanced default. Block and damage from the same engine.</p>
+
+      <p>This is the Defect equivalent of "just play the game". Channel a Frost on turn 1 for block, a Lightning on turn 2 for damage. Pick up Coolheaded for draw, Ball Lightning for damage + orb, and Glacier for bulk Frost. Every orb passive stacks with Focus. By Act 2 you're generating 15-20 block and 10 damage per turn without consciously trying.</p>
+
+      <p>The consistency of this deck is its strength. It doesn't need a specific rare to win — it scales linearly with good picks. A lone Defragment (permanent Focus +1) is enough to carry the deck through Act 3. Two Defragments and a Capacitor (more orb slots) wins on Ascension 20.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Defragment</h3>
+          <div class="card-desc">Gain +1 <span class="kw">Focus</span>. Permanent scaling — arguably the most important card in the Defect's pool.</div>
+          <div class="card-footer"><span>Rare</span><span>Scaler</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Capacitor</h3>
+          <div class="card-desc">Gain 2 additional orb slots. Upgraded: 3. Enables Dark builds and Evoke-chain plays.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Slot expander</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Ball Lightning</h3>
+          <div class="card-desc">Deal 7 damage. Channel a Lightning orb. Damage + orb in one — always take one or two.</div>
+          <div class="card-footer"><span>Common</span><span>Damage + channel</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Cold Snap</h3>
+          <div class="card-desc">Deal 6 damage. Channel a Frost orb. Defect's defensive Ball Lightning — block and chip.</div>
+          <div class="card-footer"><span>Common</span><span>Damage + Frost</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Coolheaded</h3>
+          <div class="card-desc">Channel a Frost orb. Draw 1 card. Upgraded: draw 2. Auto-include in every Defect deck.</div>
+          <div class="card-footer"><span>Common</span><span>Draw + Frost</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Lightning Rod</h3>
+          <div class="card-desc">Gain 5 Block. Channel a Lightning orb. A better Defend — floor card for any Defect deck.</div>
+          <div class="card-footer"><span>Common</span><span>Block + Lightning</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Glacier</h3>
+          <div class="card-desc">Gain 7 Block. Channel 2 Frost orbs. The block scaler — 7 + (2 × Frost passive) per cast.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Dual Frost</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Sunder</h3>
+          <div class="card-desc">Deal massive damage if the target has 50%+ HP. Upgraded: even more. Boss-deleting single-shot.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Execution</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Defragment</strong> — up to three copies. Permanent Focus is a run-winning commodity.</li>
+            <li><strong>Coolheaded</strong> — always. Every deck needs draw; the Frost orb is gravy.</li>
+            <li><strong>Capacitor</strong> — slots matter once Defragment is online.</li>
+            <li><strong>Ball Lightning / Cold Snap</strong> — cheap damage + channel. Floor of the deck.</li>
+            <li><strong>Biased Cognition</strong> — big Focus gain with a drawback. Fine with draw.</li>
+            <li><strong>Glacier</strong> / <strong>Blizzard</strong> — big single-card block spikes.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Recursion</strong> — only in Dark/Evoke builds; wasted here.</li>
+            <li><strong>Self Repair</strong> — combat healing that this deck doesn't need at current block totals.</li>
+            <li><strong>Reboot</strong> — nuking your deck is a specialised Claw-deck tool, not generalist.</li>
+            <li><strong>Claw</strong> by itself — without three or four copies and payoff, it's chip filler.</li>
+            <li><strong>Status-synergy cards</strong> — unless you're actively running Status payoff, skip.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- Dark Evoke ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · Dark Orb Evoke Nuke</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:96%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Cook a single Dark orb for 20 turns. Evoke it. Kill anything.</p>
+
+      <p>Dark orbs gain damage equal to 6 + Focus every turn they sit in a slot. Evoking them deals all accumulated damage to the lowest-HP target. Combined with <strong>Capacitor</strong> (more slots to cook in), <strong>Defragment</strong> (higher per-turn growth), and <strong>Blizzard / Doom and Gloom</strong> (spike Evoke damage), a single Dark orb can accumulate to 100+ damage — then double or triple that on Evoke.</p>
+
+      <p>The key sequencing trick: you always channel Dark orbs <em>after</em> your Frost and Lightning orbs, so Dark sits on the right side of your slot row. When slots are full and you channel another orb, the <em>leftmost</em> orb Evokes — meaning your Frost orbs Evoke for block while your Dark orbs cook. Use Coolheaded to shuffle orbs; use Recursion to re-Evoke a single valuable orb. This deck wins long single-target Act 3 boss fights more reliably than any other Defect build because Dark's speciality is dumping a round's worth of accumulated damage on a single target in one Evoke.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Sweeping Beam</h3>
+          <div class="card-desc">Deal AOE damage. Channel a Dark orb if you have empty slots. AOE + Dark fuel, efficient.</div>
+          <div class="card-footer"><span>Common</span><span>AOE + Dark</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Doom and Gloom</h3>
+          <div class="card-desc">Channel a Dark orb. Deal AOE damage. A dual-purpose Dark enabler.</div>
+          <div class="card-footer"><span>Uncommon</span><span>AOE + channel</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Blizzard</h3>
+          <div class="card-desc">Deal damage to all enemies equal to twice your channeled orbs this combat. Scales infinitely.</div>
+          <div class="card-footer"><span>Rare</span><span>Orb-count AOE</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Recursion</h3>
+          <div class="card-desc">Evoke your rightmost orb. Then Channel it. A "Evoke + replay" tool for your Dark nuke.</div>
+          <div class="card-footer"><span>Rare</span><span>Evoke recycle</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Seek</h3>
+          <div class="card-desc">Put 2 cards from your draw pile into your hand. Choose any. Best tutor in the game — fetches your Dark payoffs.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Tutor</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Echo Form</h3>
+          <div class="card-desc">The first card you play each turn is played twice. Doubles Seek/Blizzard/Coolheaded — a runaway engine.</div>
+          <div class="card-footer"><span>Rare</span><span>Engine</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Multi-Cast</h3>
+          <div class="card-desc">Evoke your rightmost orb X times (X = energy spent). With Plasma energy and Dark orbs, lethal.</div>
+          <div class="card-footer"><span>Uncommon</span><span>X-Evoke</span></div>
+        </article>
+        <article class="card-tile power uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Creative AI</h3>
+          <div class="card-desc">At the start of each turn, add a random Power card to your hand. Late-game ceiling-raiser.</div>
+          <div class="card-footer"><span>Rare</span><span>Variance engine</span></div>
+        </article>
+      </div>
+
+      <div class="callout tip">
+        <h4>Sequencing rule</h4>
+        <p>The order of channels is the order of Evokes. Channel Dark orbs <em>last</em> so they stay in the right-hand slots. When you're ready to finish a fight, one Multi-Cast at X=3 Evokes the last three orbs in sequence — Dark, Dark, Dark — dumping all accumulated damage on the boss.</p>
+      </div>
+    </div>
+
+    <!-- ---- Claw Spam ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · Claw Spam (Zero-Cost Loop)</span>
+        <span class="archetype-rating">Explosivity <span class="rating-bar" style="--pct:78%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Every Claw buffs every Claw. Cycle forever, win forever.</p>
+
+      <p>Claw is a 0-cost attack that deals 3 damage and permanently increases all other Claws by 2 damage for the rest of the combat. The more Claws you draw and play, the harder each subsequent Claw hits. The deck needs three pieces: <strong>multiple Claws</strong> (ideally 4–6), <strong>a cycling engine</strong> (Scrape, Hologram, Coolheaded), and <strong>a replayer</strong> (All for One, Feral). Late-game a Claw hits for 20+ damage — played 5 times per turn — for 100+ damage per round, at zero energy.</p>
+
+      <p>This is the Defect's "solo engine" build. It doesn't need Focus, orbs, or expensive rares. What it needs is <em>card-draw quality</em>. Every Act 2 card reward that isn't a Claw, a draw card, or a copier is a skip. Reboot effects destroy the deck — once your Claws are on the battlefield, shuffling them back is the whole plan.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile attack common">
+          <span class="card-cost">0</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Claw</h3>
+          <div class="card-desc">Deal 3 damage. All Claws deal +2 damage this combat. The entire deck's foundation.</div>
+          <div class="card-footer"><span>Common</span><span>Engine</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Scrape</h3>
+          <div class="card-desc">Deal 7 damage. Draw X cards; discard each not at 0 cost. The best cycling tool in the class.</div>
+          <div class="card-footer"><span>Common</span><span>Cycle</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">All for One</h3>
+          <div class="card-desc">Put all 0-cost cards from discard into hand. Your Claw recycler — take two.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Recycler</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Feral</h3>
+          <div class="card-desc">Each 0-cost card played is played twice. Upgraded: cheaper. Echo Form for zero-cost decks.</div>
+          <div class="card-footer"><span>Rare</span><span>Zero-cost doubler</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Hologram</h3>
+          <div class="card-desc">Recall a card from discard. Gain Block. With upgrade, loses Exhaust — permanent recycler.</div>
+          <div class="card-footer"><span>Common</span><span>Single recycle</span></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- ---- Plasma / Multi-Cast ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">4 · Plasma Combo (Energy Engine)</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:88%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Turn orbs into energy. Turn energy into more orbs. Infinite.</p>
+
+      <p>Plasma orbs' passive gives 1 Energy at the end of every turn; their Evoke gives 2. Combined with <strong>Electrodynamics</strong> (Lightning damage all enemies each turn), <strong>Meteor Strike</strong> (channel Dark + Plasma + Lightning), and <strong>Chaos</strong> (random orb), you can build an engine where energy never runs out, every orb slot is always full, and every turn generates 30 damage and 20 block. The build shines in Act 3 hallway fights — it's almost invincible against groups.</p>
+
+      <h4>Key cards</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">3</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Electrodynamics</h3>
+          <div class="card-desc">Lightning orbs now hit ALL enemies. Single best multi-target Defect power.</div>
+          <div class="card-footer"><span>Rare</span><span>AOE engine</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">5</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Meteor Strike</h3>
+          <div class="card-desc">Deal 24 damage. Channel 3 Plasma orbs. Energy snowball — costs 5 but generates 6 on Evoke.</div>
+          <div class="card-footer"><span>Rare</span><span>Combo finisher</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Chaos</h3>
+          <div class="card-desc">Channel a random orb. Zero cost, sometimes Plasma — great with Capacitor.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Cheap channel</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Turbo</h3>
+          <div class="card-desc">Gain 2 Energy. Add a Void card to discard (unplayable, drains 1 energy). Costs net 1 energy for 2 later.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Energy burst</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <h4>Defect meta-strategy</h4>
+      <p>Every Defect deck benefits from one Seek, one Defragment, one Capacitor. Your three "default" picks in any orb build. Beyond that, <strong>Echo Form</strong> is a legitimate run-winner because it doubles your first card — whether that's Seek, Blizzard, Calculated Gamble, or a Meteor Strike. Build around it if offered.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== REGENT -->
+<section id="regent" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">☼</div>
+      <div>
+        <span class="eyebrow">The Regent</span>
+        <h2>The Regent</h2>
+        <p class="char-subtitle">"Stars are cheaper than iron. Spend them freely."</p>
+      </div>
+    </div>
+
+    <p>The Regent is one of two brand-new STS2 classes and arguably the most ambitious. Two resources run parallel: <strong>Energy</strong> (standard, reset each turn) and <strong>Stars</strong> (Regent-only, persistent across turns, uncapped). Stars fuel spell cards — X-cost attacks and skills that scale with how many Stars you pour in. This decouples "what you can play this turn" from "how much damage you can deal", a design that enables some of the highest burst turns in the game.</p>
+
+    <p>The Regent's second axis is <strong>Forge</strong>, a permanent in-combat enhancement to the Sovereign Blade — a signature attack card the Regent starts with. Every Forge-tagged card permanently adds damage to the Blade for the rest of the combat. A heavily forged Blade in Act 3 hits for 60+ damage on a single 1-cost card. Between Stars and Forge, the Regent has two distinct, viable win conditions — and some hybrid builds that use both.</p>
+
+    <p>The Regent's challenge is <em>resource discipline</em>. Stars are not reset each turn — they're precious. The second-worst decision pattern in STS2 is panicking on turn 2 and spending 8 Stars on Stardust for mediocre damage, then having no reserves for the boss mechanic. Regent pilots learn to hoard Stars like a miser through Act 1 and only spend when the kill math adds up.</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>Starter Relic — Divine Right / Crown of Stars</h4>
+        <p>At the start of each combat, generate 3 Stars. This is your Stars baseline — every fight opens with 3 banked, before any card is played. Treasure every point: it is the most active starter relic in the game.</p>
+      </div>
+      <div class="info-box">
+        <h4>Starting HP</h4>
+        <p>72 HP. Squishy. No combat healing. The Regent's fragility is offset by the Stars-as-bank design — you can reserve across fights to the extent that relics allow.</p>
+      </div>
+      <div class="info-box">
+        <h4>Signature starting card — Sovereign Blade</h4>
+        <p>A 1-cost attack that deals a baseline damage and is permanently enhanced by Forge cards played during the combat. Never transform it. Never upgrade another card first.</p>
+      </div>
+      <div class="info-box">
+        <h4>What he cannot do</h4>
+        <p>No Poison, no Orbs, no Strength, no Shivs. He can't chip — he can only burst. Early-game multi-enemy rooms are his hardest challenge; plan for AOE or run cards like Gamma Blast.</p>
+      </div>
+    </div>
+
+    <!-- ---- Stars ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · Stars Burst (Stellar Engine)</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:95%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Bank Stars for three turns. Unleash a Stardust that kills the boss.</p>
+
+      <p>The Stars archetype plays like a caster in a typical RPG. Setup turns generate Stars via Gather Light, Glow, Hidden Cache, and Solar Strike. Payoff turns spend them through Stardust (a spell attack that multi-hits based on Stars) or Radiant (AOE nuke). Critically, <strong>Alignment</strong> converts Stars into Energy at a favourable ratio, meaning you can sometimes play <em>your entire hand</em> on a Stardust turn — and Stardust at 9 Stars hits for roughly 9 × 10 damage upgraded. That's a 90-damage single-target finisher on turn 3.</p>
+
+      <p>The deck is exceptionally well-equipped for Act 3, where burst trumps consistency. Its Act 1 weakness is that you need survival tools to <em>reach</em> the burst — Cloak of Stars, Reflect, Lunar Pastry (relic) are your insurance cards.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Solar Strike</h3>
+          <div class="card-desc">Deal 8 damage. Gain 1 Star. Damage + Star — the floor card for the archetype.</div>
+          <div class="card-footer"><span>Common</span><span>Attack + Star</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Gather Light</h3>
+          <div class="card-desc">Gain Block + 2 Stars. Upgraded: more block. Exceptional efficiency on the defensive turn.</div>
+          <div class="card-footer"><span>Common</span><span>Block + Stars</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">X</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Stardust</h3>
+          <div class="card-desc">Deal 5 damage X times, where X = Stars spent. Your primary win condition — upgraded doubles damage per hit.</div>
+          <div class="card-footer"><span>Rare</span><span>X-Star finisher</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">X</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Radiant</h3>
+          <div class="card-desc">Deal AOE damage X times, where X = Stars spent. The Stars AOE finisher — boss-room clearance.</div>
+          <div class="card-footer"><span>Rare</span><span>AOE X-burst</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Alignment</h3>
+          <div class="card-desc">Spend Stars. Gain Energy. The key resource-converter — enables multi-Stardust turns.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Star→Energy</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Glow</h3>
+          <div class="card-desc">Gain 1 Star. Draw 1 card. A cycling Star generator — keeps the engine alive.</div>
+          <div class="card-footer"><span>Common</span><span>Free Star</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Cloak of Stars</h3>
+          <div class="card-desc">Spend Stars for Block equal to a multiple. Cheap, big block — the defensive counterpart to Stardust.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Star→Block</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Hidden Cache</h3>
+          <div class="card-desc">Gain a large lump of Stars. One-shot setup card — fantastic in opening hands.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Star pump</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Child of the Stars</h3>
+          <div class="card-desc">At the start of each turn, gain 1 Star. Permanent baseline scaling — auto-include.</div>
+          <div class="card-footer"><span>Rare</span><span>Passive Stars</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Genesis</h3>
+          <div class="card-desc">Gain many Stars at once. A one-shot detonator that sets up a 40-Star Stardust.</div>
+          <div class="card-footer"><span>Rare</span><span>Mega Star gain</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Stardust</strong> — the win condition. Upgrade ASAP; a second copy is acceptable.</li>
+            <li><strong>Alignment</strong> — the second-most important card; enables multi-action Star turns.</li>
+            <li><strong>Child of the Stars</strong> — always take.</li>
+            <li><strong>Gather Light</strong> — the best common skill in the pool.</li>
+            <li><strong>Chemical X</strong> (relic) — boosts every X-cost card you play; it's a run-defining pick.</li>
+            <li><strong>Lunar Pastry</strong> (relic) — Stars per turn, every turn, forever.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Wrought in War</strong> — Forge axis; wrong archetype here.</li>
+            <li><strong>Conqueror</strong> / <strong>Beat Into Shape</strong> — Forge-only, don't pollute a Stars deck.</li>
+            <li><strong>Mostly single-hit attacks</strong> without Star synergy — dead weight by Act 2.</li>
+            <li><strong>Summon Forth</strong> — blade-focused; clashes with Star-spender turns.</li>
+            <li><strong>Furnace</strong> — Forge power, irrelevant in Stars decks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>Relics to route for</h4>
+      <div class="pills">
+        <span class="pill gold">Chemical X</span>
+        <span class="pill gold">Galactic Dust</span>
+        <span class="pill gold">Lunar Pastry</span>
+        <span class="pill">Mini Regent</span>
+        <span class="pill">Calipers</span>
+        <span class="pill">Runic Pyramid</span>
+      </div>
+    </div>
+
+    <!-- ---- Forge ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · Sovereign Forge</span>
+        <span class="archetype-rating">Consistency <span class="rating-bar" style="--pct:85%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">One card. Infinitely reusable. Permanently growing.</p>
+
+      <p>The Forge deck centres on Sovereign Blade, the starter attack. Every Forge card (Beat Into Shape, Wrought in War, Furnace) permanently enhances the Blade for the rest of the combat. By Act 3, a single cast of Sovereign Blade hits for 40–60+ damage. The trick is getting it to stay in rotation — <strong>Cosmic Indifference</strong>, <strong>Summon Forth</strong>, and a well-tuned draw engine recycle the Blade every turn.</p>
+
+      <p>This is the most boss-stable of the Regent archetypes. You don't have burst windows that can miss — you have <em>consistent, escalating damage</em> that gets better the longer the fight lasts. Against marathon-style Act 3 bosses, this deck simply outscales.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Beat Into Shape</h3>
+          <div class="card-desc">Forge your Blade and gain Block. The efficient, primary Forge — take multiple copies.</div>
+          <div class="card-footer"><span>Common</span><span>Forge + Block</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Wrought in War</h3>
+          <div class="card-desc">Deal damage and Forge your Blade. Two-in-one — every Regent deck wants one.</div>
+          <div class="card-footer"><span>Common</span><span>Damage + Forge</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Summon Forth</h3>
+          <div class="card-desc">Add Sovereign Blade to your hand. The recycler — keeps the Blade in rotation.</div>
+          <div class="card-footer"><span>Common</span><span>Blade fetch</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Cosmic Indifference</h3>
+          <div class="card-desc">Return your Blade to your hand next turn. A cheaper, more elegant Summon Forth.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Return trigger</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Furnace</h3>
+          <div class="card-desc">At the start of each turn, Forge your Blade. Permanent Forge growth — the ultimate long-fight scaler.</div>
+          <div class="card-footer"><span>Rare</span><span>Passive Forge</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Bulwark</h3>
+          <div class="card-desc">Gain big Block + Forge. Dual-purpose turn-1 card — worth the 2 energy.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Block + Forge</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Conqueror</h3>
+          <div class="card-desc">Deal damage equal to double your Blade's bonus. Insta-kill elite tool — the Forge's cash-out.</div>
+          <div class="card-footer"><span>Rare</span><span>Blade doubler</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Seeking Edge</h3>
+          <div class="card-desc">Multi-target Blade variant. Covers the archetype's AOE weakness for hallway fights.</div>
+          <div class="card-footer"><span>Uncommon</span><span>AOE Blade</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Furnace</strong> — always. It wins the run by itself.</li>
+            <li><strong>Beat Into Shape</strong> — two copies, upgraded.</li>
+            <li><strong>Cosmic Indifference</strong> — the elegant recycler.</li>
+            <li><strong>Fencing Manual</strong> (relic) — Forge amplifier.</li>
+            <li><strong>Energy relics</strong> — more Blade casts per turn = more damage.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Stardust</strong> / <strong>Radiant</strong> — Star axis; drains focus from the Blade.</li>
+            <li><strong>Alignment</strong> — no Stars to convert.</li>
+            <li><strong>Hidden Cache</strong> — Star setup, not useful.</li>
+            <li><strong>Bulk skills without Forge</strong> — every skill in the deck ideally Forges.</li>
+            <li><strong>Gamma Blast</strong> — Star-spender, not Forge.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- Hybrid / Infinite ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · Hybrid Smith (Infinite)</span>
+        <span class="archetype-rating">Skill cap <span class="rating-bar" style="--pct:92%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">When The Smith lands, the deck becomes self-sustaining.</p>
+
+      <p>The Regent's hidden endgame — <strong>The Smith</strong> (a rare power) enables a loop where played cards can be returned to hand. Combined with <strong>Alignment</strong>, <strong>Summon Forth</strong>, and <strong>Cosmic Indifference</strong>, your deck becomes an engine that plays, forges, and damages every turn without running out of cards. It's the Regent's infinite — an Act 3 hallway clearer that trivialises long fights.</p>
+
+      <p>This archetype requires rares and a high skill ceiling to pilot. Don't commit to it in Act 1 — keep your deck flexible and pivot when The Smith shows up in Act 2 or Act 3.</p>
+
+      <h4>Key cards</h4>
+      <div class="card-grid">
+        <article class="card-tile power rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">The Smith</h3>
+          <div class="card-desc">Grants returning-hand mechanics for Forge and spell cards. The engine that defines this build.</div>
+          <div class="card-footer"><span>Rare</span><span>Engine</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Gamma Blast</h3>
+          <div class="card-desc">Spend a Star to apply Vulnerable. Pairs with any hybrid Star/Forge plan for cheap debuff.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Debuff</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Dying Star</h3>
+          <div class="card-desc">Gain AOE Block per Star spent. A specialised Stars defensive card for heavy pressure turns.</div>
+          <div class="card-footer"><span>Uncommon</span><span>AOE Block</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <h4>Regent meta-strategy</h4>
+      <p>Never sacrifice Stars for a card you don't need to play. The Regent mistake is spending 6 Stars on turn 2 out of panic. Hold them. Bank them. Only spend when the math adds up to a kill or a critical block window. Star economy is the Regent's entire decision layer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== NECROBINDER -->
+<section id="necrobinder" class="character">
+  <div class="container">
+    <div class="char-header">
+      <div class="char-emblem">☠</div>
+      <div>
+        <span class="eyebrow">The Necrobinder</span>
+        <h2>The Necrobinder</h2>
+        <p class="char-subtitle">"Death is a delay, not an ending. Let Osty do the work."</p>
+      </div>
+    </div>
+
+    <p>The Necrobinder is STS2's second debut class and the most mechanically unusual unit in the game. Her identity is built around three pillars: a persistent <strong>minion (Osty)</strong>, the <strong>Doom</strong> execute debuff, and previously-downside mechanics (<strong>Ethereal</strong>, <strong>Souls</strong>) reframed as <em>advantages</em>. She is the most "engine builder" of the classes — a proper Necrobinder deck looks like a tangle of interlocking parts, where the whole is greater than any single card.</p>
+
+    <p>Her starter relic, <strong>Osty's Binding</strong>, summons Osty at the start of every combat. Osty is a one-HP skeletal hand that attacks enemies, soaks hits, and can be grown via Summon-tagged cards. By Act 3, a well-fed Osty has 40+ HP and deals 15+ damage per turn <em>while</em> shielding you. He is the single most defining character feature in the game — and a playstyle unlike anything else in the Spire.</p>
+
+    <p>The Necrobinder rewards deeper reading of the board than other classes. Do enemies attack this turn or block? Does Osty get one-shot, or does he tank three hits? Is Doom stack X + turn N enough to execute before the enemy's big attack? She asks more of the player — and gives more in return.</p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h4>Starter Relic — Osty's Binding</h4>
+        <p>At the start of combat, summon Osty (1 HP, strikes enemies independently). Osty intercepts attacks meant for you — including lethal ones. He effectively doubles your HP bar.</p>
+      </div>
+      <div class="info-box">
+        <h4>Starting HP</h4>
+        <p>68 HP — the lowest in the game. Necrobinder leans on Osty as her real health pool; her face HP is a timer.</p>
+      </div>
+      <div class="info-box">
+        <h4>Core Mechanics</h4>
+        <p><strong>Summon</strong> — grows Osty's HP and damage. <strong>Doom</strong> — stacks on enemies; when HP falls to that stack level, they die. <strong>Souls</strong> — zero-cost "exhaust after draw 2" cards. <strong>Blood Magic</strong> — spend HP for effects.</p>
+      </div>
+      <div class="info-box">
+        <h4>What she cannot do</h4>
+        <p>No Strength, no Shivs, no orbs, no Stars. All her damage is either through Osty, through Doom execution, or through direct attacks. Early-game reliability is poor — many runs feel rough in Act 1.</p>
+      </div>
+    </div>
+
+    <!-- ---- Osty ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">1 · Osty (Minion Command)</span>
+        <span class="archetype-rating">Consistency <span class="rating-bar" style="--pct:87%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Your minion attacks. Your minion blocks. You sit back and draw.</p>
+
+      <p>Osty decks build a skeleton tank. Early Summon cards (Snap, Sic 'Em, Pull Aggro) feed Osty HP and trigger attacks. Osty HP persists across turns — he's not a card-block that disappears. By Act 2, Osty soaks 25+ damage per turn (which would otherwise hit your tiny HP pool) and deals 10+ damage back. You play the role of a commander — summon, buff, trigger combos, and protect your minion.</p>
+
+      <p>The archetype's strength is <em>turn-one value</em>. Osty shows up automatically. Summon cards cost 1. By the second turn you've already set up a meaningful board. Its weakness is enemies that target you directly and bypass Osty — Act 3 elites with bypass debuffs force you into contingency plans.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Snap</h3>
+          <div class="card-desc">Osty attacks for cheap damage. Retain. Floor Summon — take two or three copies.</div>
+          <div class="card-footer"><span>Common</span><span>Retain Osty</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Pull Aggro</h3>
+          <div class="card-desc">Osty intercepts attacks. Gain Block. One of the best single-card defensive plays Necrobinder has.</div>
+          <div class="card-footer"><span>Common</span><span>Aggro pull</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Sic 'Em</h3>
+          <div class="card-desc">Osty attacks with Summon. Builds Osty's stat line while dealing damage.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Summon attack</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">High Five</h3>
+          <div class="card-desc">Deal AOE damage and apply Vulnerable. The Osty deck's hallway answer.</div>
+          <div class="card-footer"><span>Common</span><span>AOE</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Rattle</h3>
+          <div class="card-desc">Osty multi-attacks. Scales when Osty has been fed — a combo-heavy burst tool.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Osty multi</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Flatten</h3>
+          <div class="card-desc">Free damage once Osty's buffer is high enough. Zero-cost finishers are cherry-on-top.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Free when fed</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Bone Flute</h3>
+          <div class="card-desc">Each turn, Osty gains additional HP and damage. The Osty equivalent of Demon Form.</div>
+          <div class="card-footer"><span>Rare</span><span>Passive Summon</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Book Repair Knife</h3>
+          <div class="card-desc">Heals Osty (and can heal you). A sustained keepalive in long fights.</div>
+          <div class="card-footer"><span>Rare</span><span>Healing</span></div>
+        </article>
+      </div>
+
+      <div class="priority-split">
+        <div class="priority-col take">
+          <h4>Take priority</h4>
+          <ul>
+            <li><strong>Bone Flute</strong> — always, first pick.</li>
+            <li><strong>Snap</strong> — up to three copies; Retain keeps combos alive between turns.</li>
+            <li><strong>Pull Aggro</strong> — your best Act-1 survival tool.</li>
+            <li><strong>Sic 'Em</strong> — attack + summon; best action efficiency.</li>
+            <li><strong>Undying Sigil</strong> (relic) — weakens enemies; reduces Osty's incoming damage.</li>
+          </ul>
+        </div>
+        <div class="priority-col skip">
+          <h4>Skip priority</h4>
+          <ul>
+            <li><strong>Pagestorm</strong> — Ethereal scaler; wrong archetype here.</li>
+            <li><strong>Pull From Below</strong> — Ethereal-only payoff, skip.</li>
+            <li><strong>End of Days</strong> — Doom panic button; not needed in Osty.</li>
+            <li><strong>Defile</strong> — Doom spike; wrong axis.</li>
+            <li><strong>Bloodletting-tagged</strong> — loses HP you can't spare at Necrobinder base HP.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- Doom ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">2 · Doom (Execute Debuff)</span>
+        <span class="archetype-rating">Ceiling <span class="rating-bar" style="--pct:91%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Stack Doom. Enemies below their Doom stack die. No damage calculation needed.</p>
+
+      <p>Doom is an execute mechanic — when an enemy's HP drops to or below its Doom stack count, they die at the end of their turn. Stack Doom via Negative Pulse (AOE), Deathbringer (AOE + Weak), Scourge (damage + draw), and Blight Strike. The cash-out: <strong>Time's Up</strong> (executes at high-HP range) and <strong>End of Days</strong> (resolves Doom immediately).</p>
+
+      <p>Doom is the Necrobinder's most AOE-friendly archetype. Scourge at 3 stacks across four enemies at the end of a hallway fight means every enemy dies at the end of their turn. The drawback: you must survive until Doom triggers. You need block. Block. More block.</p>
+
+      <h4>Priority picks</h4>
+      <div class="card-grid">
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Negative Pulse</h3>
+          <div class="card-desc">Apply AOE Doom and gain Block. Dual-purpose backbone of the Doom deck.</div>
+          <div class="card-footer"><span>Common</span><span>AOE Doom</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Deathbringer</h3>
+          <div class="card-desc">Apply AOE Doom and Weak. Debuff + execute — takes care of multiple rooms at once.</div>
+          <div class="card-footer"><span>Uncommon</span><span>AOE Doom + Weak</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Scourge</h3>
+          <div class="card-desc">Deal 13 damage. Draw 1 card. Apply Doom. The efficient single-target attack.</div>
+          <div class="card-footer"><span>Common</span><span>Damage + Doom + Draw</span></div>
+        </article>
+        <article class="card-tile attack common">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Blight Strike</h3>
+          <div class="card-desc">Scaling damage with Doom stacks. Fair floor card with ceiling potential.</div>
+          <div class="card-footer"><span>Common</span><span>Doom scaler</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">2</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Defile</h3>
+          <div class="card-desc">High-damage Doom enabler — reduces enemy HP fast into your Doom threshold.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Burst</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Death's Door</h3>
+          <div class="card-desc">Gain Block per Doom card in your deck. Scales with your own commitment.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Doom-count block</span></div>
+        </article>
+        <article class="card-tile skill rare">
+          <span class="card-cost">3</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">End of Days</h3>
+          <div class="card-desc">Resolves all Doom on enemies immediately. The panic button — wins unwinnable rooms.</div>
+          <div class="card-footer"><span>Rare</span><span>Instant execute</span></div>
+        </article>
+        <article class="card-tile attack rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Time's Up</h3>
+          <div class="card-desc">Execution attack scaling with Doom. Finisher against Act 3 elites.</div>
+          <div class="card-footer"><span>Rare</span><span>Execute</span></div>
+        </article>
+      </div>
+
+      <div class="callout warn">
+        <h4>Warning — Artifact</h4>
+        <p>Artifact-wearing enemies eat your first Doom application. Stack at least 5 Doom early, or bring End of Days to bypass.</p>
+      </div>
+    </div>
+
+    <!-- ---- Ethereal / Souls ---- -->
+    <div class="archetype">
+      <div class="archetype-header">
+        <span class="archetype-name">3 · Ethereal + Souls</span>
+        <span class="archetype-rating">Skill cap <span class="rating-bar" style="--pct:86%;"></span></span>
+      </div>
+      <p class="archetype-subtitle">Turn your downsides into the engine. The Necrobinder's cleanest infinite.</p>
+
+      <p>Ethereal cards exhaust at end-of-turn if unplayed. Previously a pure downside. In Necrobinder, Ethereal-count triggers payoffs: <strong>Pagestorm</strong> draws per Ethereal played, <strong>Pull From Below</strong> scales in damage with Ethereal plays, and <strong>Veilpiercer</strong> makes the next Ethereal cost zero. Souls are 0-cost Draw-2 skills that exhaust after — free draw that fuels the loop.</p>
+
+      <p>When the archetype clicks, your turn looks like this: draw an Ethereal, play Veilpiercer (free Ethereal), play your free Ethereal, trigger Pagestorm for +2 draw, discover another Ethereal, ad infinitum. It's one of the higher-skill-floor decks in STS2 — but also one of the most satisfying when it works.</p>
+
+      <h4>Key cards</h4>
+      <div class="card-grid">
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Call of the Void</h3>
+          <div class="card-desc">Add Ethereal-type cards to hand. The enabler for Ethereal triggers.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Enabler</span></div>
+        </article>
+        <article class="card-tile power rare">
+          <span class="card-cost">2</span><span class="card-type-badge">Power</span>
+          <h3 class="card-name">Pagestorm</h3>
+          <div class="card-desc">Draw a card whenever you play an Ethereal card. The draw engine.</div>
+          <div class="card-footer"><span>Rare</span><span>Ethereal draw</span></div>
+        </article>
+        <article class="card-tile attack uncommon">
+          <span class="card-cost">1</span><span class="card-type-badge">Attack</span>
+          <h3 class="card-name">Pull From Below</h3>
+          <div class="card-desc">Damage scales with Ethereal cards played this combat. Finisher with 4+ Ethereals.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Scaler</span></div>
+        </article>
+        <article class="card-tile skill uncommon">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Veilpiercer</h3>
+          <div class="card-desc">Next Ethereal played costs 0. Enables free engine chains.</div>
+          <div class="card-footer"><span>Uncommon</span><span>Ethereal enabler</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">1</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Sculpting Strike</h3>
+          <div class="card-desc">Make a card Ethereal. Synergises with Ethereal payoffs — more triggers per turn.</div>
+          <div class="card-footer"><span>Common</span><span>Ethereal maker</span></div>
+        </article>
+        <article class="card-tile skill common">
+          <span class="card-cost">0</span><span class="card-type-badge">Skill</span>
+          <h3 class="card-name">Soul (token)</h3>
+          <div class="card-desc">Draw 2 cards. Exhaust. Generated by Necrobinder cards — a zero-cost engine fuel.</div>
+          <div class="card-footer"><span>Common</span><span>Free draw</span></div>
+        </article>
+      </div>
+
+      <div class="callout tip">
+        <h4>Tip — Discard Souls after you draw</h4>
+        <p>Souls exhaust after playing, which means every Soul is a guaranteed +2 draw + deck-thin. Always play them before cycling finishers; never skip them to save "for later".</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>Necrobinder meta-strategy</h4>
+      <p>Nothing in this class is generalist — every archetype wants specific cards, and mixing Osty with Ethereal will drown you in Act 2. Pick a lane hard by your third card reward and commit. Necrobinder is also the class most punished by bad card removals — prioritise shop removes <strong>only</strong> on starters, and never remove an archetype card even if it seems weak. Synergy is everything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== BOSS GUIDE -->
+<section id="bosses">
+  <div class="container">
+    <span class="eyebrow">Part III</span>
+    <h2>Boss & Elite Priors</h2>
+    <p class="section-intro">General rules for surviving the moments that decide runs. These hold across classes.</p>
+
+    <div class="grid-2">
+      <div class="info-box">
+        <h4>Act 1 Boss</h4>
+        <p>Hits hard in single large attacks. Prioritise one-turn block spikes (Shrug It Off upgraded, Gather Light, Pull Aggro). Stacker archetypes haven't scaled yet — use potions liberally. Keep one strong finisher upgraded.</p>
+      </div>
+      <div class="info-box">
+        <h4>Act 2 Boss</h4>
+        <p>Scaling pressure: punishes long fights more than short ones. This is where Poison, Dark orb cooking, and Forge decks peak. Have at least one reliable AOE for multi-enemy boss variants.</p>
+      </div>
+      <div class="info-box">
+        <h4>Act 3 Boss</h4>
+        <p>Status-card inducing and Artifact-equipped variants. You must have:
+        <ul>
+          <li>A scaler that doesn't rely on the first effect landing (for Artifact).</li>
+          <li>AOE or multi-hit for minion-spawners.</li>
+          <li>At least 15 block on turn 1 — setup turns die here.</li>
+        </ul></p>
+      </div>
+      <div class="info-box">
+        <h4>Act 4 / True Ending (Not in EA)</h4>
+        <p>The Heart fight and a fourth act are <em>not</em> in Slay the Spire 2 early access. Runs currently conclude with the Act 3 boss. Mega Crit has confirmed a True Ending is planned for a future EA patch — until then, the best completion goal is the Ascension ladder for each class.</p>
+      </div>
+    </div>
+
+    <h3>Elite priority guide</h3>
+    <table class="tier-table">
+      <thead>
+        <tr><th>Elite Type</th><th>Priority</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Any Act 2 elite with your deck at 70% HP+</td><td class="diff-easy">Fight</td><td>Elite relic is the single biggest power spike. Fight every time you can afford the HP cost.</td></tr>
+        <tr><td>Act 1 elite below 50% HP</td><td class="diff-moderate">Route around</td><td>No Burning Blood + starter deck = unsurvivable. Risk/reward negative.</td></tr>
+        <tr><td>Act 3 elite with deck not finished</td><td class="diff-hard">Skip only if forced</td><td>Act 3 elite relics are run-winners (key shaped, etc.) but require a functioning deck.</td></tr>
+        <tr><td>Gremlin Nob equivalent (skill-punish)</td><td class="diff-hard">Block-heavy decks only</td><td>Punishes Skill plays — Silent, Regent suffer; Ironclad thrives.</td></tr>
+        <tr><td>Lagavulin equivalent (scales with debuffs)</td><td class="diff-moderate">Silent/Defect easy</td><td>Wakes up on turn 3; kill before wake-up or outlast.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Potion strategy</h3>
+    <p>Potions are the most underused resource on Ascension 10+. Rules:</p>
+    <ul style="padding-left: 24px; color: var(--ink-dim); line-height: 1.9;">
+      <li><strong>Save for bosses.</strong> Don't drink on a normal hallway fight if you're at 60%+ HP.</li>
+      <li><strong>Drink on elites if you'd take 15+ damage otherwise.</strong> You will regret nothing.</li>
+      <li><strong>Drink Strength potions before finishers.</strong> The extra +2 per hit on Whirlwind/Twin Strike is the difference between 20 and 60 damage.</li>
+      <li><strong>Fairy in a Bottle is priceless.</strong> If a shop sells potion slots, buy them for it alone.</li>
+      <li><strong>Alchemist event</strong> — transform two potions into a rarer one. Not always worth it. Common → uncommon yes; uncommon → rare usually no (too many bad rares).</li>
+    </ul>
+
+    <h3>Shop prior</h3>
+    <p>A disciplined shop spend is the hidden skill of the Spire. Priors in order:</p>
+    <ol style="padding-left: 24px; color: var(--ink-dim); line-height: 1.9;">
+      <li>Card removal service (always, unless your deck is already under 20 cards).</li>
+      <li>Energy relic (if you don't have one by Act 2).</li>
+      <li>Rare card that finishes your archetype (Limit Break, Accuracy, Noxious Fumes, Defragment, etc.).</li>
+      <li>Relic that matches your build.</li>
+      <li>Potion slots or the Calipers-tier relics.</li>
+      <li>Nothing — it's fine to leave a shop without buying if nothing lines up.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================================================== FOOTER & SOURCES -->
+<footer id="sources">
+  <div class="container">
+    <p>&mdash; <em>Ascend the Spire</em> &mdash;<br />
+    This guide is compiled from community wisdom, tier lists, and published build analyses. Slay the Spire 2 is developed by Mega Crit. All card names and game mechanics are property of their rightful owner.</p>
+
+    <div class="sources">
+      <h4>Sources & Further Reading</h4>
+      <ul>
+        <li>Mobalytics — <a href="https://mobalytics.gg/slay-the-spire-2/characters">Character Hub</a> · <a href="https://mobalytics.gg/slay-the-spire-2/characters/ironclad-guide">Ironclad</a> · <a href="https://mobalytics.gg/slay-the-spire-2/characters/silent-guide">Silent</a> · <a href="https://mobalytics.gg/slay-the-spire-2/characters/defect-guide">Defect</a> · <a href="https://mobalytics.gg/slay-the-spire-2/characters/regent-guide">Regent</a> · <a href="https://mobalytics.gg/slay-the-spire-2/characters/necrobinder-guide">Necrobinder</a></li>
+        <li>Untapped.gg — <a href="https://sts2.untapped.gg/en/characters/defect">Defect guide</a> · <a href="https://sts2.untapped.gg/en/characters/necrobinder">Necrobinder guide</a></li>
+        <li>StS2 Guide — <a href="https://sts2guide.com/">Builds, cards & relics database</a></li>
+        <li>The Gamer — <a href="https://www.thegamer.com/slay-the-spire-2-best-builds-relics-cards-the-ironclad-strength-vulnerable-guide/">Ironclad best builds</a> · <a href="https://www.thegamer.com/slay-the-spire-2-best-builds-cards-relics-the-regent-stars-forge-guide/">Regent best builds</a> · <a href="https://www.thegamer.com/slay-the-spire-2-best-build-cards-relics-the-necrobinder-souls-guide/">Necrobinder best builds</a></li>
+        <li>GameSpot — <a href="https://www.gamespot.com/articles/best-slay-the-spire-2-regent-build-character-guide-tips-and-more/1100-6538766/">Regent character guide</a></li>
+        <li>Kotaku — <a href="https://kotaku.com/slay-the-spire-2-tips-tricks-beginner-deckbuilding-2000680050">Beginner deck-building</a> · <a href="https://kotaku.com/slay-the-spire-2-new-modes-characters-2000684316">Upcoming content roadmap</a></li>
+        <li>PCGamesN — <a href="https://www.pcgamesn.com/slay-the-spire-2/characters">Characters tier list</a></li>
+        <li>Official wiki — <a href="https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:Necrobinder">Necrobinder (wiki.gg)</a></li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 30px; font-size: 0.7rem; color: var(--ink-muted);">Built April 2026 · Patch 0.103.x · Rebuild as the meta shifts.</p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
